@@ -1,0 +1,40 @@
+.DS_Store
+node_modules
+/dist
+
+/tests/e2e/videos/
+/tests/e2e/screenshots/
+/coverage
+/etc/.env
+/.vitepress/cache
+/.vitepress/cache/deps
+/.vitepress/dist
+/.vitepress/.temp
+
+# local env files
+.local.env
+.env.*.local
+.env.local
+.env.*.bat
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.vitepress/cache
+.vitepress/dist
+.stylelintcache
+.eslintcache
+.obsidian/
+.trash/

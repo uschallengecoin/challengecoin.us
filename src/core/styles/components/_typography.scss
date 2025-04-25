@@ -1,0 +1,290 @@
+@use "UiKit/styles/_colors.scss" as *;
+@use "UiKit/styles/_mixins.scss" as *;
+@use "UiKit/styles/_variables.scss" as *;
+
+h1 {
+  font-family: $familyValueHeader;
+  font-weight: 600;
+  color: inherit;
+  font-size: 60px;
+  line-height: 77px;
+  font-style: normal;
+  @media screen and (max-width: 767px) {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+h2 {
+  font-family: $familyValueHeader;
+  font-weight: 600;
+  color: inherit;
+  font-size: 44px;
+  line-height: 56px;
+  font-style: normal;
+  @media screen and (max-width: 767px) {
+    font-size: 36px;
+    line-height: 46px;
+  }
+}
+h3 {
+  font-family: $familyValueHeader;
+  font-weight: 600;
+  color: inherit;
+  font-size: 32px;
+  line-height: 42px;
+  font-style: normal;
+}
+
+h4 {
+  font-family: $familyValueHeader;
+  font-weight: 600;
+  color: inherit;
+  font-size: 28px;
+  line-height: 38px;
+  font-style: normal;
+}
+
+h5 {
+  font-family: $familyValue;
+  font-weight: 700;
+  color: inherit;
+  font-size: 20px;
+  line-height: 28px;
+  font-style: normal;
+}
+
+h6 {
+  font-family: $familyValue;
+  font-weight: 600;
+  color: inherit;
+  font-size: 14px;
+  line-height: 21px;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  // vertical-align: baseline;
+  border: 0;
+}
+
+// H - titles by class
+.is--h1__title {
+  @extend h1;
+}
+.is--h2__title {
+  @extend h2;
+}
+.is--h3__title {
+  @extend h3;
+}
+.is--h4__title {
+  @extend h4;
+}
+.is--h5__title {
+  @extend h5;
+}
+.is--h6__title {
+  @extend h6;
+}
+
+// extra classes
+.is--display {
+  font-family: $familyValueHeader;
+  font-weight: 600;
+  font-size: 100px;
+  line-height: 128px;
+  font-style: normal;
+}
+
+.is--display-2 {
+  font-family: $familyValue;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 60px;
+  font-style: normal;
+  @media screen and (max-width: 767px) {
+    font-size: 36px;
+    line-height: 46px;
+  }
+}
+
+.is--subheading-2 {
+  font-family: $familyValue;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  font-style: normal;
+}
+
+.is--subheading-1 {
+  font-family: $familyValue;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+  font-style: normal;
+}
+
+.is--body {
+  font-family: $familyValue;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  font-style: normal;
+}
+
+.is--body-italic {
+  @extend .is--body;
+  font-style: italic;
+}
+
+.is--small {
+  font-family: $familyValue;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.is--small-2 {
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.header-anchor {
+  &:hover:before {
+    opacity: 1;
+  }
+}
+.header-anchor:before {
+  content: "#";
+  position: absolute;
+  left: -0.7em;
+  opacity: 0;
+}
+
+// SPACINGS
+.with-default-distance {
+  h1:not(:first-child),
+  h2:not(:first-child),
+  h3:not(:first-child),
+  h4:not(:first-child),
+  h5:not(:first-child),
+  h6:not(:first-child),
+  .is--h1__title:not(:first-child),
+  .is--h2__title:not(:first-child),
+  .is--h3__title:not(:first-child),
+  .is--h4__title:not(:first-child),
+  .is--h5__title:not(:first-child),
+  .is--h6__title:not(:first-child) {
+    margin-top: 40px;
+  }
+
+
+  h1 + *,
+  .is--h1__title + * {
+    margin-top: 24px;
+  }
+  h2 + *,
+  .is--h2__title + *,
+  h3 + *,
+  .is--h3__title + * {
+    margin-top: 8px;
+  }
+  h4 + *,
+  .is--h4__title + *,
+  h5 + *,
+  .is--h5__title + *,
+  h6 + *,
+  .is--h6__title + * {
+    margin-top: 4px;
+  }
+  h2 + .is--subheading-1,
+  .is--h2__title + .is--subheading-1 {
+    margin-top: 12px;
+  }
+
+  h2 + .is--subheading-2,
+  .is--h2__title + .is--subheading-2,
+  h3 + .is--subheading-2,
+  .is--h3__title + .is--subheading-2 {
+    margin-top: 8px;
+  }
+
+  .is--subheading-1 + *:not(section) {
+    margin-top: 30px;
+  }
+
+  .is--subheading-2 + * {
+    margin-top: 30px;
+  }
+
+  .v-badge + h1,
+  .v-badge + .is--h1__title {
+    margin-top: 12px;
+  }
+}
+
+h1.with-default-distance + *,
+.is--h1__title.with-default-distance + * {
+  margin-top: 12px;
+}
+h2.with-default-distance + *,
+.is--h2__title.with-default-distance + *,
+h3.with-default-distance + *,
+.is--h3__title.with-default-distance + * {
+  margin-top: 8px;
+}
+h4.with-default-distance + *,
+.is--h4__title.with-default-distance + *,
+h5.with-default-distance + *,
+.is--h5__title.with-default-distance + *,
+h6.with-default-distance + *,
+.is--h6__title.with-default-distance + * {
+  margin-top: 4px;
+}
+h2.with-default-distance + .is--subheading-1,
+.is--h2__title.with-default-distance + .is--subheading-1 {
+  margin-top: 12px;
+}
+
+h2.with-default-distance + .is--subheading-2,
+.is--h2__title.with-default-distance + .is--subheading-2,
+h3.with-default-distance + .is--subheading-2,
+.is--h3__title.with-default-distance + .is--subheading-2 {
+  margin-top: 8px;
+}
+
+.is--subheading-1.with-default-distance + *:not(section) {
+  margin-top: 30px;
+}
+
+.is--subheading-2.with-default-distance + * {
+  margin-top: 30px;
+}
+
+* + h1.with-default-distance,
+* + h2.with-default-distance,
+* + h3.with-default-distance,
+* + h4.with-default-distance,
+* + h5.with-default-distance,
+* + h6.with-default-distance,
+* + .is--h1__title.with-default-distance,
+* + .is--h2__title.with-default-distance,
+* + .is--h3__title.with-default-distance,
+* + .is--h4__title.with-default-distance,
+* + .is--h5__title.with-default-distance,
+* + .is--h6__title.with-default-distance {
+  margin-top: 30px;
+}
+
+.v-tag + h1.with-default-distance,
+.v-tag + .is--h1__title.with-default-distance {
+  margin-top: 12px;
+}

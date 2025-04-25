@@ -1,0 +1,130 @@
+// $primary: #004FFF;
+// $primary-dark: #0042D4;
+// $primary-light: #F0F4FF;
+
+$primary: #A52422;
+$primary-dark: #A52422;
+$primary-light: #A52422;
+
+$secondary: #E1DCD0;
+$secondary-dark: #E1DCD0;
+$secondary-light: #E1DCD0;
+
+$red: #FF7070;
+$red-dark: #FF3B3B;
+$red-light: #FFF1F1;
+
+$purple: #6F3DFD;
+$purple-dark: #5014D0;
+$purple-light: #F8F5FF;
+
+$yellow: #FFC24D;
+$yellow-dark: #F1AF32;
+$yellow-light: #FFF7E8;
+
+$white: #fff;
+$gray-10: #F8F9FA;
+$gray-20: #E9ECEF;
+$gray-30: #DEE2E6;
+$gray-40: #CED4DA;
+$gray-50: #ADB5BD;
+$gray-60: #6C757D;
+$gray-70: #495057;
+$gray-80: #343A40;
+$gray-90: #1A202D;
+$black: #12161F;
+// new
+
+
+$primary-red: #A52422;
+$primary-red-dark: #7E1716;
+$primary-red-light: rgba(165, 36, 34, 0.20);
+$primary-blue: #1A1A3C;
+
+$biege: #E1DCD0;
+$green: #7A8450;
+$light-blue: #5C80BC;
+$yellow: #BC8034;
+
+
+$white: #fff;
+$light-gray: #F2F2F2;
+$gray: #425466;
+$black: #222222;
+
+// BACKGROUNDS
+.is--background-primary-red{
+  background-color: $primary-red;
+}
+.is--background-primary-blue{
+  background-color: $primary-blue;
+}
+
+.is--background-biege{
+  background-color: $biege;
+}
+.is--background-green{
+  background-color: $green;
+}
+.is--background-light-blue{
+  background-color: $light-blue;
+}
+.is--background-yellow{
+  background-color: $yellow;
+}
+
+.is--background-white{
+  background-color: $white;
+}
+.is--background-light-gray{
+  background-color: $light-gray;
+}
+.is--background-gray{
+  background-color: $gray;
+}
+.is--background-black{
+  background-color: $black;
+}
+
+
+// COLORS
+.is--color-primary-red{
+  color: $primary-red;
+}
+.is--color-primary-blue{
+  color: $primary-blue;
+}
+
+.is--color-biege{
+  color: $biege;
+}
+.is--color-green{
+  color: $green;
+}
+.is--color-light-blue{
+  color: $light-blue;
+}
+.is--color-yellow{
+  color: $yellow;
+}
+
+.is--color-white{
+  color: $white;
+}
+.is--color-light-gray{
+  color: $light-gray;
+}
+.is--color-gray{
+  color: $gray;
+}
+.is--color-black{
+  color: $black;
+}
+
+
+[class*="is--color"] p:not([class*="is--color"]),
+[class*="is--color"] li:not([class*="is--color"]),
+[class*="is--color"] a:not([class*="is--color"]){
+    color: inherit;
+  }
+

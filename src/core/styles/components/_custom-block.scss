@@ -1,0 +1,98 @@
+
+@use 'UiKit/styles/_colors.scss' as *;
+@use 'UiKit/styles/_variables.scss' as *;
+// markdown - it
+// spacing
+.custom-block + *{
+  margin-top: 40px;
+  @media screen and (max-width: $tablet){
+    margin-top: 60px;
+  }
+}
+
+* + .custom-block{
+  margin-top: 40px;
+  @media screen and (max-width: $tablet){
+    margin-top: 60px;
+  }
+}
+// end spacing
+
+.custom-block{
+  padding: 12px 20px;
+}
+
+.custom-block.info{
+  border-left: 2px solid $light-blue;
+  background: $light-blue;
+}
+
+.custom-block.note{
+  border-left: 2px solid $green;
+  background: $green;
+}
+
+.custom-block.tip{
+  border-left: 2px solid $light-gray;
+  background: $light-gray;
+}
+
+.custom-block.important{
+  border-left: 2px solid $green;
+  background: $green;
+}
+
+.custom-block.warning{
+  border-left: 2px solid $yellow;
+  background: $yellow;
+}
+
+.custom-block.danger{
+  border-left: 2px solid $primary-red;
+  background: $primary-red;
+}
+
+.custom-block.caution{
+  border-left: 2px solid $primary-red;
+  background: $primary-red;
+}
+
+.custom-block.details{
+  border-left: 2px solid $light-gray;
+  background: $light-gray;
+}
+
+.custom-block-title{
+  font-weight: 600;
+}
+
+.custom-block p + p{
+  margin: 8px 0;
+}
+
+.custom-block.details summary{
+  margin: 0 0 8px;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-block.details summary + p{
+  margin: 8px 0;
+}
+    
+.custom-block-title{
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 26px;
+}
+
+.custom-block div[class*='language-'] code{
+  font-weight: 400;
+  background-color: transparent;
+}
+
+
+.custom-block .vp-code-group .tabs{
+  margin: 0;
+}
