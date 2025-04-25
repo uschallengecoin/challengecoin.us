@@ -34,6 +34,7 @@ defineProps({
   // padding: 40px 0;
     @media (max-width: 768px) {
       flex-direction: column;
+      gap: 0;
     }
 
   &__top {
@@ -42,6 +43,7 @@ defineProps({
 
   &__image-wrap {
     width: 41%;
+    aspect-ratio: 225/195;
 
     @media screen and (max-width: $tablet){
       width: 65%;

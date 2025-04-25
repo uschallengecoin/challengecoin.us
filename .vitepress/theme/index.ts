@@ -19,30 +19,34 @@ const VBadge = defineAsyncComponent({
   hydrate: hydrateOnVisible(),
 });
 
-const VInfoHero = defineAsyncComponent({
-  loader: () => import('UiKit/components/VInfo/VInfoHero.vue'),
-  // hydrate: hydrateOnVisible(),
-});
+// const VInfoHero = defineAsyncComponent({
+//   loader: () => import('UiKit/components/VInfo/VInfoHero.vue'),
+//   // hydrate: hydrateOnVisible(),
+// });
+import VInfoHero from 'UiKit/components/VInfo/VInfoHero.vue';
 
-const VSectionTopVideo = defineAsyncComponent({
-  loader: () => import('UiKit/components/VSectionTop/VSectionTopVideo.vue'),
-  // hydrate: hydrateOnVisible(),
-});
+// const VSectionTopVideo = defineAsyncComponent({
+//   loader: () => import('UiKit/components/VSectionTop/VSectionTopVideo.vue'),
+//   // hydrate: hydrateOnVisible(),
+// });
+import VSectionTopVideo from 'UiKit/components/VSectionTop/VSectionTopVideo.vue';
 
-const VSlider = defineAsyncComponent({
-  loader: () => import('UiKit/components/VSlider/VSlider.vue'),
-  // hydrate: hydrateOnVisible(),
-});
+// const VSlider = defineAsyncComponent({
+//   loader: () => import('UiKit/components/VSlider/VSlider.vue'),
+//   // hydrate: hydrateOnVisible(),
+// });
+import VSlider from 'UiKit/components/VSlider/VSlider.vue';
 
 const VSliderAutoplay = defineAsyncComponent({
   loader: () => import('UiKit/components/VSlider/VSliderAutoplay.vue'),
   hydrate: hydrateOnVisible(),
 });
 
-const VCarouselItem = defineAsyncComponent({
-  loader: () => import('UiKit/components/Base/VCarousel/VCarouselItem.vue'),
-  // hydrate: hydrateOnVisible(),
-});
+// const VCarouselItem = defineAsyncComponent({
+//   loader: () => import('UiKit/components/Base/VCarousel/VCarouselItem.vue'),
+//   // hydrate: hydrateOnVisible(),
+// });
+import VCarouselItem from 'UiKit/components/Base/VCarousel/VCarouselItem.vue';
 
 const VDialogTop = defineAsyncComponent({
   loader: () => import('UiKit/components/VSectionTop/VDialogTop.vue'),

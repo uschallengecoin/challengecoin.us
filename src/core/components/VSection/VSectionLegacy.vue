@@ -51,6 +51,15 @@ const props = defineProps({
 
   &__hero-image {
     width: 100%;
+    aspect-ratio: 348/219;
+  }
+
+  &__bottom-left {
+    aspect-ratio: 128/158;
+  }
+
+  &__bottom-right {
+    aspect-ratio: 238/158;
   }
 
   &__bottom {

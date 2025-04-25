@@ -65,6 +65,8 @@ defineProps({
     @media screen and (max-width: $desktop){
       flex-direction: column;
       padding: 48px;
+      background-image: url('/images/home/coin10.webp');
+      background-position: bottom right;
     }
   }
 

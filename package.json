@@ -5,16 +5,11 @@
   "type": "module",
   "scripts": {
     "postinstall": "sh etc/scripts/postinstall.sh",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --port 8080",
     "lint:eslint": "eslint \"{config,src,tests}/**/*.{js,ts,vue}\"",
     "lint:stylelint": "stylelint \"src/**/*.{vue,scss}\"",
     "lint:fix": "npm run lint:eslint --fix && npm run lint:stylelint --fix",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
     "audit:check": "npm run audit --groups dependencies",
-    "test:watch": "vitest watch --environment jsdom",
-    "test:unit:cov": "vitest --run --coverage --reporter=verbose --silent",
     "docs:dev": "vitepress dev .",
     "docs:build": "vitepress build .",
     "docs:preview": "vitepress preview . --port 8080"

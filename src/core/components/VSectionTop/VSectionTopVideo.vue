@@ -93,7 +93,7 @@ const emit = defineEmits(['click']);
 
     @include media-lte(tablet) {
       padding: calc($header-height-mobile + 40px) 0 70px;
-      min-height: auto;
+      // min-height: auto;
     }
   }
 

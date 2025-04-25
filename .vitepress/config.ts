@@ -57,8 +57,11 @@ export default {
   srcDir: './docs',
   srcExclude: findDraftFiles('./docs'),
   transformHead({ assets }) {
+    const fontNames = ['Inter', 'TestTiemposHeadline'];
+    const fontRegex = new RegExp(`(${fontNames.join('|')})[-a-zA-Z0-9.]+\\.(woff2|ttf|eot|svg)`);
+    const myFontFile = assets.find((file) => file.match(fontRegex));
     // adjust the regex accordingly to match your font
-    const myFontFile = assets.find((file) => file.match(/Avenir[-a-zA-Z0-9.]+\.[woff2|ttf|eot|svg]/));
+    // const myFontFile = assets.find((file: string) => file.match(/Inter[-a-zA-Z0-9.]+\.[woff2|ttf|eot|svg]/));
     if (myFontFile) {
       const ext = myFontFile.split('.').pop();
       return [

@@ -114,6 +114,10 @@ const open = defineModel<boolean>();
   &__burger {
     margin-right: 33px;
     margin-top: 9px;
+
+    @media screen and (max-width: $desktop){
+      margin-right: 10px;
+    }
   }
 }
 </style>

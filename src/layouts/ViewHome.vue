@@ -26,8 +26,11 @@ useGlobalLoader().hide();
 @use "UiKit/styles/_variables.scss" as *;
 
 .view-home {
+  overflow: hidden;
+
   .v-slider {
     width: 100%;
+    height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column-reverse;
