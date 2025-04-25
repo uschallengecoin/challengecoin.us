@@ -59,11 +59,6 @@ const loader = createContentLoader(['**/*.md'], {
       rawData,
       async (pageData) => {
         const mtime = await getLastUpdatedUnix(pageData.url);
-        // Will remove
-        // Fix URL, remove virtual folders
-        // so http://local.webdevelop.biz:5173/use-cases/rules-exempts/reg-d-solution should be
-        // http://local.webdevelop.biz:5173/use-cases/reg-d-solution
-        // since rules-exempts is a virtual page
         normalizeFrontmatter(pageData);
         return {
           ...pageData.frontmatter as IFrontmatter,

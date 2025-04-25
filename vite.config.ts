@@ -38,7 +38,7 @@ export default withPwa(defineConfig({
   },
   server: {
     port: 8080,
-    host: 'local.webdevelop.biz',
+    host: 'local.challengecoin.us',
   },
   pwa: {}
 }));

@@ -5,7 +5,7 @@ case $1 in
 run-dev)
   set -a
   source .dev.env
-  npm run docs:dev --host local.webdevelop.biz
+  npm run docs:dev --host local.challengecoin.us
   ;;
 
 install)
@@ -30,18 +30,6 @@ build)
   cp -rf docs/public/* .vitepress/dist/
   ;;
 
-deploy-dev)
-  BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
-  SHORT_SHA=`git rev-parse --short HEAD`
-  echo $BRANCH_NAME, $SHORT_SHA
-  set -a
-  #. .dev.env
-  SHORT_SHA=$SHORT_SHA BRANCH_NAME=$BRANCH_NAME npm run docs:build --mode dev
-  cp -rf docs/public/* .vitepress/dist/
-  # npm run add --global wrangler
-  wrangler pages deploy .vitepress/dist/ --project-name="dev2-webdevelop-us" --commit-dirty true --branch main --commit-hash $SHORT_SHA --commit-message $SHORT_SHA
-  ;;
-
 deploy-master)
   BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
   SHORT_SHA=`git rev-parse --short HEAD`
@@ -51,7 +39,7 @@ deploy-master)
   SHORT_SHA=$SHORT_SHA BRANCH_NAME=$BRANCH_NAME npm run docs:build --mode production
   cp -rf docs/public/* .vitepress/dist/
   # npm run add --global wrangler
-  wrangler pages deploy .vitepress/dist/ --project-name="webdevelop-pro" --commit-dirty true --branch main --commit-hash $SHORT_SHA --commit-message $SHORT_SHA
+  wrangler pages deploy .vitepress/dist/ --project-name="challengecoin-us" --commit-dirty true --branch main --commit-hash $SHORT_SHA --commit-message $SHORT_SHA
   ;;
 
 help)
