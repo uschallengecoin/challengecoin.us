@@ -13,13 +13,18 @@ defineProps({
   <VAccordionItem
     :value="String(idx)"
     class="VAccordionItem v-accordion-item"
+    itemscope
+    itemprop="mainEntity"
+    itemtype="https://schema.org/Question"
   >
     <VAccordionTrigger
+      itemprop="name"
       class="v-accordion-item__title is--h5__title"
     >
       {{ trigger }}
     </VAccordionTrigger>
     <VAccordionContent
+      itemprop="text"
       class="v-accordion-item__content with-default-distance"
     >
       <slot />

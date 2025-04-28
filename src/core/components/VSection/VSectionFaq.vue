@@ -21,6 +21,8 @@ const props = defineProps({
       type="single"
       collapsible
       class="v-section-faq__accordion"
+      itemscope
+      itemtype="https://schema.org/FAQPage"
     >
       <slot />
     </VAccordion>

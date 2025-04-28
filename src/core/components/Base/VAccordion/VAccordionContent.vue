@@ -15,7 +15,6 @@ const delegatedProps = computed(() => {
   <AccordionContent
     v-bind="delegatedProps"
     class="VAccordionContent v-accordion-content"
-    itemprop="description"
   >
     <slot />
   </AccordionContent>
