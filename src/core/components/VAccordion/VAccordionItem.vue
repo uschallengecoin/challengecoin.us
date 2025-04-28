@@ -27,15 +27,17 @@ defineProps({
       itemscope
       itemprop="acceptedAnswer"
       itemtype="https://schema.org/Answer"
+      class="v-accordion-item__content-hidden with-default-distance"
     >
-      <VAccordionContent
-        itemprop="text"
-        force-mount
-        class="v-accordion-item__content with-default-distance"
-      >
+      <div itemprop="text">
         <slot />
-      </VAccordionContent>
+      </div>
     </div>
+    <VAccordionContent
+      class="v-accordion-item__content with-default-distance"
+    >
+      <slot />
+    </VAccordionContent>
   </VAccordionItem>
 </template>
 
@@ -43,6 +45,10 @@ defineProps({
 .v-accordion-item {
   &__content {
     color: $gray;
+  }
+
+  &__content-hidden {
+    display: none;
   }
 }
 </style>
