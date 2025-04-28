@@ -7,7 +7,7 @@ import Fade from 'embla-carousel-fade';
 import { computed } from 'vue';
 
 interface Props {
-    variant?: 'default' | 'autoplay' | 'autoplay-navigation';
+    variant?: 'default' | 'autoplay';
     autoplay?: boolean;
     fade?: boolean;
     autoplayChangeTime?: number;
@@ -21,7 +21,6 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const isAutoplay = computed(() => props.variant === 'autoplay');
-const isAutoplayNavigation = computed(() => props.variant === 'autoplay-navigation');
 
 const plugins = [];
 if (props.autoplay || isAutoplay.value) {

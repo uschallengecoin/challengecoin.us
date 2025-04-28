@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import {
-  VAccordionItem, VAccordion, VAccordionContent, VAccordionTrigger,
+  VAccordionItem, VAccordionContent, VAccordionTrigger,
 } from 'UiKit/components/Base/VAccordion';
-import { PropType } from 'vue';
 
 defineProps({
   idx: Number || String,
