@@ -16,7 +16,7 @@ const compat = new FlatCompat({
 
 export default [
   ...compat.config({
-    extends: ['@vue/eslint-config-airbnb'],
+    // extends: ['@vue/eslint-config-airbnb'],
     rules: {
       // fix airbnb conflicts
       'import/extensions': 'off',
