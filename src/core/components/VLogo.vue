@@ -49,6 +49,7 @@ const componentName = computed(() => {
     height: 100%;
     color: inherit;
     width: auto;
+    max-width: 100%;
     // @media screen and (width < 1024px) {
     //   display: none;
     // }

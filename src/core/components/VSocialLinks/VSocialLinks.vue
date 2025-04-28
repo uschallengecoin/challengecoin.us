@@ -46,7 +46,7 @@ defineProps({
 
 .social-links{
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   align-items: center;
   width: 100%;
   color: colors.$white;

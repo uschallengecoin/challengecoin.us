@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 import { VDialogTrigger, VDialog } from 'UiKit/components/Base/VDialog';
+import { onBeforeUnmount, watch } from 'vue';
 
 defineProps({
   title: String,
@@ -11,6 +12,18 @@ defineProps({
   learnMoreHref: String,
 });
 const open = defineModel<boolean>();
+
+const onHashChange = () => {
+  open.value = false;
+}
+
+if (typeof window !== 'undefined') {
+  window?.addEventListener('hashchange', onHashChange);
+}
+
+onBeforeUnmount(() => {
+  window?.removeEventListener('hashchange', onHashChange);
+})
 </script>
 
 <template>

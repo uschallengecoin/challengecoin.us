@@ -64,7 +64,7 @@ const onClickMenu = () => {
   <div class="VFooter v-footer">
     <div class="is--container">
       <div class="v-footer__wrap is--gap-80">
-        <div>
+        <div class="v-footer__content">
           <VLogo
             href="/"
             class="v-footer__logo"
@@ -93,7 +93,7 @@ const onClickMenu = () => {
           />
           <VSocialLinks
             :social-list="SOCIAL_LIST"
-            class="is--margin-top-40"
+            class="v-footer__socials is--margin-top-40"
           />
         </div>
       </div>
@@ -108,7 +108,7 @@ const onClickMenu = () => {
   $root: &;
 
   background-color: $primary-blue;
-  padding: 80px 109px;
+  padding: 80px 0;
   color: $white;
 
   @media screen and (width < $desktop-lg){
@@ -117,9 +117,9 @@ const onClickMenu = () => {
 
   &__wrap {
     display: grid;
-    grid-template-columns: calc(61.5% - 40px) calc(39.5% - 40px);
+    grid-template-columns: calc(60.5% - 40px) calc(39.5% - 40px);
 
-    @media screen and (width < $desktop-lg){
+    @media screen and (width < $desktop){
       display: flex;
       flex-direction: column;
     }
@@ -131,6 +131,10 @@ const onClickMenu = () => {
     align-items: center;
     gap: 8px;
     margin-top: 20px;
+  
+    @media screen and (width < $tablet){
+      flex-flow: row wrap;
+    }
   }
 
   p {
@@ -143,7 +147,27 @@ const onClickMenu = () => {
 
     @media screen and (width < $tablet){
       max-height: 30px;
+      max-width: 100%;
+      width: 100%;
     }
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__socials {
+    width: 100%;
+    justify-content: space-between;
+    gap: 4px !important;
+  }
+
+  &__form-wrap {
+    width: 100%;
+  }
+
+  &__content {
+    width: 100%;
   }
 }
 </style>

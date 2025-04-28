@@ -11,6 +11,8 @@ const props = defineProps({
   backgroundImageSrc: String,
 });
 
+const emit = defineEmits(['close']);
+
 const backgroundImageLocal = computed(() => (
   `url(${props.backgroundImageSrc})`
 ));
@@ -50,6 +52,7 @@ const backgroundImageLocal = computed(() => (
             size="large"
             variant="link"
             class="is--margin-top-0"
+            @click="emit('close')"
           >
             How It Works
           </VButton>

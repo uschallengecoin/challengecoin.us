@@ -24,10 +24,16 @@ defineProps({
       {{ trigger }}
     </VAccordionTrigger>
     <VAccordionContent
-      itemprop="text"
-      class="v-accordion-item__content with-default-distance"
+      itemscope
+      itemprop="acceptedAnswer"
+      itemtype="https://schema.org/Answer"
     >
-      <slot />
+      <p
+        itemprop="text"
+        class="v-accordion-item__content with-default-distance"
+      >
+        <slot />
+      </p>
     </VAccordionContent>
   </VAccordionItem>
 </template>
