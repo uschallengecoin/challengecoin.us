@@ -5,17 +5,17 @@ import { defineAsyncComponent, hydrateOnVisible } from 'vue';
 import AppLayoutDefault from '@/layouts/AppLayoutDefault.vue';
 
 const VTooltip = defineAsyncComponent({
-  loader: () => import('UiKit/components/VTooltip.vue'),
+  loader: () => import(/*VTooltip*/'UiKit/components/VTooltip.vue'),
   hydrate: hydrateOnVisible(),
 });
 
 const VButton = defineAsyncComponent({
-  loader: () => import('UiKit/components/Base/VButton/VButton.vue'),
+  loader: () => import(/*VButton*/'UiKit/components/Base/VButton/VButton.vue'),
   hydrate: hydrateOnVisible(),
 });
 
 const VBadge = defineAsyncComponent({
-  loader: () => import('UiKit/components/Base/VBadge/VBadge.vue'),
+  loader: () => import(/*VBadge*/'UiKit/components/Base/VBadge/VBadge.vue'),
   hydrate: hydrateOnVisible(),
 });
 
@@ -23,7 +23,7 @@ const VBadge = defineAsyncComponent({
 //   loader: () => import('UiKit/components/VInfo/VInfoHero.vue'),
 //   // hydrate: hydrateOnVisible(),
 // });
-import VInfoHero from 'UiKit/components/VInfo/VInfoHero.vue';
+import VInfoHero from /*VInfoHero*/'UiKit/components/VInfo/VInfoHero.vue';
 
 // const VSectionTopVideo = defineAsyncComponent({
 //   loader: () => import('UiKit/components/VSectionTop/VSectionTopVideo.vue'),

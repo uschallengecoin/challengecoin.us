@@ -11,6 +11,7 @@ const { canScrollNext, scrollNext } = useCarousel();
     variant="link"
     icon-only
     :disabled="!canScrollNext"
+    aria-label="Carousel Next"
     class="VCarouselNext v-carousel-next"
     @click="scrollNext"
   >

@@ -39,12 +39,14 @@ const props = defineProps({
         alt="Legacy bottom left image"
         class="v-section-legacy__bottom-left is--margin-top-0"
         fit="cover"
+        loading="lazy"
       />
       <VImage
         :src="images[2]"
         alt="Legacy bottom right image"
         class="v-section-legacy__bottom-right is--margin-top-0"
         fit="cover"
+        loading="lazy"
       />
     </div>
   </section>

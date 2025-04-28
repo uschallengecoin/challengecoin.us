@@ -11,6 +11,7 @@ const { canScrollPrev, scrollPrev } = useCarousel();
     :disabled="!canScrollPrev"
     variant="link"
     icon-only
+    aria-label="Carousel Previous"
     class="VCarouselPrev v-carousel-prev"
     @click="scrollPrev"
   >

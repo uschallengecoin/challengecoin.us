@@ -21,6 +21,7 @@ defineProps({
         :src="imageSrc"
         alt="hero image"
         class="v-info-hero__image"
+        loading="lazy"
       />
     </div>
   </div>
