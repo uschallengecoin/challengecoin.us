@@ -27,19 +27,20 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
 
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
-.v-command-item {
 
-  font-family: 'Avenir';
+.v-command-item {
     color: colors.$black;
     padding: 12px;
     cursor: pointer;
     font-size: 16px;
     line-height: 26px;
 }
+
 .v-command-item[data-disabled] {
   pointer-events: none;
   opacity: 0.3;
 }
+
 .v-command-item[data-highlighted] {
   outline: none;
   background-color: colors.$gray-20;

@@ -92,6 +92,7 @@ watch(() => [props.schemaBack, props.schemaFront], () => {
 
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
+
 .v-form-group {
   display: flex;
   flex-direction: column;
@@ -103,6 +104,7 @@ watch(() => [props.schemaBack, props.schemaFront], () => {
     color: colors.$gray;
     text-align: left;
     margin-bottom: 4px;
+
     &.is--dark {
       color: colors.$white;
     }
@@ -123,6 +125,7 @@ watch(() => [props.schemaBack, props.schemaFront], () => {
     color: colors.$primary-red;
     transition: all 0.3s ease;
     transform: translateY(-5px);
+
     &.is--error{
       height: auto;
       transition: all 0.3s ease;

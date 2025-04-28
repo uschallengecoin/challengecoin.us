@@ -185,6 +185,7 @@ watch(() => selectedIndex.value, () => {
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
 @use 'UiKit/styles/_variables.scss' as *;
+
 .v-carousel-default{
   height: 100%;
   width: 100%;
@@ -197,7 +198,6 @@ watch(() => selectedIndex.value, () => {
     position: relative;
     display: flex;
     flex-direction: row;
-    position: relative;
   }
 
   &__slider-main{
@@ -225,6 +225,7 @@ watch(() => selectedIndex.value, () => {
         display: block;
         width: 100%;
       }
+
       .is--default-image{
         max-height: 40%;
       }
@@ -234,6 +235,7 @@ watch(() => selectedIndex.value, () => {
     height: 20%;
     padding: 10px 0 0;
   }
+
   &__thumb-item {
     height: 100%;
     opacity: 0.4;
@@ -253,7 +255,7 @@ watch(() => selectedIndex.value, () => {
       height: 100%;
     }
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       max-width: 110px;
     }
   }

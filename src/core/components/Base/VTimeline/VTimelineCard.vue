@@ -81,7 +81,7 @@ const btnClasses = computed(() => {
     left: 16px;
     top: 50px;
 
-    @media screen and (max-width: 767px){
+    @media screen and (width < 767px){
       left: 10px;
     }
   }
@@ -93,9 +93,9 @@ const btnClasses = computed(() => {
     align-items: center;
     margin-bottom: 10px;
     padding-bottom: 15px;
-    border-bottom: 1px dashed rgba(51,51,51,.1);
+    border-bottom: 1px dashed rgb(51 51 51 / 0.1);
 
-    @media screen and (max-width: 767px){
+    @media screen and (width < 767px){
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
@@ -106,7 +106,7 @@ const btnClasses = computed(() => {
     margin-top: 0;
     color: colors.$black;
 
-    @media screen and (max-width: 767px){
+    @media screen and (width < 767px){
       margin-bottom: 10px;
     }
   }
@@ -124,7 +124,7 @@ const btnClasses = computed(() => {
       height: 32px;
       background-color: colors.$gray-30;
 
-      @media screen and (max-width: 767px){
+      @media screen and (width < 767px){
         left: 15px;
       }
     }
@@ -151,7 +151,7 @@ const btnClasses = computed(() => {
       height: 32px;
       background-color: colors.$gray-30;
 
-      @media screen and (max-width: 767px){
+      @media screen and (width < 767px){
         left: 15px;
       }
     }

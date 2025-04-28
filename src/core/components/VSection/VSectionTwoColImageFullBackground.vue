@@ -44,7 +44,7 @@ defineProps({
     // grid-template-columns: 2fr 3fr;
     position: relative;
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       display: flex;
       flex-direction: column;
     }

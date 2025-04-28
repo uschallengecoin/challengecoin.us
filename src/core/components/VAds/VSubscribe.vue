@@ -78,7 +78,7 @@ const { isTablet } = storeToRefs(useBreakpoints());
   background: url('./subscribe.webp') lightgray 50% / cover no-repeat;
   padding: 150px;
 
-  @media screen and (max-width: $desktop){
+  @media screen and (width < $desktop){
     padding: 100px 0;
   }
 
@@ -90,7 +90,7 @@ const { isTablet } = storeToRefs(useBreakpoints());
     line-height: 36px;
     color: $white;
 
-    @media screen and (max-width: $desktop){
+    @media screen and (width < $desktop){
       font-size: 24px;
       line-height: 32px;
     }
@@ -105,7 +105,7 @@ const { isTablet } = storeToRefs(useBreakpoints());
     margin-top: 60px;
     justify-content: center;
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       gap: 2px;
       justify-content: space-between;
     }

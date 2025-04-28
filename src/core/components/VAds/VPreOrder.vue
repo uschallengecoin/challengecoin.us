@@ -62,7 +62,7 @@ defineProps({
     background-image: var(--bg-image);
     background-image: url('/images/home/coin6.webp');
 
-    @media screen and (max-width: $desktop){
+    @media screen and (width < $desktop){
       flex-direction: column;
       padding: 48px;
       background-image: url('/images/home/coin10.webp');
@@ -71,7 +71,7 @@ defineProps({
   }
 
   &__display {
-    @media screen and (max-width: $desktop){
+    @media screen and (width < $desktop){
       font-size: 36px;
       font-weight: 600;
       line-height: 46px;

@@ -50,8 +50,10 @@ const modelValue = defineModel<boolean>();
 
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
+
 .v-form-checkbox {
   $root: &;
+
   display: flex;
 }
 </style>

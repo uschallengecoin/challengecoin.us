@@ -72,7 +72,7 @@ const props = defineProps({
     position: relative;
     left: calc(-47vw + 100% + 40px);
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       width: calc(100vw - 25px);
       left: -25px;
     }
@@ -86,7 +86,7 @@ const props = defineProps({
     text-align: start;
     margin-left: 10%;
 
-    @media screen and (max-width: $desktop){
+    @media screen and (width < $desktop){
       margin-left: 0;
     }
   }
@@ -96,7 +96,7 @@ const props = defineProps({
     margin-right: 10%;
     float: right;
 
-    @media screen and (max-width: $desktop){
+    @media screen and (width < $desktop){
       margin-right: 0;
     }
   }

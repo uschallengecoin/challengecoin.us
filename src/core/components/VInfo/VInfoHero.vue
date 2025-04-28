@@ -32,7 +32,7 @@ defineProps({
   align-items: center;
   gap: 40px;
   // padding: 40px 0;
-    @media (max-width: 768px) {
+    @media (width < 768px) {
       flex-direction: column;
       gap: 0;
     }
@@ -45,7 +45,7 @@ defineProps({
     width: 41%;
     aspect-ratio: 225/195;
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       width: 65%;
     }
   }

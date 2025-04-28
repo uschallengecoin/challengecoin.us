@@ -48,7 +48,7 @@ const { isTablet } = storeToRefs(useBreakpoints());
 
 <style lang="scss">
 .v-section-why-own {
-  @media screen and (max-width: $desktop){
+  @media screen and (width < $desktop){
     margin-bottom: -100px;
   }
 
@@ -56,7 +56,7 @@ const { isTablet } = storeToRefs(useBreakpoints());
     width: calc(48vw - 40px);
     position: relative;
 
-    @media screen and (max-width: $desktop){
+    @media screen and (width < $desktop){
       width: calc(100vw);
       left: -15px;
     }
@@ -71,7 +71,7 @@ const { isTablet } = storeToRefs(useBreakpoints());
     height: 346px;
     aspect-ratio: 471/346;
 
-    @media screen and (max-width: $desktop){
+    @media screen and (width < $desktop){
       width: 200px;
       height: 150px;
       bottom: -85px;

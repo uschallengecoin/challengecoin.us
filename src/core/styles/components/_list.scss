@@ -79,7 +79,8 @@ li.with-default-distance + li.with-default-distance{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 17px 30px;
-        @media screen and (max-width: $tablet){
+
+        @media screen and (width < $tablet){
             grid-template-columns: repeat(1, 1fr);
             gap: 16px;
         }
@@ -100,6 +101,7 @@ li.with-default-distance + li.with-default-distance{
         margin-top: 0;
     }
 }
+
 .is--two-col-grid{
     li:nth-child(2){
         margin-top: 0;

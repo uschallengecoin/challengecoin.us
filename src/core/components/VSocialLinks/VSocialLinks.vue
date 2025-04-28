@@ -43,6 +43,7 @@ defineProps({
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
 @use 'UiKit/styles/_variables.scss' as variables;
+
 .social-links{
   display: flex;
   flex-direction: row;
@@ -51,7 +52,7 @@ defineProps({
   color: colors.$white;
   gap: 28px;
 
-  @media screen and (max-width: $tablet){
+  @media screen and (width < $tablet){
     gap: 2px;
     justify-content: space-between;
   }
@@ -59,9 +60,6 @@ defineProps({
   &__icon{
     height: 24px;
     width: 24px;
-  }
-
-  &__item{
   }
 }
 </style>

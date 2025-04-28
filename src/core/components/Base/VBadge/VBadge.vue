@@ -32,9 +32,9 @@ const classes = computed(() => {
 
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
+
 .v-badge {
   color: colors.$gray-70;
-  font-family: 'Avenir';
   text-decoration: none;
   border-radius: 24px;
   font-size: 12px;
@@ -47,6 +47,7 @@ const classes = computed(() => {
     padding: 8px 12px;
     font-weight: 800;
   }
+
   &.is--size-small {
     padding: 0 6px;
     font-weight: 500;
@@ -59,6 +60,7 @@ const classes = computed(() => {
   &.is--badge-color-primary {
     background-color: colors.$primary;
     color: colors.$white;
+
     &.is--active,
     &.is--hover:hover {
       background-color: colors.$primary-dark;
@@ -67,6 +69,7 @@ const classes = computed(() => {
 
   &.is--badge-color-secondary {
     background-color: colors.$secondary;
+
     &.is--active,
     &.is--hover:hover {
       background-color: colors.$secondary-dark;
@@ -75,6 +78,7 @@ const classes = computed(() => {
 
   &.is--badge-color-secondary-light {
     background-color: colors.$secondary-light;
+
     &.is--active,
     &.is--hover:hover {
       background-color: colors.$secondary;
@@ -84,6 +88,7 @@ const classes = computed(() => {
   &.is--badge-color-red {
     background-color: colors.$red;
     color: colors.$white;
+
     &.is--active,
     &.is--hover:hover {
       background-color: colors.$red-dark;
@@ -92,32 +97,40 @@ const classes = computed(() => {
 
   &.is--badge-color-yellow {
     background-color: colors.$yellow;
+
     &.is--active,
     &.is--hover:hover {
       background-color: colors.$yellow-dark;
     }
   }
+
   &.is--badge-color-red-light {
     background-color: colors.$red-light;
+
     &.is--active,
     &.is--hover:hover {
       background-color: colors.$red;
     }
   }
+
   &.is--badge-color-yellow-light {
     background-color: colors.$yellow-light;
+
     &.is--active,
     &.is--hover:hover {
       background-color: colors.$yellow;
     }
   }
+
   &.is--badge-color-purple-light {
     background-color: colors.$purple-light;
+
     &.is--active,
     &.is--hover:hover {
       background-color: colors.$purple;
     }
   }
+
   &.is--badge-color-default {
     // default color
   }

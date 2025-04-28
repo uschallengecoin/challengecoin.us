@@ -60,7 +60,7 @@ const forwardedProps = useForwardProps(delegatedProps);
     margin-top: 0 !important;
     transition: color 0.3s ease;
 
-    @media screen and (max-width: 576px) {
+    @media screen and (width < 576px) {
       display: none;
     }
   }

@@ -126,7 +126,8 @@ const btnClasses = computed(() => {
   left: 0;
   top: 0;
   height: 100%;
-  @media screen and (max-width: 767px) {
+
+  @media screen and (width < 767px) {
     padding-bottom: 35px;
     margin-left: 8px;
   }
@@ -231,6 +232,7 @@ const btnClasses = computed(() => {
         height: calc(100% + 7px);
       }
     }
+
     &:nth-child(1)::before {
       @include media-gt(tablet) {
         left: calc(50% + 19px);
@@ -242,6 +244,7 @@ const btnClasses = computed(() => {
         height: calc(100%);
       }
     }
+
     &:nth-child(3)::after {
       @include media-lte(desktop) {
         width: calc(100% + 100vw);
@@ -258,6 +261,7 @@ const btnClasses = computed(() => {
         }
       }
     }
+
     &:nth-child(3)::before {
       @include media-gt(desktop) {
         width: calc(100% + 100vw);
@@ -279,6 +283,7 @@ const btnClasses = computed(() => {
         width: calc(100% + 100vw);
       }
     }
+
     &:nth-child(5)::after {
       @include media-lte(desktop) {
         width: calc(100% + 100vw);

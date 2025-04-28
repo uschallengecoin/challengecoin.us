@@ -59,6 +59,7 @@ if (props.fade || isAutoplay.value) {
 <style lang="scss">
 .v-slider {
   $root: &;
+
   width: 100%;
 
   &.is--autoplay,
@@ -72,7 +73,8 @@ if (props.fade || isAutoplay.value) {
   &__prev {
     top: -95px;
     right: 70px;
-    @media screen and (max-width: 767px) {
+
+    @media screen and (width < 767px) {
      top: -75px;
     }
   }
@@ -80,7 +82,8 @@ if (props.fade || isAutoplay.value) {
   &__next {
     top: -95px;
     right: 15px;
-    @media screen and (max-width: 767px) {
+
+    @media screen and (width < 767px) {
       top: -75px;
     }
   }
@@ -88,7 +91,8 @@ if (props.fade || isAutoplay.value) {
   .with-default-distance #{$root},
   #{$root}.with-default-distance {
       margin-top: 60px;
-      @media screen and (max-width: $tablet){
+
+      @media screen and (width < $tablet){
         margin-top: 100px;
       }
   }

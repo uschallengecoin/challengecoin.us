@@ -25,6 +25,7 @@ const forwarded = useForwardProps(delegatedProps);
 
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
+
 .v-stepper-separator[data-orientation="vertical"] {
   flex-shrink: 0;
   position: absolute;
@@ -34,6 +35,7 @@ const forwarded = useForwardProps(delegatedProps);
   width: 1px;
   background: colors.$gray-30;
 }
+
 .v-stepper-separator[data-orientation="horizontal"] {
   flex-shrink: 0;
   position: absolute;

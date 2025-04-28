@@ -52,11 +52,11 @@ defineProps({
 
   &.is--content-style-default{
     #{$root}__content{
-      max-width: 740px;
+      max-width: < 740px;
       margin: 0 auto;
     }
     #{$root}__title{
-      max-width: 740px;
+      max-width: < 740px;
       margin: 0 auto 20px;
     }
   }
@@ -66,10 +66,12 @@ defineProps({
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
-      @media screen and (max-width: $desktop){
+
+      @media screen and (width < $desktop){
         grid-template-columns: repeat(2, 1fr);
       }
-      @media screen and (max-width: $tablet){
+
+      @media screen and (width < $tablet){
         // grid-template-columns: repeat(1, 1fr);
         display: flex;
         flex-direction: column;

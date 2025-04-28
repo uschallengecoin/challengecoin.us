@@ -46,7 +46,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
   border-left: 2px solid transparent;
   box-shadow: variables.$box-shadow-medium;
 
-  @media screen and (max-width: 768px){
+  @media screen and (width < 768px){
     width: 100%;
     min-height: auto;
     margin-bottom: 0;

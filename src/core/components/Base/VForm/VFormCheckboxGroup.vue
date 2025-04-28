@@ -46,6 +46,7 @@ function onUpdate(option: string, checked: boolean) {
 <style lang="scss">
 .v-form-checkbox-group {
   $root: &;
+
   width: 100%;
 
   --v-form-checkbox-group-item--padding: 15px 12px;
@@ -60,6 +61,7 @@ function onUpdate(option: string, checked: boolean) {
     width: 100%;
     cursor: pointer;
     transition: all 0.2s ease;
+
     &:hover {
       background: var(--v-form-checkbox-group-item--background-color);
     }

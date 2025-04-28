@@ -53,7 +53,7 @@ defineProps({
     font-weight: 400;
     line-height: 60px;
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       font-size: 36px;
       line-height: 46px;
     }

@@ -17,12 +17,13 @@ const props = defineProps<{ class?: HTMLAttributes['class'] }>();
 @use 'UiKit/styles/_transitions.scss' as *;
 @use 'UiKit/styles/_variables.scss' as *;
 @use 'UiKit/styles/_colors.scss' as colors;
+
 .v-dialog-footer {
   width: 100%;
   padding: 20px 60px;
-  border-top: 1px solid rgba(66, 84, 102, 0.20);
+  border-top: 1px solid rgb(66 84 102 / 0.2);
 
-  @media screen and (max-width: $tablet){
+  @media screen and (width < $tablet){
     padding: 20px 23px;
   }
 }

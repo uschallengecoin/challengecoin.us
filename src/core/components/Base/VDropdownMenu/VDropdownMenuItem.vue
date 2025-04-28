@@ -25,6 +25,7 @@ const forwardedProps = useForwardProps(delegatedProps);
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
 @use 'UiKit/styles/_variables.scss' as variables;
+
 .v-dropdown-menu-item {
   display: block;
   color: $black;

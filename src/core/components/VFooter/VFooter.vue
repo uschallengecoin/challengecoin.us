@@ -110,7 +110,7 @@ const onClickMenu = () => {
   padding: 80px 109px;
   color: $white;
 
-  @media screen and (max-width: $desktop-lg){
+  @media screen and (width < $desktop-lg){
     padding: 60px 0;
   }
 
@@ -118,7 +118,7 @@ const onClickMenu = () => {
     display: grid;
     grid-template-columns: calc(61.5% - 40px) calc(39.5% - 40px);
 
-    @media screen and (max-width: $desktop-lg){
+    @media screen and (width < $desktop-lg){
       display: flex;
       flex-direction: column;
     }
@@ -140,7 +140,7 @@ const onClickMenu = () => {
     color: inherit;
     max-height: 53px;
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       max-height: 30px;
     }
   }

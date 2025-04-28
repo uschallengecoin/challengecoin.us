@@ -3,16 +3,9 @@
 @use 'UiKit/styles/_variables.scss' as *;
 @use 'UiKit/styles/_mixins.scss' as *;
     
-    
-    
 blockquote,
 q{
     margin-top: 60px;
-}
-
-
-blockquote,
-q{
     // border: 1px solid $gray-20;
     background: $black;
     display: flex;

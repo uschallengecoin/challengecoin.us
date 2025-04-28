@@ -5,14 +5,16 @@
 // spacing
 .custom-block + *{
   margin-top: 40px;
-  @media screen and (max-width: $tablet){
+
+  @media screen and (width < $tablet){
     margin-top: 60px;
   }
 }
 
 * + .custom-block{
   margin-top: 40px;
-  @media screen and (max-width: $tablet){
+
+  @media screen and (width < $tablet){
     margin-top: 60px;
   }
 }
@@ -60,10 +62,6 @@
 .custom-block.details{
   border-left: 2px solid $light-gray;
   background: $light-gray;
-}
-
-.custom-block-title{
-  font-weight: 600;
 }
 
 .custom-block p + p{

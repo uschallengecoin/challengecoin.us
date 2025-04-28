@@ -60,8 +60,9 @@ const getSvgComponent = (data) => {
 </template>
 
 <style lang="scss">
-@use 'UiKit/styles/_variables.scss' as variables;
+@use 'UiKit/styles/_variables.scss' as *;
 @use 'UiKit/styles/_colors.scss' as colors;
+
 .v-header-navigation-list-item {
   margin-top: 0;
 
@@ -74,7 +75,7 @@ const getSvgComponent = (data) => {
     align-items: center;
     gap: 8px;
 
-    @media screen and (max-width: variables.$desktop-md) {
+    @media screen and (width < $desktop-md) {
       padding: 7px 12px;
     }
 

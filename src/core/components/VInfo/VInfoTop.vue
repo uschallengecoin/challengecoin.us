@@ -65,7 +65,7 @@ const open = defineModel<boolean>();
   flex-direction: column;
   justify-content: space-between;
 
-  @media screen and (max-width: $tablet){
+  @media screen and (width < $tablet){
     justify-content: center;
   }
 
@@ -78,7 +78,8 @@ const open = defineModel<boolean>();
     font-style: normal;
     font-weight: 400;
     line-height: 36px;
-    @media (max-width: 768px) {
+
+    @media (width < 768px) {
       font-size: 24px;
       line-height: 32px;
     }
@@ -89,20 +90,21 @@ const open = defineModel<boolean>();
     gap: 16px;
     display: flex;
     align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 
-    @media (max-width: 768px) {
+    @media (width < 768px) {
       flex-direction: column;
       width: 100%;
     }
-    @media screen and (max-width: $tablet){
+
+    @media screen and (width < $tablet){
       gap: 12px;
       align-items: end;
       flex-direction: row;
       margin-top: 40px;
     }
   }
+
   a:not([class]) {
     margin-top: 0 !important;
   }

@@ -20,11 +20,9 @@
   background-color: $biege;
 }
 
-
 a > code{
   color: $black;
 }
-
 
 a:hover > code{
     color: $primary-red;
@@ -32,11 +30,11 @@ a:hover > code{
 
 pre > code{
     display: block;
+
     a{
       margin: 0 !important;
     }
 }
-
 
 h1 > code,
 h2 > code,
@@ -44,7 +42,6 @@ h3 > code,
 h4 > code{
     font-size: 0.9em;
 }
-
 
 div[class*='language-'],
 .vp-block{
@@ -55,28 +52,22 @@ div[class*='language-'],
     max-width: 100%;
 }
 
-
-@media (min-width: 640px){
+@media (width > 640px){
   div[class*='language-'],
   .vp-block{
       margin-top: 40px;
       margin-left: 0;
       margin-right: 0;
-      & + *{
+
+      + *{
         margin-top: 40px;
       }
     }
 }
-    
-
-
-
 
 [class*='language-'] pre,
 [class*='language-'] code{
-    /*rtl:ignore*/
     direction: ltr;
-    /*rtl:ignore*/
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -150,12 +141,6 @@ div[class*='language-'],
 
 [class*='language-'] .has-focused-lines .line:not(.has-focus){
     filter: blur(0.095rem);
-    opacity: 0.4;
-    transition: filter 0.35s, opacity 0.35s;
-}
-
-
-[class*='language-'] .has-focused-lines .line:not(.has-focus){
     opacity: 0.7;
     transition: filter 0.35s, opacity 0.35s;
 }
@@ -191,7 +176,6 @@ div[class*='language-'],
 
 
 div[class*='language-'].line-numbers-mode{
-    /*rtl:ignore*/
     padding-left: 32px;
 }
 
@@ -200,10 +184,8 @@ div[class*='language-'].line-numbers-mode{
     position: absolute;
     top: 0;
     bottom: 0;
-    /*rtl:ignore*/
     left: 0;
     z-index: 3;
-    /*rtl:ignore*/
     border-right: 1px solid $primary-red;
     padding-top: 20px;
     width: 32px;
@@ -213,11 +195,9 @@ div[class*='language-'].line-numbers-mode{
 
 
 [class*='language-'] > button.copy{
-    /*rtl:ignore*/
     direction: ltr;
     position: absolute;
     top: 12px;
-    /*rtl:ignore*/
     right: 12px;
     z-index: 3;
     width: 40px;
@@ -275,13 +255,12 @@ div[class*='language-'].line-numbers-mode{
     margin-left: -24px;
     padding: 4px;
     background-color: $biege;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: auto hidden;
     border-radius: 2px;
 }
   
 
-@media (min-width: 640px){
+@media (width > 640px){
     .vp-code-group .tabs{
       margin-right: 0;
       margin-left: 0;

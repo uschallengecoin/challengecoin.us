@@ -93,6 +93,7 @@ watch(api, (value) => {
 
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
+
 .v-slider-autoplay {
   $root: &;
 

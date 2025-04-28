@@ -23,17 +23,20 @@ const delegatedProps = computed(() => {
 
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
+
 .v-accordion-content {
   overflow: hidden;
   color: colors.$gray;
   transition: all 0.3s ease;
   margin: 0 !important;
 }
+
 .v-accordion-content[data-state="open"] {
   animation: slideDown 0.3s ease;
   background-color: #F2F1ED;
   padding: 0 29px 29px;
 }
+
 .v-accordion-content[data-state="closed"] {
   animation: slideUp 0.3s ease;
   padding: 0 29px;

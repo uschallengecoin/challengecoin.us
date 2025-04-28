@@ -101,14 +101,13 @@ const selectedValue = computed(() => findValueInOption(modelValue.value));
 @use 'UiKit/styles/_colors.scss' as colors;
 @use 'UiKit/styles/_variables.scss' as variables;
 @use 'UiKit/styles/_mixins.scss' as *;
+
 .v-select{
   width: 100%;
   position: relative;
   font-size: 16px;
-  font-family: 'Avenir';
   font-weight: 400;
   background: colors.$gray-10;
-  position: relative;
   display: flex;
 
   &.is--select-large{
@@ -116,54 +115,66 @@ const selectedValue = computed(() => findValueInOption(modelValue.value));
       height: 48px;
     }
   }
+
   &.is--select-medium{
     .vs__dropdown-toggle{
       height: 40px;
     }
+
     .v-select__append{
       height: 40px;
     }
   }
+
   &.is--focused{
     .vs__dropdown-toggle{
       border-color: colors.$primary;
     }
   }
+
   &.is--error{
     .vs__dropdown-toggle{
       border-color: colors.$red;
-      &:before{
+
+      &::before{
         display: none;
       }
     }
   }
+
   &.is--disabled{
     opacity: 0.3;
     pointer-events: none;
   }
+
   &.is--readonly{
     pointer-events: none;
+
     .vs__dropdown-toggle{
       background-color: transparent;
       border-radius: 0;
       border: none;
       pointer-events: none;
+
       .vs__actions{
         display: none;
       }
     }
   }
+
   &.is--append{
     .vs__dropdown-toggle{
       padding-left: 43px;
     }
   }
+
   &.vs--unsearchable{
     .vs__dropdown-toggle,
     .vs__search{
       cursor: pointer !important;
     }
   }
+
   &__append{
     position: absolute;
     left: 15px;
@@ -174,6 +185,7 @@ const selectedValue = computed(() => findValueInOption(modelValue.value));
     display: flex;
     align-items: center;
   }
+
   .vs__dropdown-toggle{
     border: solid 1px colors.$gray-40;
     border-radius: 2px;
@@ -183,6 +195,7 @@ const selectedValue = computed(() => findValueInOption(modelValue.value));
     justify-content: space-between;
     padding: 12.5px 12px;
     height: 40px;
+
     .vs__selected-options{
       display: flex;
       flex-basis: 100%;
@@ -191,10 +204,12 @@ const selectedValue = computed(() => findValueInOption(modelValue.value));
       position: relative;
       align-items: center;
     }
+
     .vs__actions{
       display: flex;
       margin-left: 8px;
     }
+
     .vs__search{
       border: solid 1px transparent;
       outline: none;
@@ -211,6 +226,7 @@ const selectedValue = computed(() => findValueInOption(modelValue.value));
       z-index: 1;
       appearance: none;
       padding: 0;
+
       &::placeholder {
         color: colors.$gray-60;
         font-size: inherit;
@@ -220,16 +236,19 @@ const selectedValue = computed(() => findValueInOption(modelValue.value));
         opacity: 1;
       }
     }
+
     .vs__open-indicator{
-      background-image: url(./arrow.svg);
+      background-image: url('./arrow.svg');
       width: 16px;
       height: 16px;
       transform: rotate(90deg);
-      @include mt(.3s);
       background-size: contain;
       background-repeat: no-repeat;
+
+      @include mt(.3s);
     }
   }
+
   .vs__dropdown-menu {
     padding-left: 0;
     list-style-type: none;
@@ -246,7 +265,6 @@ const selectedValue = computed(() => findValueInOption(modelValue.value));
   }
 
   .vs__dropdown-option{
-    font-family: 'Avenir';
     color: colors.$black;
     padding: 12px;
     cursor: pointer;
@@ -270,19 +288,23 @@ const selectedValue = computed(() => findValueInOption(modelValue.value));
         border-color: colors.$red;
       }
     }
+
     .vs__dropdown-toggle {
-      &:before{
+      &::before{
         display: none;
       }
     }
+
     .vs__open-indicator{
       transform: rotate(270deg);
     }
+
     &.vs--searchable{
       .vs__selected{
         position: absolute;
         opacity: 0;
       }
+
       .vs__search{
         width: 100%;
       }

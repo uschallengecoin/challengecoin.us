@@ -33,8 +33,7 @@ const delegatedProps = computed(() => {
     display: flex;
     flex-direction: row;
     width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: auto hidden;
     position: relative;
 
   &.is--varinat-primary {

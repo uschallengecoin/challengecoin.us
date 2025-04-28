@@ -64,13 +64,16 @@ watchPostEffect(() => {
   top: 0;
   z-index: 100;
   height: $header-height;
+
   &.is--fixed {
     background: $white;
     box-shadow: $box-shadow-small;
   }
+
   @include media-lte(desktop-md) {
     box-shadow: $box-shadow-small;
   }
+
   @include media-lte(tablet) {
     height: $header-height-mobile
   }

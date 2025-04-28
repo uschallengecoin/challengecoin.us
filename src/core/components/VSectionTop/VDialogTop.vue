@@ -74,7 +74,7 @@ const backgroundImageLocal = computed(() => (
     height: calc(100% - 130px);
     overflow-y: auto;
 
-    &:before {
+    &::before {
       content: "";
       position: absolute;
       background-image: var(--bg-image);
@@ -88,7 +88,7 @@ const backgroundImageLocal = computed(() => (
       z-index: -1;
     }
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       padding: 0 23px 14px;
     }
   }
@@ -97,8 +97,7 @@ const backgroundImageLocal = computed(() => (
     gap: 20px;
     display: flex;
     align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
   }
 
   p {

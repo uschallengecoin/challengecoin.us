@@ -106,12 +106,12 @@ const emit = defineEmits(['click']);
     height: 100%;
     z-index: -1;
     opacity: 0.5;
+    background: linear-gradient(243deg, #F2F2F2 16.02%, #E1DCD0 83.06%);
     background-image: var(--video-cover);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
     background-position: center;
-    background: linear-gradient(243deg, #F2F2F2 16.02%, #E1DCD0 83.06%);
   }
 
   video {

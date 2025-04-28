@@ -24,7 +24,7 @@ defineProps({
 .v-skeleton {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(207, 219, 255, 0.34) 0%, rgba(235, 243, 255, 0.34) 35.42%, rgba(203, 216, 255, 0.34) 100%);
+  background: linear-gradient(90deg, rgb(207 219 255 / 0.34) 0%, rgb(235 243 255 / 0.34) 35.42%, rgb(203 216 255 / 0.34) 100%);
   border-radius: 2px;
 
   &::before {
@@ -35,7 +35,7 @@ defineProps({
     width: 100%;
     height: 100%;
     content: "";
-    background: linear-gradient(90deg, rgba(207, 219, 255, 0.34) 0%, rgba(235, 243, 255, 0.34) 35.42%, rgba(203, 216, 255, 0.34) 100%);
+    background: linear-gradient(90deg, rgb(207 219 255 / 0.34) 0%, rgb(235 243 255 / 0.34) 35.42%, rgb(203 216 255 / 0.34) 100%);
     animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 }

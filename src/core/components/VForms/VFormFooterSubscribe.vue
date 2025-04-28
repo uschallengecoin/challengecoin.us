@@ -123,7 +123,7 @@ watch(() => model, () => {
     width: 100%;
     text-align: left;
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       flex-direction: column;
     }
   }

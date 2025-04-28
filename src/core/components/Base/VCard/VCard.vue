@@ -37,6 +37,7 @@ const classLocal = computed(() => (props.variant ? `is--variant-${props.variant}
 
 <style lang="scss">
 @use 'UiKit/styles/_variables.scss' as variables;
+
 .v-card {
   text-decoration: none;
   position: relative;
@@ -48,10 +49,7 @@ const classLocal = computed(() => (props.variant ? `is--variant-${props.variant}
 
   &__link {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     z-index: 10;
   }
 
@@ -61,6 +59,10 @@ const classLocal = computed(() => (props.variant ? `is--variant-${props.variant}
     align-items: flex-start;
     box-shadow: variables.$box-shadow-medium;
     background-color: white;
+    border-radius: 2px;
+    gap: 10px;
+    flex-shrink: 0;
+
     &:hover {
       box-shadow: variables.$box-shadow-large;
     }
@@ -75,18 +77,13 @@ const classLocal = computed(() => (props.variant ? `is--variant-${props.variant}
     text-align: start;
   }
 
-  &.is--variant-secondary {
-    border-radius: 2px;
-    gap: 10px;
-    flex-shrink: 0;
-  }
-
   &.is--variant-ghost {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     gap: 20px;
+
     &:hover {
       background-color: white;
     }

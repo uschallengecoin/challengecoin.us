@@ -18,7 +18,7 @@
   .is--size-regular & {
     padding: 16px;
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       font-weight: 500;
       font-size: 12px;
       line-height: 18px;
@@ -35,7 +35,7 @@
   .is--size-large & {
     padding: 26px 16px;
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       font-weight: 500;
       font-size: 12px;
       line-height: 18px;

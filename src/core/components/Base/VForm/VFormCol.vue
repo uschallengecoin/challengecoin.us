@@ -29,6 +29,7 @@ const classes = computed(() => ({
 
   &.f-col-2 {
     width: calc(50% - 15px);
+
     @include media-lte(tablet) {
       width: 100%;
     }
@@ -36,6 +37,7 @@ const classes = computed(() => ({
 
   &.f-col-3 {
     width: calc(33.3333% - 15px);
+
     @include media-lte(tablet) {
       width: 100%;
     }

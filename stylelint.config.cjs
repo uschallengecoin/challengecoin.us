@@ -53,6 +53,13 @@ module.exports = {
     // 要求或禁止在规则之前的空行
     'rule-empty-line-before': ['always', { ignore: ['after-comment', 'first-nested'] }],
     'media-query-no-invalid': null, // This rule is only appropriate for CSS. You should not turn it on for CSS-like languages, such as SCSS or Less.
+    'property-no-vendor-prefix': null,
+    'value-keyword-case': null,
+    'alpha-value-notation': ['number'],
+    'custom-property-pattern': null,
+    'scss/load-no-partial-leading-underscore': null,
+    'scss/dollar-variable-pattern': null,
+    'scss/at-extend-no-missing-placeholder': null,
   },
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
   overrides: [
@@ -72,8 +79,8 @@ module.exports = {
       extends: ['stylelint-config-recommended-scss'],
       rules: {
         // 'scss/color-no-invalid-hex': true,
+        'at-rule-no-unknown': null,
         'scss/at-rule-no-unknown': true,
-        'scss/dollar-variable-pattern': '^foo',
         'scss/selector-no-redundant-nesting-selector': true,
       },
     },

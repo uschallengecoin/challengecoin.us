@@ -20,7 +20,7 @@ import VSection from 'UiKit/components/VSection/VSection.vue';
     display: grid;
     grid-template-columns: calc(30% - 40px) calc(67% - 40px);
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       display: flex;
       flex-direction: column;
     }
@@ -32,7 +32,7 @@ import VSection from 'UiKit/components/VSection/VSection.vue';
       line-height: 32px;
       margin-top: 28px;
 
-      @media screen and (max-width: $tablet){
+      @media screen and (width < $tablet){
         margin-top: 20px;
       }
     }

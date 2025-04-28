@@ -21,7 +21,7 @@ const currentYear = new Date().getFullYear();
     background-color: $primary-blue;
     padding: 10px 0 16px;
 
-    @media screen and (max-width: $tablet){
+    @media screen and (width < $tablet){
       padding: 0;
       text-align: center;
     }
@@ -31,7 +31,7 @@ const currentYear = new Date().getFullYear();
       flex-direction: row;
       justify-content: space-between;
 
-      @media screen and (max-width: $tablet){
+      @media screen and (width < $tablet){
         flex-direction: column-reverse;
         gap: 40px;
       }
@@ -47,7 +47,7 @@ const currentYear = new Date().getFullYear();
       gap: 48px;
       align-items: center;
 
-      @media screen and (max-width: $tablet){
+      @media screen and (width < $tablet){
         justify-content: center;
       }
     }

@@ -224,6 +224,7 @@ watch(() => props.modelValue, () => onInput(props.modelValue));
 
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
+
 .v-form-input {
   color: colors.$black;
   caret-color: colors.$black;
@@ -312,10 +313,12 @@ watch(() => props.modelValue, () => onInput(props.modelValue));
     margin-right: 8px;
     position: relative;
     z-index: 2;
+
     > div {
       width: 20px;
       height: 20px;
     }
+
     svg {
       width: 20px;
       height: 20px;

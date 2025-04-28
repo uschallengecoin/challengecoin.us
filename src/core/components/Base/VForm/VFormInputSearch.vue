@@ -61,11 +61,14 @@ watch(() => props.modelValue, () => {
 
 <style lang="scss">
 @use 'UiKit/styles/_colors.scss' as colors;
+
 .v-form-input-search {
+
   &__search-icon {
     width: 20px;
     color: colors.$gray-70;
   }
+
   &__close-icon {
     width: 10px !important;
     color: colors.$gray-80;

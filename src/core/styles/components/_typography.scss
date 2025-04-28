@@ -9,11 +9,13 @@ h1 {
   font-size: 60px;
   line-height: 77px;
   font-style: normal;
-  @media screen and (max-width: 767px) {
+
+  @media screen and (width < 767px) {
     font-size: 40px;
     line-height: 50px;
   }
 }
+
 h2 {
   font-family: $familyValueHeader;
   font-weight: 600;
@@ -21,11 +23,13 @@ h2 {
   font-size: 44px;
   line-height: 56px;
   font-style: normal;
-  @media screen and (max-width: 767px) {
+
+  @media screen and (width < 767px) {
     font-size: 36px;
     line-height: 46px;
   }
 }
+
 h3 {
   font-family: $familyValueHeader;
   font-weight: 600;
@@ -78,18 +82,23 @@ h6 {
 .is--h1__title {
   @extend h1;
 }
+
 .is--h2__title {
   @extend h2;
 }
+
 .is--h3__title {
   @extend h3;
 }
+
 .is--h4__title {
   @extend h4;
 }
+
 .is--h5__title {
   @extend h5;
 }
+
 .is--h6__title {
   @extend h6;
 }
@@ -109,7 +118,8 @@ h6 {
   font-size: 44px;
   line-height: 60px;
   font-style: normal;
-  @media screen and (max-width: 767px) {
+
+  @media screen and (width < 767px) {
     font-size: 36px;
     line-height: 46px;
   }
@@ -141,6 +151,7 @@ h6 {
 
 .is--body-italic {
   @extend .is--body;
+
   font-style: italic;
 }
 
@@ -158,11 +169,12 @@ h6 {
 }
 
 .header-anchor {
-  &:hover:before {
+  &:hover::before {
     opacity: 1;
   }
 }
-.header-anchor:before {
+
+.header-anchor::before {
   content: "#";
   position: absolute;
   left: -0.7em;
@@ -186,17 +198,18 @@ h6 {
     margin-top: 40px;
   }
 
-
   h1 + *,
   .is--h1__title + * {
     margin-top: 24px;
   }
+
   h2 + *,
   .is--h2__title + *,
   h3 + *,
   .is--h3__title + * {
     margin-top: 8px;
   }
+
   h4 + *,
   .is--h4__title + *,
   h5 + *,
@@ -205,6 +218,7 @@ h6 {
   .is--h6__title + * {
     margin-top: 4px;
   }
+
   h2 + .is--subheading-1,
   .is--h2__title + .is--subheading-1 {
     margin-top: 12px;
@@ -235,12 +249,14 @@ h1.with-default-distance + *,
 .is--h1__title.with-default-distance + * {
   margin-top: 12px;
 }
+
 h2.with-default-distance + *,
 .is--h2__title.with-default-distance + *,
 h3.with-default-distance + *,
 .is--h3__title.with-default-distance + * {
   margin-top: 8px;
 }
+
 h4.with-default-distance + *,
 .is--h4__title.with-default-distance + *,
 h5.with-default-distance + *,
@@ -249,6 +265,7 @@ h6.with-default-distance + *,
 .is--h6__title.with-default-distance + * {
   margin-top: 4px;
 }
+
 h2.with-default-distance + .is--subheading-1,
 .is--h2__title.with-default-distance + .is--subheading-1 {
   margin-top: 12px;
