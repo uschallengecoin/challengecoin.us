@@ -141,13 +141,4 @@ export default [
         window.addEventListener('load', loadSegment);
       }();`,
     ],
-    [
-      'link',
-      {
-        rel: 'preload',
-        as: 'video',
-        href: '/video/video-bg.mp4',
-        type: "video/mp4",
-      }
-    ]
   ];
