@@ -32,12 +32,12 @@ defineProps({
             class="v-card-checkmarked__icon"
           />
         </span>
-        <h5
+        <span
           class="is--h5__title"
           itemprop="headline"
         >
           {{ title }}
-        </h5>
+        </span>
       </span>
       <template #content>
         <div v-html="tooltip" />

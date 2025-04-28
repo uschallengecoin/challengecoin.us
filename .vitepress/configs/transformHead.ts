@@ -1,24 +1,22 @@
 export default function({ assets }) {
-  // adjust the regex accordingly to match your font
-  // const myFontFile = assets.find((file) => file.match(/Avenir[-a-zA-Z0-9.]+\.[woff2|ttf|eot|svg]/));
-
   const fontNames = ['Inter', 'TiemposHeadline'];
   const fontRegex = new RegExp(`(${fontNames.join('|')})[-a-zA-Z0-9.]+\\.(woff2|ttf|eot|svg)`);
-  const myFontFile = assets.find((file) => file.match(fontRegex));
-  console.log(myFontFile)
-  if (myFontFile) {
-    const ext = myFontFile.split('.').pop();
+  
+  // Get all matching font files
+  const matchedFonts = assets.filter((file) => fontRegex.test(file));
+  
+  // Map each font file to a preload link config
+  return matchedFonts.map((fontFile) => {
+    const ext = fontFile.split('.').pop();
     return [
-      [
-        'link',
-        {
-          rel: 'preload',
-          href: myFontFile,
-          as: 'font',
-          type: `font/${ext}`,
-          crossorigin: '',
-        },
-      ],
+      'link',
+      {
+        rel: 'preload',
+        href: fontFile,
+        as: 'font',
+        type: `font/${ext}`,
+        crossorigin: '',
+      },
     ];
-  }
-};
+  });
+}
