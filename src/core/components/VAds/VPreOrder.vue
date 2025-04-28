@@ -11,7 +11,10 @@ defineProps({
 
 <template>
   <VSection class="VPreOrder v-pre-order with-default-distance">
-    <h2 v-if="title" id="pre-order">
+    <h2
+      v-if="title"
+      id="pre-order"
+    >
       {{ title }}
     </h2>
     <div class="v-pre-order__card is--margin-top-40">

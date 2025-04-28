@@ -73,19 +73,19 @@ watch(api, (value) => {
         :class="{ 'is--active': indexp === activeElementId }"
         @click="changeSlide(indexp)"
       >
-          <div
-            class="v-slider-autoplay__pagination-item"
+        <div
+          class="v-slider-autoplay__pagination-item"
+          :class="{ 'is--active': indexp === activeElementId }"
+        />
+        <slot name="pagination">
+          <VImage
+            v-if="paginationSrc"
+            :src="paginationSrc"
+            alt="coin image"
+            class="v-slider-autoplay__pagination-image"
             :class="{ 'is--active': indexp === activeElementId }"
           />
-          <slot name="pagination">
-            <VImage
-              v-if="paginationSrc"
-              :src="paginationSrc"
-              alt="coin image"
-              class="v-slider-autoplay__pagination-image"
-            :class="{ 'is--active': indexp === activeElementId }"
-            />
-          </slot>
+        </slot>
       </div>
     </div>
   </div>

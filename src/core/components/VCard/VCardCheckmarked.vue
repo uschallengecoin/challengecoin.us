@@ -79,7 +79,7 @@ defineProps({
     align-self: stretch;
     text-align: initial;
 
-    @media screen and (max-width: 767px){
+    @media screen and (width < 767px){
       align-items: flex-start;
     }
   }
@@ -96,7 +96,7 @@ defineProps({
     align-items: flex-start;
     gap: 10px;
 
-    @media screen and (max-width: 767px){
+    @media screen and (width < 767px){
       margin-top: 3px;
     }
   }

@@ -9,8 +9,14 @@ const currentYear = new Date().getFullYear();
     <p class="is--container is--small v-footer-bottom__content">
       © {{ currentYear }} U.S. Challenge Coin LLC. All rights reserved.
       <span class="v-footer-bottom__terms">
-        <a :href="links.terms" class="is--small">Terms of Use</a>
-        <a :href="links.privacy" class="is--small">Privacy Policy</a>
+        <a
+          :href="links.terms"
+          class="is--small"
+        >Terms of Use</a>
+        <a
+          :href="links.privacy"
+          class="is--small"
+        >Privacy Policy</a>
       </span>
     </p>
   </div>

@@ -17,7 +17,10 @@ defineProps({
         <h5 v-if="title">
           {{ title }}
         </h5>
-        <p v-if="profession" class="is--color-gray is--margin-top-8">
+        <p
+          v-if="profession"
+          class="is--color-gray is--margin-top-8"
+        >
           {{ profession }}
         </p>
       </div>

@@ -70,7 +70,8 @@ const onClickMenu = () => {
             class="v-footer__logo"
           />
           <p class="is--margin-top-17">
-            Introducing a modern symbol of American pride — crafted to honor heritage, support those who serve, and bring communities together with every purchase.
+            Introducing a modern symbol of American pride — crafted to honor heritage, support those who serve,
+            and bring communities together with every purchase.
           </p>
           <div
             class="v-footer__contact"

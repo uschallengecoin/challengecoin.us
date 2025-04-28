@@ -39,8 +39,8 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.0",
-    "@eslint/js": "^9.21.0",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.25.1",
     "@types/jsdom": "^21.1.7",
     "@types/lodash": "^4.17.16",
     "@types/luxon": "^3.4.2",
@@ -62,9 +62,13 @@
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-vue": "10.0.0",
     "eslint-plugin-vuejs-accessibility": "2.4.1",
+    "extend": "^3.0.2",
     "globals": "^16.0.0",
     "jsdom": "^26.0.0",
+    "markdown-it-regexp": "^0.4.0",
     "postcss-html": "^1.8.0",
+    "reurl": "git+https://github.com/jsepia/reurl.git#commonjs",
+    "sanitize-filename": "^1.6.3",
     "sass": "^1.85.1",
     "stylelint": "^16.15.0",
     "stylelint-config-recess-order": "6.0.0",
@@ -76,12 +80,7 @@
     "ts-node-dev": "^2.0.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0",
-    "vitepress": "^1.6.3",
-
-    "extend": "^3.0.2",
-    "markdown-it-regexp": "^0.4.0",
-    "reurl": "git+https://github.com/jsepia/reurl.git#commonjs",
-    "sanitize-filename": "^1.6.3"
+    "vitepress": "^1.6.3"
   },
   "peerDependencies": {
     "ws": "^8.18.0"

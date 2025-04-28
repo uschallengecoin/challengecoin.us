@@ -1,5 +1,6 @@
 import pluginVue from 'eslint-plugin-vue';
 import vueTsEslintConfig from '@vue/eslint-config-typescript';
+import pluginVueA11y from "eslint-plugin-vuejs-accessibility";
 import importPlugin from 'eslint-plugin-import';
 import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
@@ -24,6 +25,7 @@ export default [
     },
   }),
   ...pluginVue.configs['flat/recommended'],
+  ...pluginVueA11y.configs["flat/recommended"],
   ...vueTsEslintConfig(),
   {
     files: ['**/*.+(ts|tsx|mts|cts|js|mjs|cjs|jsx)'],
@@ -44,7 +46,7 @@ export default [
       'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
       'no-underscore-dangle': 'off',
       'import/no-named-as-default': 0,
-      'react/jsx-props-no-spreading': 0,
+      // 'react/jsx-props-no-spreading': 0,
       'import/prefer-default-export': 0,
       '@typescript-eslint/no-unused-vars': [
         'error', {
@@ -67,7 +69,7 @@ export default [
       'import/no-absolute-path': 'off',
 
       // tsx
-      'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+      // 'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
       'jsx-a11y/control-has-associated-label': 0,
       'jsx-a11y/anchor-has-content': 0,
     },
@@ -91,6 +93,7 @@ export default [
       'prefer-rest-params': ['warn'],
       'vue/require-default-prop': 'off',
       'vuejs-accessibility/click-events-have-key-events': ['warn'],
+      'vuejs-accessibility/no-static-element-interactions': ['warn'],
       '@typescript-eslint/no-explicit-any': ['warn'],
       'vue/no-mutating-props': ['warn'],
     },

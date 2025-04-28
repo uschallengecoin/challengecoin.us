@@ -19,9 +19,18 @@ const props = defineProps({
       class="v-section-legacy__hero-image is--margin-top-0"
       fit="cover"
     />
-    <h2 v-if="title1 || title2" class="is--color-green v-section-legacy__title is--margin-top-0">
-      <span v-if="title1" class="v-section-legacy__title1">{{ title1 }}</span> <br/>
-      <span v-if="title2" class="v-section-legacy__title2">{{ title2 }}</span>
+    <h2
+      v-if="title1 || title2"
+      class="is--color-green v-section-legacy__title is--margin-top-0"
+    >
+      <span
+        v-if="title1"
+        class="v-section-legacy__title1"
+      >{{ title1 }}</span> <br>
+      <span
+        v-if="title2"
+        class="v-section-legacy__title2"
+      >{{ title2 }}</span>
     </h2>
     <div class="v-section-legacy__bottom is--margin-top-0">
       <VImage

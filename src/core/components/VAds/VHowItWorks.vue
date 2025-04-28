@@ -9,7 +9,10 @@ defineProps({
 
 <template>
   <VSection class="VHowItWorks v-how-it-works is--margin-top-150">
-    <h2 v-if="title" id="how-it-works">
+    <h2
+      v-if="title"
+      id="how-it-works"
+    >
       {{ title }}
     </h2>
     <div

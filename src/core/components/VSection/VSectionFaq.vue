@@ -9,7 +9,11 @@ const props = defineProps({
 
 <template>
   <VSection class="VSectionFaq v-section-faq">
-    <h2 v-if="title" id="faq" class="v-section-faq__title">
+    <h2
+      v-if="title"
+      id="faq"
+      class="v-section-faq__title"
+    >
       {{ title }}
     </h2>
 

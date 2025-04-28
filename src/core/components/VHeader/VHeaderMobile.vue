@@ -23,7 +23,10 @@ const open = defineModel<boolean>();
     class="VHeaderMobile v-header-mobile"
   >
     <VSheetTrigger v-bind="{ ...$attrs }">
-      <VMenuBurger :model-value="open" class="v-header-mobile__burger"/>
+      <VMenuBurger
+        :model-value="open"
+        class="v-header-mobile__burger"
+      />
     </VSheetTrigger>
     <VSheetContent
       with-header
