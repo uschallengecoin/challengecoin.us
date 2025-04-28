@@ -82,6 +82,7 @@ watch(api, (value) => {
             v-if="paginationSrc"
             :src="paginationSrc"
             alt="coin image"
+            loading="lazy"
             class="v-slider-autoplay__pagination-image"
             :class="{ 'is--active': indexp === activeElementId }"
           />

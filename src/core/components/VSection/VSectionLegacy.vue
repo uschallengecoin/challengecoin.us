@@ -18,6 +18,7 @@ const props = defineProps({
       alt="Legacy hero image"
       class="v-section-legacy__hero-image is--margin-top-0"
       fit="cover"
+      loading="lazy"
     />
     <h2
       v-if="title1 || title2"

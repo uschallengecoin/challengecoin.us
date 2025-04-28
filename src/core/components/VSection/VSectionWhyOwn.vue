@@ -33,6 +33,7 @@ const { isTablet } = storeToRefs(useBreakpoints());
         :src="isTablet ? imageMobile || image : image"
         alt="why own image"
         class=" is--margin-top-0"
+        loading="lazy"
       />
 
       <div class="v-section-why-own__coin">
