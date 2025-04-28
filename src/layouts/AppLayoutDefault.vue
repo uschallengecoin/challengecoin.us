@@ -40,7 +40,7 @@ const router = useRouter();
 const isFontLoaded = ref(false);
 const globalLoader = useGlobalLoader();
 const { isLoading: globalLoaderisLoading } = storeToRefs(globalLoader);
-const showLoader = computed(() => globalLoaderisLoading.value || !isFontLoaded.value);
+const showLoader = computed(() => globalLoaderisLoading.value);
 globalLoader.toggle(true);
 
 const checkIfFontLoaded = async () => {

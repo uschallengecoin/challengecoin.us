@@ -31,13 +31,13 @@ const delegatedProps = computed(() => {
 }
 
 .v-accordion-content[data-state="open"] {
-  animation: slideDown 0.3s ease;
+  animation: slideDown 0.3s ease forwards;
   background-color: #F2F1ED;
   padding: 0 29px 29px;
 }
 
 .v-accordion-content[data-state="closed"] {
-  animation: slideUp 0.3s ease;
+  animation: slideUp 0.3s ease forwards;
   padding: 0 29px;
 }
 </style>
