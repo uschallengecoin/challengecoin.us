@@ -18,10 +18,10 @@ export function generateJsonLd(pageData: PageData, env: any): string | null {
     telephone: env.phone,
     email: env.email,
     sameAs: [
-      'https://www.linkedin.com/company/webdevelop-pro',
-      'https://www.facebook.com/WebdevelopPro',
-      'https://www.instagram.com/webdevelop.pro',
-      'https://github.com/webdevelop-pro',
+      'https://www.linkedin.com/company/challengecoin.us',
+      'https://www.facebook.com/challengecoin.us',
+      'https://www.instagram.com/challengecoin.us',
+      'https://github.com/uschallengecoin',
     ],
   };
 
