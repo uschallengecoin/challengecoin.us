@@ -41,6 +41,7 @@ const { isTablet } = storeToRefs(useBreakpoints());
           src="/images/home/coin4.webp"
           alt="coin image"
           class=" is--margin-top-0"
+          loading="lazy"
         />
       </div>
     </div>
