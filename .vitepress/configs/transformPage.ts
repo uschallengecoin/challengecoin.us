@@ -178,12 +178,4 @@ export default function (pageData: PageData) {
       content: pageData.frontmatter.locale || env.locale,
     },
   ]);
-  pageData.frontmatter.head.push([
-    'link',
-    {
-      rel: 'preload',
-      as: 'image',
-      href: '/images/home/coin1.webp',
-    },
-  ]);
 };
