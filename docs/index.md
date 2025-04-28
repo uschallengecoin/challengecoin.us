@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Ready-to-Go Investment Platform for Alternative Assets
-description: Using our API products you can launch enterprise grade solution without burden of building everything from scratch 
+title: US Challenge Coin
+description: Introducing a modern symbol of American pride — crafted to honor heritage, support those who serve, and bring communities together with every purchase.
 jsonLDType: WebSite
 ---
 

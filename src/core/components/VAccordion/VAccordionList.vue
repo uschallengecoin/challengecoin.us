@@ -24,7 +24,6 @@ defineProps({
       v-for="(item, idx) in data"
       :key="idx"
       :value="String(idx)"
-      transparent
     >
       <VAccordionTrigger
         class="v-accordion-list-default__title is--h4__title"

@@ -7,9 +7,7 @@ import {
 import { computed } from 'vue';
 import chevronDownIcon from 'UiKit/assets/images/chevron-down.svg';
 
-const props = defineProps<AccordionTriggerProps & {
-  isWhite?: boolean;
-}>();
+const props = defineProps<AccordionTriggerProps>();
 
 const delegatedProps = computed(() => {
   const { ...delegated } = props;
@@ -23,8 +21,6 @@ const delegatedProps = computed(() => {
     <AccordionTrigger
       v-bind="delegatedProps"
       class="VAccordionTrigger v-accordion-trigger"
-      :class="{ 'is--white': isWhite }"
-      itemprop="name"
     >
       <slot />
       <slot name="icon">

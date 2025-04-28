@@ -27,7 +27,7 @@ const forwardedProps = useForwardProps(delegatedProps);
 
 .v-accordion-item {
   border-top: solid 1px colors.$gray;
-
+  
   &:last-child {
     border-bottom: solid 1px colors.$gray
   }

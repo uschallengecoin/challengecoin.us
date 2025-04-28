@@ -42,7 +42,6 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
           xmlns="http://www.w3.org/2000/svg"
         >
           <g
-            id="square-check 1"
             clip-path="url(#clip0_381_5240)"
           >
             <path
@@ -52,7 +51,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
             />
           </g>
           <defs>
-            <clipPath id="clip0_381_5240">
+            <clipPath>
               <rect
                 width="12"
                 height="12"

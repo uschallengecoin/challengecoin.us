@@ -4,7 +4,7 @@ import {
 } from 'UiKit/components/Base/VAccordion';
 
 defineProps({
-  idx: Number || String,
+  idx: [Number, String],
   trigger: String,
 });
 </script>
@@ -12,7 +12,6 @@ defineProps({
 <template>
   <VAccordionItem
     :value="String(idx)"
-    transparent
     class="VAccordionItem v-accordion-item"
   >
     <VAccordionTrigger

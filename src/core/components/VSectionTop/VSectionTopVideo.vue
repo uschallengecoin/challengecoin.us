@@ -23,7 +23,7 @@ const emit = defineEmits(['click']);
   <VSection
     class="VSectionTopVideo v-section-top-video"
     :class="{ 'is--full-height': fullHeight }"
-    :style="{ '--video-cover': `url(${videoCoverImage})` }"
+    :style="{ '--video-cover': videoCoverImage ? `url(${videoCoverImage})` : undefined }"
   >
     <video
       v-if="props.videoSrc"
@@ -107,7 +107,7 @@ const emit = defineEmits(['click']);
     z-index: -1;
     opacity: 0.5;
     background: linear-gradient(243deg, #F2F2F2 16.02%, #E1DCD0 83.06%);
-    background-image: var(--video-cover);
+    // background-image: var(--video-cover);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
