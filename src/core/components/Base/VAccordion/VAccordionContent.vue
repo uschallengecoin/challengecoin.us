@@ -26,13 +26,13 @@ const delegatedProps = computed(() => {
 .v-accordion-content {
   overflow: hidden;
   color: colors.$gray;
+  background-color: #F2F1ED;
   transition: all 0.3s ease;
   margin: 0 !important;
 }
 
 .v-accordion-content[data-state="open"] {
   animation: slideDown 0.3s ease forwards;
-  background-color: #F2F1ED;
   padding: 0 29px 29px;
 }
 

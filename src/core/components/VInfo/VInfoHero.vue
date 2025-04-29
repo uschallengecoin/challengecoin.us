@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import VInfoTop from 'UiKit/components/VInfo/VInfoTop.vue';
 import VImage from 'UiKit/components/Base/VImage/VImage.vue';
+import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
+import { storeToRefs } from 'pinia';
+
+const { isTablet } = storeToRefs(useBreakpoints());
 
 defineProps({
   imageSrc: String,
+  imageMobileSrc: String,
   buyNowHref: String,
 });
 </script>
@@ -18,7 +23,7 @@ defineProps({
     </VInfoTop>
     <div class="v-info-hero__image-wrap">
       <VImage
-        :src="imageSrc"
+        :src="isTablet ? imageMobileSrc : imageSrc"
         alt="hero image"
         class="v-info-hero__image"
       />
@@ -42,11 +47,15 @@ defineProps({
   }
 
   &__image-wrap {
-    width: 41%;
-    aspect-ratio: 225/195;
+    width: 48%;
+    aspect-ratio: 602/582;
+    position: relative;
+    margin-right: -80px;
 
     @media screen and (width < $tablet){
-      width: 65%;
+      width: 100%;
+      aspect-ratio: 348/250;
+      margin: 15px 0 20px;
     }
   }
 }

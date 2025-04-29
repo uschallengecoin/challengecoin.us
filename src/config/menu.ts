@@ -15,7 +15,11 @@ export type MenuItem = {
 
 export const MENU_HEADER = [
   {
-    href: '#a-symbol-of-honor-for-every-american',
+    href: '#hero',
+    text: 'US Challenge Coin',
+  },
+  {
+    href: '#legacy',
     text: 'The Legacy of Challenge Coins',
   },
   {

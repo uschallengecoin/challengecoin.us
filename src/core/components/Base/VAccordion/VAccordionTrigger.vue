@@ -41,6 +41,7 @@ const delegatedProps = computed(() => {
   width: 24px;
   color: inherit;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .v-accordion-trigger[data-state="open"] {

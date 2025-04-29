@@ -24,7 +24,7 @@ const createContainer = (
         const title2 = attrs.title2 ? ` title2="${attrs.title2}"` : '';
         const images = attrs.images ? ` :images="${attrs.images}"` : '';
         return (
-          `<VSectionLegacy ${title1} ${title2} ${images}>\n`
+          `<VSectionLegacy ${title1} ${title2} ${images} id="legacy">\n`
         );
       }
       // closing tag

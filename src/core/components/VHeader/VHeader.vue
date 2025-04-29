@@ -91,7 +91,7 @@ watchPostEffect(() => {
     display: flex;
     align-items: center;
     margin-right: 55px;
-    max-height: 53px;
+    max-height: 44px;
 
     @include media-lte(desktop-lg) {
       margin-right: 30px;

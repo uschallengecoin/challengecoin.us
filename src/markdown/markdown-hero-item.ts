@@ -22,9 +22,10 @@ const createContainer = (
 
         // Safely escape attributes
         const imageSrc = attrs.image ? ` image-src="${attrs.image}"` : '';
+        const imageMobileSrc = attrs.imageMobile ? ` image-mobile-src="${attrs.imageMobile}"` : '';
         const buyNowHref = links.buyNow ? ` buy-now-href="${links.buyNow}"` : '';
         return (
-          `<VCarouselItem><VInfoHero ${imageSrc} ${buyNowHref}>\n`
+          `<VCarouselItem><VInfoHero ${imageSrc} ${buyNowHref} ${imageMobileSrc}>\n`
         );
       }
       // closing tag

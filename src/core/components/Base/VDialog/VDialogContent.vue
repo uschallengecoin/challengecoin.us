@@ -49,7 +49,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
 @use 'UiKit/styles/_colors.scss' as colors;
 
 .v-dialog-overlay {
-  background: rgb(18 22 31 / 0.4);
+  background: rgb(34 34 34 / 0.85);
   position: fixed;
   inset: 0;
   animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);

@@ -143,7 +143,7 @@ const onClickMenu = () => {
 
   &__logo {
     color: inherit;
-    max-height: 53px;
+    max-height: 44px;
 
     @media screen and (width < $tablet){
       max-height: 30px;

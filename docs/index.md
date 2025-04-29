@@ -8,11 +8,11 @@ jsonLDType: WebSite
 :::::: top-video {video="/video/video-bg.mp4"}
 ::::: slider
 
-:::: hero-item {image="/images/home/coin1.webp"}
-# US Challenge Coin
+:::: hero-item {image="/images/home/coin1.webp" imageMobile="/images/home/coin7.webp"}
+# U.S. Challenge Coin
 Commemorating the 250th anniversary of the founding of the United States for everyone that Loves, Protects, Supports and Honors America.
 
-::: dialog-top {image="/images/home/coin7.webp"}
+::: dialog-top {image="/images/home/coin1.webp"}
 ### Once-in-a-Generation
 In just over one year from now, on July 4th, 2026, America will celebrate its founding. Beginning on Independence Day 2025, the entire country will witness and participate in year-long patriotic celebrations like none the world has ever seen, culminating in this momentous and historic occasion.
 ### Pride, History, Art & Technology in the Palm of Your Hand
@@ -22,11 +22,11 @@ Whether you collect for yourself or present US Challenge Coine as a special gift
 :::
 ::::
 
-:::: hero-item {image="/images/home/coin2.webp"}
+:::: hero-item {image="/images/home/coin2.webp" imageMobile="/images/home/coin8.webp"}
 # Supporting Our Heroes
-A significant/fixed percentage of all sales/purchases directly supports charitable causes & organizations for veterans, police & firefighters, first-responders, and other heroes-in-need.
+Seven (7%) percent of all sales/purchases will directly support charitable causes & organizations for veterans, police & firefighters, first-responders, and other heroes-in-need.
 
-::: dialog-top {image="/images/home/coin8.webp"}
+::: dialog-top {image="/images/home/coin2.webp"}
 ### Receiving Means Giving
 American’s help one another. The ethos of dignified charity has been in our blood since the founding of our country. We’ve never forgotten the sacrifices that our service members, public safety professionals and first responders have made to protect our way of life and keep us safe from harm. Whether donating to a local cause or supporting a large-scale national initiative, Americans have always taken care of their protectors and heroes.
 ### Community-Driven
@@ -36,11 +36,11 @@ Join the first-ever Challenge Coin community for anyone who loves America. By pu
 :::
 ::::
 
-:::: hero-item {image="/images/home/coin3.webp"}
-# Own a physical Challenge Coin and receive Digital Challenge Coins.
-Each individually numbered physical challenge coin will have a unique blockchain ID and crypto wallet that digital challenge coins will be automatically “airdropped” into.
+:::: hero-item {image="/images/home/coin3.webp" imageMobile="/images/home/coin9.webp"}
+# Buy Physical Coins, Get Free Crypto
+For each U.S. Challenge Coin purchased, receive free U.S. Challenge Coin crypto tokens.
 
-::: dialog-top {image="/images/home/coin9.webp"}
+::: dialog-top {image="/images/home/coin3.webp"}
 ### America’s Next Digital Revolution
 We all know that crypto currencies and the digital Blockchain have been around for years and these technologies are here to stay and growing in popularity. But most Americans have been left on the sidelines watching this technological and financial revolution take place right in front of their eyes with no idea how to learn, participate and benefit from these massive developments.  Blockchain technology, the backbone of crypto and many other emerging applications, is changing the way that the world perceives value and how people interact and transact with financial systems and money.
 ### Buy a U.S. Challenge Coin, Get Free Crypto
@@ -68,7 +68,7 @@ Challenge coins trace their roots back to the battlefields of World War I, where
 
 **Now, as the United States prepares to celebrate 250 years of independence, the tradition lives on.**
 
-The U.S. Challenge Coin was created to commemorate this milestone — a modern tribute to American resilience and pride. 100% made and designed in America in collaboration with renowned sculptor and engraver **Don Everhart II** (U.S. Mint / Franklin Mint) its beautiful design and timeless craftsmanship bridges past and present, honoring those who’ve served and inspiring those who collect and carry it.
+The U.S. Challenge Coin was created to commemorate this milestone — a modern tribute to American resilience and pride. 100% made and designed in America in collaboration with renowned sculptor and engraver **Don Everhart II (U.S. Mint / Franklin Mint)**  its beautiful design and timeless craftsmanship bridges past and present, honoring those who’ve served and inspiring those who collect and carry it.
 
 Owning this coin means holding a piece of American history — a symbol of who we are, where we’ve been, and the legacy we carry forward.
 </div>
@@ -116,7 +116,7 @@ The U.S. Challenge Coin community is powered by blockchain and crypto technology
 ::::
 
 :::: subscribe
-# Be part of something bigger
+# Be Part of Something Bigger
 Join a nationwide community of patriots, collectors, and supporters.
 ::::
 
@@ -140,20 +140,74 @@ This coin represents honor, duty, and the community we protect. It’s a symbol 
 :::::
 ::::::
 
-::: pre-order {title="Limited Edition Pre-Order" pieces="150,000"}
-Own a Piece of History – Limited to
+::: pre-order {pieces="On Sale Now"}
+Don’t miss this once-in-a-generation opportunity!
 :::
 
 ::::: faq {title="Frequently Asked Questions"}
-::: accordion-item {trigger="What is a U.S. Challenge Coin?"}
-The U.S. Challenge Coin is a modern tribute to a long-standing American tradition. Originally used by military units to represent identity, unity, and honor, challenge coins have evolved into symbols of service and recognition across military, government, and civilian communities.
 
-This particular coin was created to commemorate the 250th anniversary of U.S. independence. It blends meaningful design with craftsmanship and purpose — serving as a collectible, a token of patriotism, and a way to support charitable causes. Each coin also includes optional crypto-enabled features for added utility in the digital world.
+::: accordion-item {trigger="What is a Challenge Coin?"}
+Since WWI challenge coins have been timeless symbols of loyalty, unity, and honor — carried proudly by service members, first responders, patriots, and heroes of every kind.
 :::
-::: accordion-item {trigger="How does the crypto feature work?"}
+
+::: accordion-item {trigger="What is the U.S. Challenge Coin?"}
+The U.S.Challenge is the first-ever challenge coin for ALL Americans and people who honor our country’s history and all its heroes. Minted in commemoration of the 250th Anniversary of the founding of the United States. are timeless symbols of loyalty, unity, and honor — carried proudly by service members, first responders, patriots, and heroes of every kind.
 :::
-::: accordion-item {trigger="Can I buy it as a gift?"}
+
+::: accordion-item {trigger="What makes these coins “special purpose” coins?"}
+Every coin we offer stands for something bigger than itself. Whether it’s supporting our veterans, commemorating a historic milestone, or honoring everyday heroes, each design carries a purpose worth standing behind.
 :::
-::: accordion-item {trigger="What charities does this support?"}
+
+::: accordion-item {trigger="Are these coins limited edition?"}
+Yes. Our coins are issued in limited numbers to protect their meaning and value. Once they’re gone, they become a piece of history, just like the stories they represent.
 :::
+
+::: accordion-item {trigger="What materials are your coins made from?"}
+Our coins are struck from durable, high-grade metals like brass, copper, and zinc alloy — built to last as long as the memories they represent. Many are finished in antique gold, silver, or black nickel for a timeless, battle-tested look.
+:::
+
+::: accordion-item {trigger="What size are the coins?"}
+Most of our coins range from 1.5" to 2.5" — a perfect size for carrying in your pocket, presenting in a ceremony, or displaying with pride.
+:::
+
+::: accordion-item {trigger="Can I personalize or customize a coin?"}
+For select coins, yes. Options like engraving a name, rank, or date may be available. Reach out to us to see how we can help you create a truly personal piece of legacy.
+:::
+
+::: accordion-item {trigger="Do you offer custom coin design for groups and organizations?"}
+Absolutely. We are honored to work with military units, police and fire departments, nonprofits, and other patriotic groups to create custom coins that tell their story.
+:::
+
+::: accordion-item {trigger="How are the coins packaged?"}
+Every coin comes protected in either a heavy-duty plastic sleeve or a premium presentation box — ready for gifting, safekeeping, or display.
+:::
+
+::: accordion-item {trigger="How long does shipping take?"}
+We process orders within 2–3 business days. From there, delivery typically takes 5–7 business days within the United States. Fast, reliable, and made to serve.
+:::
+
+::: accordion-item {trigger="Do you ship internationally?"}
+Yes. We are proud to send our coins across the world, wherever there are patriots and proud supporters. International rates and delivery times vary.
+:::
+
+::: accordion-item {trigger="What is your return policy?"}
+Because of the special and limited nature of our coins, all sales are final. However, if you receive a coin that is damaged or defective, contact us within 7 days and we’ll make it right — that’s our word.
+:::
+
+::: accordion-item {trigger="How does purchasing a coin support the cause?"}
+Each purchase directly supports [insert cause, e.g., wounded veterans, fallen heroes’ families, memorial building funds]. Your coin isn’t just a symbol — it’s part of making a real difference.
+:::
+
+::: accordion-item {trigger="Do these coins come with a Certificate of Authenticity?"}
+Yes. Limited-edition and serialized coins ship with a Certificate of Authenticity, verifying that you hold a true piece of history.
+:::
+
+::: accordion-item {trigger="Can I order bulk quantities for my team or organization?"}
+Yes. We proudly offer bulk pricing for groups, units, departments, and businesses. Contact us to honor your team with coins forged in tradition and pride.
+:::
+
+::: accordion-item {trigger="Where can I learn more about the story behind each coin?"}
+Each of our coins tells a story — of bravery, sacrifice, and patriotism. Visit the product pages or our “Stories of Honor” blog to learn about the inspiration behind each design.
+:::
+
 :::::

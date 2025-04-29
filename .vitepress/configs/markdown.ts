@@ -29,7 +29,7 @@ export default {
   // options for markdown-it-anchor
   // https://github.com/valeriangalliat/markdown-it-anchor#usage
   anchor: {
-    permalink: markdownItAnchor.permalink.headerLink(),
+    // permalink: markdownItAnchor.permalink.headerLink(),
   },
   config: (md) => {
     md.use(wikilinks({

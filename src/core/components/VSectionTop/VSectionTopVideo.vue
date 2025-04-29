@@ -105,8 +105,25 @@ const emit = defineEmits(['click']);
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.7;
     background: linear-gradient(243deg, #F2F2F2 16.02%, #E1DCD0 83.06%);
+    // background-image: var(--video-cover);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.8;
+    background: linear-gradient(63deg, rgb(242 242 242 / 0) 20.53%, #E1DCD0 73.23%);
     // background-image: var(--video-cover);
     background-repeat: no-repeat;
     background-attachment: scroll;

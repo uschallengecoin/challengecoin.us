@@ -83,12 +83,17 @@ const backgroundImageLocal = computed(() => (
       background-image: var(--bg-image);
       width: 100%;
       height: 100%;
+      opacity: 0.08;
       background-repeat: no-repeat;
-      background-size: 50%;
-      background-position: right center;
+      background-size: 60%;
+      background-position: 124% 0%;
       top: 0;
       left: 0;
       z-index: -1;
+
+      @media screen and (width < $tablet){
+        display: none;
+      }
     }
 
     @media screen and (width < $tablet){

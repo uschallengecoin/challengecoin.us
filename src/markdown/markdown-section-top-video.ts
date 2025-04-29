@@ -23,7 +23,7 @@ const createContainer = (
         const videoSrc = attrs.video ? ` video-src="${attrs.video}"` : '';
         const videoCover = attrs.videoCover ? ` video-cover-image="${attrs.videoCover}"` : '';
         return (
-          `<VSectionTopVideo full-height ${videoSrc} ${videoCover}>\n`
+          `<VSectionTopVideo full-height ${videoSrc} ${videoCover} id="hero">\n`
         );
       }
       // closing tag

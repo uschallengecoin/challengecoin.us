@@ -22,6 +22,9 @@ export function generateJsonLd(pageData: PageData, env: any): string | null {
       'https://www.facebook.com/challengecoin.us',
       'https://www.instagram.com/challengecoin.us',
       'https://github.com/uschallengecoin',
+      'https://x.com/challengecoin.us',
+      'https://www.tiktok.com/@challengecoin.us',
+      'https://t.me/challengecoin.us',
     ],
   };
 

@@ -14,7 +14,7 @@ const createContainer = (
       const token = tokens[idx];
       if (token.nesting === 1) {
         return (
-          '<VSubscribe>\n'
+          '<VSubscribe id="be-part-of-something-bigger">\n'
         );
       }
       // closing tag

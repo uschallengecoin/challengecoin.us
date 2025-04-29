@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import VSection from 'UiKit/components/VSection/VSection.vue';
-import { computed } from 'vue';
 import { links } from '@/config/links';
+import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
+import { storeToRefs } from 'pinia';
+
+const { isTablet } = storeToRefs(useBreakpoints());
 
 defineProps({
   title: String,
@@ -14,17 +17,17 @@ defineProps({
     <h2
       v-if="title"
       id="pre-order"
+      class="v-pre-order__title"
     >
       {{ title }}
     </h2>
-    <div class="v-pre-order__card is--margin-top-40">
+    <div class="v-pre-order__card">
       <div class="is--subheading-2">
         <slot />
         <div class="is--margin-top-8">
           <span class="is--display v-pre-order__display">
             {{ pieces }}
           </span>
-          Pieces
         </div>
       </div>
       <VButton
@@ -34,7 +37,7 @@ defineProps({
         size="large"
         class="is--margin-top-0"
       >
-        Reserve Yours Now
+        {{ isTablet ? 'U.S. Challenge Coin' : 'Buy U.S. Challenge Coin' }}
       </VButton>
     </div>
   </VSection>
@@ -48,6 +51,10 @@ defineProps({
 .v-pre-order {
   text-align: center;
 
+  &__title {
+    margin-bottom: 40px;
+  }
+
   &__card {
     position: relative;
     text-align: left;
@@ -59,17 +66,31 @@ defineProps({
     justify-content: space-between;
     border-radius: 10px;
     background-color: $biege;
-    background-size: contain;
-    background-position: 100% 0;
-    background-repeat: no-repeat;
-    background-image: var(--bg-image);
-    background-image: url('/images/home/coin6.webp');
+    
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: $biege;
+      background-image: url('/images/home/coin6.webp');
+      width: 100%;
+      height: 100%;
+      opacity: 0.08;
+      background-repeat: no-repeat;
+      background-size: 57%;
+      background-position: 133% 43%;
+      top: 0;
+      left: 0;
+
+      @media screen and (width < $tablet){
+        background-size: 127%;
+        background-position: -92% 41%;
+      }
+    }
 
     @media screen and (width < $desktop){
       flex-direction: column;
       padding: 48px;
-      background-image: url('/images/home/coin10.webp');
-      background-position: bottom right;
     }
   }
 

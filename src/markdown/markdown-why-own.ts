@@ -23,7 +23,7 @@ const createContainer = (
         const image = attrs.image ? `image="${attrs.image}"` : '';
         const imageMobile = attrs.imageMobile ? `image-mobile="${attrs.imageMobile}"` : '';
         return (
-          `<VSectionWhyOwn ${image} ${imageMobile} class="is--paddings">\n`
+          `<VSectionWhyOwn ${image} ${imageMobile} class="is--paddings" id="why-own-u-s-challenge-coin">\n`
         );
       }
       // closing tag

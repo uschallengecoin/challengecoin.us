@@ -32,8 +32,9 @@ const { isTablet } = storeToRefs(useBreakpoints());
       <VImage
         :src="isTablet ? imageMobile || image : image"
         alt="why own image"
-        class=" is--margin-top-0"
+        class="v-section-why-own__image-main is--margin-top-0"
         loading="lazy"
+        fit="cover"
       />
 
       <div class="v-section-why-own__coin">
@@ -55,7 +56,7 @@ const { isTablet } = storeToRefs(useBreakpoints());
   }
 
   &__image {
-    width: calc(48vw - 40px);
+    width: calc(50vw - 40px);
     position: relative;
 
     @media screen and (width < $desktop){
@@ -66,19 +67,30 @@ const { isTablet } = storeToRefs(useBreakpoints());
 
   &__coin {
     position: absolute;
-    bottom: -25%;
-    left: 102px;
+    bottom: -25px;
+    left: 126px;
     z-index: 1;
-    width: 471px;
-    height: 346px;
-    aspect-ratio: 471/346;
+    width: 390px;
+    height: 390px;
+    aspect-ratio: 339/339;
 
     @media screen and (width < $desktop){
-      width: 200px;
-      height: 150px;
-      bottom: -85px;
+      width: 140px;
+      height: 140px;
+      bottom: -75px;
       left: auto;
-      right: -43px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+
+  &__image-main {
+    height: 100%;
+    padding-bottom: 64px;
+
+    @media screen and (width < $desktop){
+      height: auto;
+      padding-bottom: 0;
     }
   }
 }

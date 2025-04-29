@@ -14,7 +14,7 @@ const createContainer = (
       const token = tokens[idx];
       if (token.nesting === 1) {
         return (
-          '<VSectionWhatOurClientsSay class="is--margin-top-150">\n'
+          '<VSectionWhatOurClientsSay class="is--margin-top-150" id="voices-of-honor">\n'
         );
       }
       // closing tag

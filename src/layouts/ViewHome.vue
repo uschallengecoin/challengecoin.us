@@ -44,11 +44,11 @@ useGlobalLoader().hide();
   }
 
   .v-slider__prev {
-    transform: translateX(-33px);
+    transform: translateX(-18px);
   }
 
   .v-slider__next {
-    transform: translateX(53px);
+    transform: translateX(68px);
   }
 
   .v-info-hero {
