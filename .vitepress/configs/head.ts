@@ -141,4 +141,12 @@ export default [
         window.addEventListener('load', loadSegment);
       }();`,
     ],
+    [
+      'link',
+      {
+        rel: 'preload',
+        href: '/favicon.ico',
+        as: 'image',
+      },
+    ],
   ];

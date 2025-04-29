@@ -3,8 +3,10 @@ import VSection from 'UiKit/components/VSection/VSection.vue';
 import { links } from '@/config/links';
 import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
 import { storeToRefs } from 'pinia';
+import { useLazyBackground } from '@/core/composables/useLazyBackground';
 
 const { isTablet } = storeToRefs(useBreakpoints());
+useLazyBackground('v-pre-order__card', '/images/home/coin6.webp', { useVariable: true });
 
 defineProps({
   title: String,
@@ -69,18 +71,18 @@ defineProps({
     
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
-      background-color: $biege;
-      background-image: url('/images/home/coin6.webp');
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      opacity: 0.08;
+      background-image: var(--lazy-background-image);
       background-repeat: no-repeat;
       background-size: 57%;
       background-position: 133% 43%;
-      top: 0;
-      left: 0;
+      opacity: 0.08;
+      pointer-events: none;
 
       @media screen and (width < $tablet){
         background-size: 127%;

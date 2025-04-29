@@ -7,6 +7,8 @@ import { useHubspotForm } from 'UiKit/composables/useHubspotForm';
 import { env } from '@/config/env';
 import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
 import { storeToRefs } from 'pinia';
+import { useLazyBackground } from '@/core/composables/useLazyBackground';
+import subscribeImage from './subscribe.webp';
 
 const VSocialLinks = defineAsyncComponent({
   loader: () => import('UiKit/components/VSocialLinks/VSocialLinks.vue'),
@@ -48,6 +50,8 @@ const onSubmit = async (emailLocal: string) => {
 };
 
 const { isTablet } = storeToRefs(useBreakpoints());
+
+useLazyBackground('v-subscribe', subscribeImage);
 </script>
 
 <template>
@@ -75,7 +79,7 @@ const { isTablet } = storeToRefs(useBreakpoints());
 .v-subscribe {
   text-align: center;
   color: $white;
-  background: url('./subscribe.webp') lightgray 50% / cover no-repeat;
+  background: lightgray 50% / cover no-repeat;
   padding: 150px;
 
   @media screen and (width < $desktop){
