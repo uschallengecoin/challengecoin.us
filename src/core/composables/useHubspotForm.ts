@@ -3,6 +3,7 @@ import { fetchHubspotForm } from 'UiKit/services';
 
 export const useHubspotForm = (formId: string) => {
   const hubspotFormId = ref(formId);
+  const errorHubspotForm = ref();
 
   const setHSFieldsData = (model: object) => {
     const result: object[] = [];
@@ -21,12 +22,15 @@ export const useHubspotForm = (formId: string) => {
   });
 
   const submitFormToHubspot = async (model: object) => {
+    errorHubspotForm.value = null;
     await fetchHubspotForm(hubspotFormId.value, getRequestData(model)).catch((error) => {
       console.log(error);
+      errorHubspotForm.value = error;
     });
   };
 
   return {
     submitFormToHubspot,
+    errorHubspotForm,
   };
 };

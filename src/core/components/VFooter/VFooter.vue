@@ -46,12 +46,16 @@ const TOAST_OPTIONS = {
 const loadingSubmitting = ref(false);
 const onSubmit = async (emailLocal: string) => {
   loadingSubmitting.value = true;
-  const { submitFormToHubspot } = useHubspotForm(env.HUBSPOT_FORM_ID_RECEIVE_LATEST_NEWS);
+  const { submitFormToHubspot, errorHubspotForm } = useHubspotForm(env.HUBSPOT_FORM_ID_RECEIVE_LATEST_NEWS);
   await submitFormToHubspot({
     email: emailLocal,
   });
   loadingSubmitting.value = false;
-  toast(TOAST_OPTIONS);
+  if (!errorHubspotForm.value) toast(TOAST_OPTIONS);
+  else toast({
+    title: 'Something went wrong!',
+    variant: 'error',
+  });
 };
 
 const onClickMenu = () => {
