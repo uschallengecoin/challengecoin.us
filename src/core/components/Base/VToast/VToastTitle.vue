@@ -15,8 +15,18 @@ const delegatedProps = computed(() => {
   <ToastTitle
     v-bind="delegatedProps"
     :class="props.class"
-    class="VToastTitle v-toast-title is--h5__title"
+    class="VToastTitle v-toast-title is--small"
   >
     <slot />
   </ToastTitle>
 </template>
+
+
+<style lang="scss">
+@use 'UiKit/styles/_colors.scss' as *;
+
+.v-toast-title {
+  color: $black;
+  font-weight: 700;
+}
+</style>

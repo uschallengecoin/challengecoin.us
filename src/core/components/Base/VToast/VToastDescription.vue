@@ -22,3 +22,13 @@ const delegatedProps = computed(() => {
     </p>
   </ToastDescription>
 </template>
+
+
+
+<style lang="scss">
+@use 'UiKit/styles/_colors.scss' as *;
+
+.v-toast-description {
+  color: $black;
+}
+</style>

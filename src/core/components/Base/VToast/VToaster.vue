@@ -79,14 +79,14 @@ const getButtonColor = (variant?: string) => {
     margin-top: 1px;
     width: 20px;
     flex-shrink: 0;
-    color: colors.$primary;
+    color: colors.$light-blue;
 
     .is--variant-success & {
-      color: colors.$secondary;
+      color: colors.$green;
     }
 
     .is--variant-error & {
-      color: colors.$red;
+      color: colors.$primary-red;
     }
   }
 }

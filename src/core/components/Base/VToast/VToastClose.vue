@@ -25,6 +25,7 @@ const delegatedProps = computed(() => {
       icon-only
       variant="link"
       size="small"
+      color="secondary"
     >
       <closeIcon class="v-toast-close__icon" />
     </VButton>
@@ -50,11 +51,11 @@ const delegatedProps = computed(() => {
   }
 
   .is--variant-info & {
-    color: colors.$primary;
+    color: colors.$light-blue;
   }
 
   .is--variant-error & {
-    color: colors.$red;
+    color: colors.$primary-red;
   }
 }
 

@@ -42,6 +42,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
   min-height: 66px;
   padding: 21px 44px 21px 18px;
   margin-bottom: 10px;
+  border-color: colors.$black;
   background: colors.$white;
   border-left: 2px solid transparent;
   box-shadow: variables.$box-shadow-medium;
@@ -53,15 +54,15 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
   }
 
   &.is--variant-info{
-    border-color: colors.$primary;
+    border-color: colors.$light-blue;
   }
 
   &.is--variant-error{
-    border-color: colors.$red;
+    border-color: colors.$primary-red;
   }
 
   &.is--variant-success{
-    border-color: colors.$secondary;
+    border-color: colors.$green;
   }
 }
 

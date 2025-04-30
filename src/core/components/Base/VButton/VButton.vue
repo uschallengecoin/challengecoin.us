@@ -173,11 +173,11 @@ const btnClasses = computed(() => ({
   }
 
   &.is--button-color-secondary {
-    background-color: colors.$primary-light;
+    background-color: colors.$green;
     color: colors.$black;
 
     &:hover{
-      background-color: colors.$primary;
+      background-color: colors.$green;
     }
   }
 
@@ -308,8 +308,10 @@ const btnClasses = computed(() => ({
     }
 
     &.is--button-color-secondary {
+      color: colors.$black;
+
       &:hover {
-        background-color: colors.$secondary-light;
+        background-color: colors.$green;
       }
     }
 
