@@ -15,10 +15,6 @@ export type MenuItem = {
 
 export const MENU_HEADER = [
   {
-    href: '#hero',
-    text: 'US Challenge Coin',
-  },
-  {
     href: '#legacy',
     text: 'The Legacy of Challenge Coins',
   },
@@ -32,7 +28,7 @@ export const MENU_HEADER = [
   },
   {
     href: '#be-part-of-something-bigger',
-    text: 'Be part of something bigger',
+    text: 'Be Part of Something Bigger',
   },
   {
     href: '#voices-of-honor',
@@ -40,7 +36,7 @@ export const MENU_HEADER = [
   },
   {
     href: '#pre-order',
-    text: 'Limited Edition Pre-Order',
+    text: 'On Sale Now',
   },
   {
     href: '#faq',

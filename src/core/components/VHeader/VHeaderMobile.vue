@@ -28,10 +28,7 @@ const open = defineModel<boolean>();
         class="v-header-mobile__burger"
       />
     </VSheetTrigger>
-    <VSheetContent
-      with-header
-      hide-close
-    >
+    <VSheetContent>
       <VisuallyHidden>
         <VSheetHeader>
           <VSheetTitle>Mobile Menu</VSheetTitle>
@@ -89,10 +86,11 @@ const open = defineModel<boolean>();
   &__item {
     height: auto;
     width: 100%;
-    padding: 20px 0 0 20px;
+    padding: 20px 0 0;
     gap: 9px;
     display: flex;
     flex-direction: column;
+    color: colors.$black;
   }
 
   &__list {
@@ -102,7 +100,6 @@ const open = defineModel<boolean>();
   }
 
   &__navigation > &__list + &__list {
-    border-top: 1px solid colors.$gray-40;
     margin-top: 20px;
   }
 
@@ -111,10 +108,8 @@ const open = defineModel<boolean>();
   }
 
   &__data {
-    border-top: 1px solid colors.$gray-40;
-    padding: 20px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 
   &__burger {

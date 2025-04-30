@@ -15,7 +15,7 @@ const forwarded = useForwardPropsEmits(props, emits);
 <template>
   <NavigationMenuLink
     v-bind="forwarded"
-    class="VNavigationMenuLink v-navigation-menu-link is--h6__title is--link"
+    class="VNavigationMenuLink v-navigation-menu-link is--h5__title is--link"
   >
     <slot />
   </NavigationMenuLink>

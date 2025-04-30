@@ -60,8 +60,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
 @use 'UiKit/styles/_variables.scss' as variables;
 @use 'UiKit/styles/_transitions.scss' as *;
 
-$z-index-menu-bg: 9;
-$z-index-menu: 10;
+$z-index-menu-bg: 100;
+$z-index-menu: 100;
 $z-index-menu-burger: $z-index-menu + 1;
 
 .v-sheet-content {
@@ -69,6 +69,10 @@ $z-index-menu-burger: $z-index-menu + 1;
   z-index: $z-index-menu;
   background: $white;
   overflow-y: auto;
+  padding: 56px 40px 76px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .v-sheet-overlay {
@@ -76,7 +80,7 @@ $z-index-menu-burger: $z-index-menu + 1;
   position: fixed;
   inset: 0;
   z-index: $z-index-menu-bg;
-  background: rgb(0 0 0 / 0.33);
+  background: rgb(34 34 34 / 0.85);
 
   &.is--with-header {
     top: $header-height;
@@ -177,7 +181,7 @@ $z-index-menu-burger: $z-index-menu + 1;
     right: 0;
     height: 100%;
     width: 100%;
-    max-width: 367px;
+    max-width: 498px;
 
     &.is--with-header {
       top: $header-height;

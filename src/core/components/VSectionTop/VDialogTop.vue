@@ -73,9 +73,11 @@ const backgroundImageLocal = computed(() => (
   justify-content: space-between;
 
   &__content {
-    padding: 0 60px 14px;
+    padding: 0 60px 40px;
     height: calc(100% - 130px);
     overflow-y: auto;
+    scrollbar-color: $gray transparent;
+    scrollbar-width: thin;
 
     &::before {
       content: "";

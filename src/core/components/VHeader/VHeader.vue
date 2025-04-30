@@ -66,8 +66,8 @@ watchPostEffect(() => {
   height: $header-height;
 
   &.is--fixed {
-    background: $white;
-    box-shadow: $box-shadow-small;
+    background: rgb(252 252 252 / 0.9);
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.04);
   }
 
   @include media-lte(desktop-md) {

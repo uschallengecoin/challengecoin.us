@@ -8,7 +8,7 @@ defineEmits(['update:modelValue']);
 
 <template>
   <component
-    :is="modelValue ? closeIcon : menuMobIcon"
+    :is="menuMobIcon"
     class="VMenuBurger v-menu-burger"
     aria-label="Menu burger button"
   />

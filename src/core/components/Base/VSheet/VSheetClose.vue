@@ -16,7 +16,6 @@ const props = defineProps<DialogCloseProps>();
       <VButton
         icon-only
         variant="link"
-        size="large"
       >
         <closeIcon class="v-sheet-close__icon" />
       </VButton>
@@ -31,13 +30,13 @@ const props = defineProps<DialogCloseProps>();
 
 .v-sheet-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 12px;
+  right: 12px;
   width: auto;
 
   &__icon {
-    width: 20px;
-    height: 20px;
+    width: 24px !important;
+    height: 24px !important;
     color: colors.$black;
   }
 }

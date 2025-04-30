@@ -9,6 +9,7 @@ import { data as allPages } from '@/store/all.data';
 import { convertPages } from 'UiKit/types/pages';
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
 import { storeToRefs } from 'pinia';
+import { links } from '@/config/links';
 
 const VHeader = defineAsyncComponent({
   loader: () => import('UiKit/components/VHeader/VHeader.vue'),
@@ -107,7 +108,17 @@ onUnmounted(() => {
     <transition name="transition-fade-out">
       <VLoader v-if="showLoader" />
     </transition>
-    <VHeader />
+    <VHeader>
+      <template #mobile>
+        <VButton
+          as="a"
+          :href="encodeURI(links.buyNow)"
+          size="large"
+        >
+          Buy U.S. Challenge Coin
+        </VButton>
+      </template>
+    </VHeader>
 
     <main class="app-layout-default__main is--markdown">
       <ViewErrors
