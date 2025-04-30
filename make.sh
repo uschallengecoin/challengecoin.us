@@ -1,5 +1,11 @@
 #!/bin/sh
 
+build() {
+  BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
+  npm run docs:build --mode $BRANCH_NAME
+  cp -rf docs/public/* .vitepress/dist/
+}
+
 case $1 in
 
 run-dev)
@@ -25,17 +31,12 @@ tests)
   ;;
 
 build)
-  BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
-  npm run docs:build --mode $BRANCH_NAME
-  cp -rf docs/public/* .vitepress/dist/
+  build;
   ;;
 
 build-master)
-  set -a
-  . .master.env
-  BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
-  npm run docs:build --mode $BRANCH_NAME
-  cp -rf docs/public/* .vitepress/dist/
+  export $(grep -v '^#' .master.env | xargs)
+  build;
   ;;
 
 deploy-master)
