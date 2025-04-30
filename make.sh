@@ -30,6 +30,14 @@ build)
   cp -rf docs/public/* .vitepress/dist/
   ;;
 
+build-master)
+  set -a
+  . .master.env
+  BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
+  npm run docs:build --mode $BRANCH_NAME
+  cp -rf docs/public/* .vitepress/dist/
+  ;;
+
 deploy-master)
   BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
   SHORT_SHA=`git rev-parse --short HEAD`
