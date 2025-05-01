@@ -1,17 +1,24 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import logoIcon from 'UiKit/assets/images/logo.svg?component';
+import logoIcon from '@/assets/images/logo.svg?component';
+import logoWhiteIcon from '@/assets/images/logo-white.svg?component';
 
 const props = defineProps({
   disabled: Boolean,
   href: String,
   routeName: String,
+  white: Boolean,
 });
 
 const componentName = computed(() => {
   if (props.href) return 'a';
   if (props.routeName) return 'router-link';
   return 'span';
+});
+
+const icon = computed(() => {
+  if (props.white) return logoWhiteIcon;
+  return logoIcon;
 });
 </script>
 
@@ -24,14 +31,26 @@ const componentName = computed(() => {
     aria-label="Site logo"
     :class="{ 'is--link': href || routeName }"
   >
-    <component
-      :is="logoIcon"
+    <!-- <component
+      :is="icon"
       class="v-logo__desktop"
     />
     <component
-      :is="logoIcon"
+      :is="icon"
       class="v-logo__mobile"
-    />
+    /> -->
+    <img
+      v-if="white"
+      src="@/assets/images/logoWhite.webp"
+      class="v-logo__desktop"
+      alt="Logo"
+    >
+    <img
+      v-else
+      src="@/assets/images/logo.webp"
+      class="v-logo__desktop"
+      alt="Logo"
+    >
   </component>
 </template>
 

@@ -41,7 +41,7 @@ defineProps({
         size="large"
         class="is--margin-top-0"
       >
-        {{ isTablet ? 'U.S. Challenge Coin' : 'Buy U.S. Challenge Coin' }}
+        {{ isTablet ? 'Buy Now' : 'Buy U.S. Challenge Coin' }}
       </VButton>
     </div>
   </VSection>

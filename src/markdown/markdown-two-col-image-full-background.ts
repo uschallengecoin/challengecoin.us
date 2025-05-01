@@ -24,8 +24,9 @@ const createContainer = (
         const reverse = attrs.reverse ? 'reverse' : '';
         const buttonHref = links.buyNow ? ` button-href="${links.buyNow}"` : '';
         const buttonText = attrs.buttonText ? ` button-text="${attrs.buttonText}"` : '';
+        const buttonTextMobile = attrs.buttonText ? ` button-text-mobile="${attrs.buttonTextMobile}"` : '';
         return (
-          `<VSectionTwoColImageFullBackground ${reverse} ${buttonHref} ${buttonText} class="is--margin-top-150">\n`
+          `<VSectionTwoColImageFullBackground ${reverse} ${buttonHref} ${buttonText} ${buttonTextMobile} class="is--margin-top-150">\n`
         );
       }
       // closing tag

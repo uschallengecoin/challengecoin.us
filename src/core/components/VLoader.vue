@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import logoIcon from 'UiKit/assets/images/logo.svg';
+import logoIcon from '@/assets/images/logo.svg?component';
 
 defineProps({
   hide: Boolean,
@@ -34,6 +34,7 @@ defineProps({
   justify-content: center;
   width: 100%;
   height: 100%;
+  color: $black;
   background-color: #fff;
 
   &.is--hidden {

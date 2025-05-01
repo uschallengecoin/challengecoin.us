@@ -4,7 +4,8 @@ import {
 } from '../Base/VCarousel';
 import Autoplay from 'embla-carousel-autoplay';
 import Fade from 'embla-carousel-fade';
-import { computed } from 'vue';
+import { computed, onBeforeMount, ref } from 'vue';
+import { CarouselApi } from '../Base/VCarousel';
 
 interface Props {
     variant?: 'default' | 'autoplay';
@@ -32,6 +33,24 @@ if (props.autoplay || isAutoplay.value) {
 if (props.fade || isAutoplay.value) {
   plugins.push(Fade());
 }
+
+const api = ref<CarouselApi>();
+
+function setApi(val: CarouselApi) {
+  api.value = val;
+}
+
+onBeforeMount(() => {
+  document?.querySelectorAll('.v-slider h1[id]').forEach(element => {
+    element.removeAttribute('id');
+  });
+  // Remove <a> tags while keeping their text
+    document?.querySelectorAll('.v-slider h1 a.header-anchor').forEach(anchor => {
+    const text = anchor.textContent;
+    anchor.replaceWith(text); // Replace link with its text
+  });
+  // api.value?.reInit();
+});
 </script>
 
 <template>
@@ -44,6 +63,7 @@ if (props.fade || isAutoplay.value) {
     :plugins="plugins"
     orientation="horizontal"
     :class="{ 'is--autoplay': isAutoplay, 'is--hide-navigation': hideNavigation }"
+      @init-api="setApi"
   >
     <div>
       <VCarouselPrevious class="v-slider__prev" />

@@ -20,7 +20,7 @@ const createContainer = (
         });
         const hideNavigation = attrs.hideNavigation ? `hide-navigation="${attrs.hideNavigation}"` : '';
         return (
-          `<VSlider autopolay fade :options="{ containScroll: 'trimSnaps', loop: true }" ${hideNavigation}>\n`
+          `<VSlider autoplay fade :options="{ containScroll: 'trimSnaps', loop: true }" ${hideNavigation}>\n`
         );
       }
       // closing tag

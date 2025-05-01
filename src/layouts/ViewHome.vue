@@ -37,7 +37,7 @@ useGlobalLoader().hide();
 
   .v-slider__prev,
   .v-slider__next {
-    bottom: 0;
+    bottom: -48px;
     top: auto;
     right: 50%;
     z-index: 1;

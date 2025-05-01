@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import VSection from 'UiKit/components/VSection/VSection.vue';
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
+import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
+import { storeToRefs } from 'pinia';
+
+const { isTablet } = storeToRefs(useBreakpoints());
 
 defineProps({
   reverse: Boolean,
   buttonHref: String,
   buttonText: String,
+  buttonTextMobile: String,
 });
 </script>
 
@@ -24,7 +29,7 @@ defineProps({
       size="large"
       class="v-section-two-col-image-full-background__button"
     >
-      {{ buttonText }}
+      {{ isTablet ? buttonTextMobile || buttonText : buttonText }}
     </VButton>
   </VSection>
 </template>

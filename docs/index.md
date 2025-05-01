@@ -55,7 +55,7 @@ U.S. Challenge Coin believes that these new technologies should be made availabl
 import { links } from '@/config/links';
 </script>
 
-::::: two-col-image-full-background {buttonText="Buy U.S. Challenge Coin Now"}
+::::: two-col-image-full-background {buttonText="Buy U.S. Challenge Coin Now" buttonTextMobile="Buy Now"}
 :::: legacy {title1="The Legacy of" title2="Challenge Coins" images="['/images/home/history1.webp', '/images/home/history2.webp', '/images/home/history3.webp']"}
 ::::
 <div style="position: relative; align-self: center;">

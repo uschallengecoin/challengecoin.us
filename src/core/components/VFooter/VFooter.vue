@@ -70,6 +70,7 @@ const onClickMenu = () => {
       <div class="v-footer__wrap is--gap-80">
         <div class="v-footer__content">
           <VLogo
+            white
             href="/"
             class="v-footer__logo"
           />
@@ -146,7 +147,7 @@ const onClickMenu = () => {
   }
 
   &__logo {
-    color: inherit;
+    // color: inherit;
     max-height: 44px;
 
     @media screen and (width < $tablet){
