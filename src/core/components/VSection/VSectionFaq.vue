@@ -14,7 +14,12 @@ const props = defineProps({
       id="faq"
       class="v-section-faq__title"
     >
-      {{ title }}
+      <a
+        class="header-anchor"
+        href="#faq"
+      >
+        {{ title }}
+      </a>
     </h2>
 
     <VAccordion

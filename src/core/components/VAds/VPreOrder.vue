@@ -15,10 +15,12 @@ defineProps({
 </script>
 
 <template>
-  <VSection class="VPreOrder v-pre-order with-default-distance">
+  <VSection
+    id="pre-order"
+    class="VPreOrder v-pre-order with-default-distance"
+  >
     <h2
       v-if="title"
-      id="pre-order"
       class="v-pre-order__title"
     >
       {{ title }}

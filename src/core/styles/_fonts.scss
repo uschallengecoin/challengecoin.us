@@ -7,6 +7,14 @@
 }
 
 @font-face{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("UiKit/assets/fonts/Inter-Bold.woff2") format("woff2"), url("UiKit/assets/fonts/Inter-Bold.woff") format("woff"), url("UiKit/assets/fonts/Inter-Bold.ttf") format("truetype");
+}
+
+@font-face{
   font-family: TiemposHeadlineSemibold;
   font-style: normal;
   font-weight: 600;

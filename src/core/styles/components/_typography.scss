@@ -169,6 +169,8 @@ h6 {
 }
 
 .header-anchor {
+  position: relative;
+
   &:hover::before {
     opacity: 1;
   }

@@ -13,7 +13,12 @@ defineProps({
       v-if="title"
       id="how-it-works"
     >
-      {{ title }}
+      <a
+        class="header-anchor"
+        href="#how-it-works"
+      >
+        {{ title }}
+      </a>
     </h2>
     <div
       class="is--three-col-grid"

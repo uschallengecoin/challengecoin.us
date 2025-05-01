@@ -92,6 +92,11 @@ const props = defineProps({
 
   &__title {
     width: 100%;
+
+    @media screen and (width < $tablet){
+      max-width: 345px;
+      margin: 0 auto;
+    }
   }
 
   &__title1 {
