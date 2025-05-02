@@ -46,13 +46,13 @@ watchPostEffect(() => {
         class="v-header__logo"
       />
 
-      <div class="v-header__right ">
+      <ClientOnly class="v-header__right ">
         <VHeaderMobile
           v-model="isMobileSidebarOpen"
         >
           <slot name="mobile" />
         </VHeaderMobile>
-      </div>
+      </ClientOnly>
     </div>
   </header>
 </template>
