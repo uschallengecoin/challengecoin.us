@@ -65,7 +65,7 @@ const onValidate = () => {
 const onSubmit = () => {
   onValidate();
   if (!isValid.value) {
-    void nextTick(() => scrollToError('VFormFooterSubscribe'));
+    void nextTick(() => scrollToError('VFormJoinWaitlist'));
     return;
   }
 
@@ -78,12 +78,12 @@ watch(() => model, () => {
 </script>
 
 <template>
-  <div class="VFormFooterSubscribe v-form-footer-subscribe">
+  <div class="VFormJoinWaitlist v-form-join-waitlist">
     <form
       novalidate
       @submit.prevent="onSubmit"
     >
-      <div class="v-form-footer-subscribe__group">
+      <div class="v-form-join-waitlist__group">
         <VFormGroup
           v-slot="baseFormGroupProps"
           :model="model"
@@ -106,7 +106,7 @@ watch(() => model, () => {
           size="large"
           :loading="loading"
           :disabled="isDisabledButton || loading"
-          class="v-form-footer-subscribe__button is--margin-top-0"
+          class="v-form-join-waitlist__button is--margin-top-0"
         >
           {{ buttonText }}
         </VButton>
@@ -116,7 +116,7 @@ watch(() => model, () => {
 </template>
 
 <style lang="scss">
-.v-form-footer-subscribe {
+.v-form-join-waitlist {
   &__group {
     display: flex;
     gap: 8px;

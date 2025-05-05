@@ -30,6 +30,7 @@ import VInfoHero from /*VInfoHero*/'UiKit/components/VInfo/VInfoHero.vue';
 //   // hydrate: hydrateOnVisible(),
 // });
 import VSectionTopVideo from 'UiKit/components/VSectionTop/VSectionTopVideo.vue';
+import VSectionTopComingSoon from 'UiKit/components/VSectionTop/VSectionTopComingSoon.vue';
 
 // const VSlider = defineAsyncComponent({
 //   loader: () => import('UiKit/components/VSlider/VSlider.vue'),
@@ -139,5 +140,6 @@ export default {
     app.component('VPreOrder', VPreOrder);
     app.component('VSectionFaq', VSectionFaq);
     app.component('VAccordionItem', VAccordionItem);
+    app.component('VSectionTopComingSoon', VSectionTopComingSoon);
   },
 } satisfies Theme;

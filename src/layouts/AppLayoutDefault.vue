@@ -21,6 +21,7 @@ const VFooter = defineAsyncComponent({
 });
 
 const ViewHome = defineAsyncComponent(() => import('@/layouts/ViewHome.vue'));
+const ViewComingSoon = defineAsyncComponent(() => import('@/layouts/ViewComingSoon.vue'));
 const DefaultContent = defineAsyncComponent(() => import('@/layouts/DefaultContent.vue'));
 const ViewErrors = defineAsyncComponent(() => import('UiKit/components/VPage/VErrorPage/VErrorPageNotFound404.vue'));
 
@@ -38,10 +39,16 @@ theme.navigation = {
 const route = useRoute();
 const router = useRouter();
 
+
+const isComingSoon = computed(() => {
+  return frontmatter.value.layout === 'coming-soon'
+});
 const isFontLoaded = ref(false);
 const globalLoader = useGlobalLoader();
 const { isLoading: globalLoaderisLoading } = storeToRefs(globalLoader);
 const showLoader = computed(() => globalLoaderisLoading.value || !isFontLoaded.value);
+const showHeader = computed(() => !isComingSoon.value);
+const showFooter = computed(() => !isComingSoon.value);
 globalLoader.toggle(true);
 
 const checkIfFontLoaded = async () => {
@@ -108,7 +115,7 @@ onUnmounted(() => {
     <transition name="transition-fade-out">
       <VLoader v-if="showLoader" />
     </transition>
-    <VHeader>
+    <VHeader v-if="showHeader">
       <template #mobile>
         <VButton
           as="a"
@@ -125,6 +132,7 @@ onUnmounted(() => {
         v-if="page.isNotFound"
       />
       <ViewHome v-else-if="frontmatter.layout === 'home'" />
+      <ViewComingSoon v-else-if="isComingSoon" />
       <DefaultContent
         v-else
         class="is--content is--container is--page"
@@ -135,7 +143,7 @@ onUnmounted(() => {
     </main>
 
     <footer class="app-layout-default__footer">
-      <VFooter />
+      <VFooter v-if="showFooter" />
     </footer>
 
     <ClientOnly>

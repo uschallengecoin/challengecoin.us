@@ -14,6 +14,7 @@ import { dialogTop } from '../../src/markdown/markdown-dialog-top';
 import { twoCOlImageFullBackground } from '../../src/markdown/markdown-two-col-image-full-background';
 import { whyOwn } from '../../src/markdown/markdown-why-own';
 import { card } from '../../src/markdown/markdown-card';
+import { comingSoon } from '../../src/markdown/markdown-section-top-coming-soon';
 import { CheckmarkedItem } from '../../src/markdown/markdown-checkmarked';
 import { testimonialItem } from '../../src/markdown/markdown-testimonial-item';
 import { subscribe } from '../../src/markdown/markdown-subscribe';
@@ -52,6 +53,7 @@ export default {
     md.use(sliderAutoplay);
     md.use(faq);
     md.use(accordionItem);
+    md.use(comingSoon);
   },
   theme: 'github-light',
 };
