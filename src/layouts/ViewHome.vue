@@ -1,6 +1,16 @@
 <script lang="ts">
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
 import { links } from '@/config/links';
+import VSectionTopVideo from 'UiKit/components/VSectionTop/VSectionTopVideo.vue';
+import VSlider from 'UiKit/components/VSlider/VSlider.vue';
+import { data } from '@/store/home.data';
+import { convertPages } from 'UiKit/types/pages';
+import VInfoHero from /*VInfoHero*/'UiKit/components/VInfo/VInfoHero.vue';
+import VCarouselItem from /*VCarouselItem*/'UiKit/components/Base/VCarousel/VCarouselItem.vue';
+
+console.log('home data', data);
+
+const heroSlides = data?.filter((item) => item.slug === 'heroSlide');
 </script>
 
 <script setup lang="ts">
@@ -9,7 +19,31 @@ useGlobalLoader().hide();
 
 <template>
   <div class="ViewHome view-home">
-    <Content />
+    <VSectionTopVideo
+      id="hero"
+      full-height
+      video-src="/video/video-bg.mp4"
+    >
+      <VSlider
+        autoplay
+        fade
+        :options="{ containScroll: 'trimSnaps', loop: true }"
+      >
+        <VCarouselItem
+          v-for="(item, index) in heroSlides"
+          :key="index"
+        >
+          <VInfoHero
+            :image-src="item.image"
+            :image-mobile-src="item.imageMobile"
+            :buy-now-href="links.buyNow"
+          >
+            <div v-html="item.html" />
+          </VInfoHero>
+        </VCarouselItem>
+      </VSlider>
+    </VSectionTopVideo>
+    <!-- <Content /> -->
     <div class="is--paddings view-home__button">
       <VButton
         as="a"

@@ -52,7 +52,7 @@ async function getLastUpdatedUnix(url:string) {
   });
 }
 
-const loader = createContentLoader(['**/*.md'], {
+const loader = createContentLoader(['dialogs/*.md'], {
   includeSrc: true,
   render: true,
   async transform(rawData: ContentData[]) {
@@ -72,7 +72,6 @@ const loader = createContentLoader(['**/*.md'], {
     );
     // ToDo
     // change to draft == false
-    // data = data.filter((pageData) => pageData.draft === true);
     data = sortByPublishDate(data);
     data = sortByOrder(data);
     return data;

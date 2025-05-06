@@ -1,7 +1,6 @@
 ---
 image: /images/home/coin1.webp
 dialogId: 1
-render: true
 draft: true
 ---
 

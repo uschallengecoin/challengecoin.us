@@ -16,7 +16,7 @@ const srcDir = "./docs";
 export default {
   // https://vitepress.dev/guide/routing#root-and-source-directory
   srcDir: srcDir,
-  srcExclude: findDraftFiles(srcDir),
+  srcExclude: findDraftFiles(srcDir, srcDir),
   transformHead: transformHead,
   title: env.title,
   description: env.description,

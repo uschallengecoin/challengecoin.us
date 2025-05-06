@@ -14,7 +14,9 @@ const VDialogClickText = defineAsyncComponent({
 });
 </script>
 
-:::::: top-video {video="/video/video-bg.mp4"}
+<VSectionTopVideo
+  video-src="/video/video-bg.mp4"
+>
 ::::: slider
 
 :::: hero-item {image="/images/home/coin1.webp" imageMobile="/images/home/coin7.webp"}
@@ -58,7 +60,7 @@ U.S. Challenge Coin believes that these new technologies should be made availabl
 ::::
 
 :::::
-::::::
+</VSectionTopVideo>
 
 ::::: two-col-image-full-background {buttonText="Buy U.S. Challenge Coin Now" buttonTextMobile="Buy Now"}
 :::: legacy {title1="The Legacy of" title2="Challenge Coins" images="['/images/home/history1.webp', '/images/home/history2.webp', '/images/home/history3.webp']"}
