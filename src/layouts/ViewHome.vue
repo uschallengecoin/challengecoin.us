@@ -1,9 +1,14 @@
 <script lang="ts">
+import { useData } from 'vitepress';
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
 import { links } from '@/config/links';
 </script>
 
 <script setup lang="ts">
+import { data as textsPages } from '@/store/dialogs.data';
+const { theme } = useData();
+
+theme.navigation.dialogs = textsPages;
 useGlobalLoader().hide();
 </script>
 

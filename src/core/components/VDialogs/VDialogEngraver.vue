@@ -14,9 +14,10 @@ const useDialogsStore = useDialogs();
 const { isDialogEngraverOpen } = storeToRefs(useDialogsStore);
 
 const data = computed(() => {
-  return theme.navigation.dialogs?.children?.engraver?.data?.html;
+  return theme.navigation.dialogs[0]?.html;
 });
 
+console.log(data, theme.navigation.dialogs[0]);
 const open = defineModel<boolean>();
 
 watch(() => open.value, () => {
