@@ -151,7 +151,7 @@ Some Internet browsers may be configured to send “Do Not Track” signals to t
 
 ## Payment processors
 
-To facilitate financial transactions on our services, we use [Dwolla](https://www.dwolla.com/), [Plaid](https://www.plaid.com/) and [Stripe](https://stripe.com/). When you engage in a financial transaction, you direct us to share certain information with these payment processors, and you will provide other information—such as your credit card or bank account information—directly to them. We do not record or maintain this financial information. For more information on how transactions are handled, or to understand the data security and privacy practices of these payment processors, please refer to the privacy notices of [Dwolla](https://www.dwolla.com/), [Plaid](https://www.plaid.com/) and [Stripe](https://stripe.com/).
+To facilitate financial transactions on our services, we use [Stripe](https://stripe.com/). When you engage in a financial transaction, you direct us to share certain information with these payment processors, and you will provide other information—such as your credit card or bank account information—directly to them. We do not record or maintain this financial information. For more information on how transactions are handled, or to understand the data security and privacy practices of these payment processors, please refer to the privacy notices of [Stripe](https://stripe.com/).
 
 ## Job applicants
 
