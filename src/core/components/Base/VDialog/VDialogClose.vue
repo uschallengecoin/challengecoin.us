@@ -36,8 +36,8 @@ const props = defineProps<DialogCloseProps>();
   width: auto;
 
   &__icon {
-    width: 20px;
-    height: 20px;
+    width: 24px !important;
+    height: 24px !important;
     color: colors.$black
   }
 }

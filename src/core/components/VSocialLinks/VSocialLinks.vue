@@ -70,7 +70,7 @@ onMounted(() => {
       </VButton>
       <span
         v-if="share"
-        class="social-links__text"
+        class="social-links__text is--small"
       >{{ item.name }}</span>
     </div>
   </div>

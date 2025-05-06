@@ -131,8 +131,9 @@ const onClickMenu = () => {
     grid-template-columns: calc(60.5% - 40px) calc(39.5% - 40px);
 
     @media screen and (width < $desktop){
-      display: flex;
-      flex-direction: column;
+      // display: flex;
+      // flex-direction: column;
+      grid-template-columns: 100%;
     }
   }
 
@@ -157,9 +158,7 @@ const onClickMenu = () => {
     max-height: 44px;
 
     @media screen and (width < $tablet){
-      max-height: 30px;
-      max-width: 100%;
-      width: 100%;
+      max-height: 53px;
     }
   }
 

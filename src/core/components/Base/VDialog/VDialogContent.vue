@@ -76,6 +76,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
     max-width: 100%;
     max-height: 100%;
     height: 100%;
+    border-radius: 8px 8px 0 0;
   }
 
   &:focus {

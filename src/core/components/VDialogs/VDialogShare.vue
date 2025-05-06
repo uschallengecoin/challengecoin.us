@@ -69,13 +69,21 @@ watch(() => open.value, () => {
   padding: 60px;
 
   @media screen and (width < $tablet){
-    padding: 14px 23px;
+    padding: 60px 23px;
+    height: auto;
   }
 
   &__social-links {
     margin: 40px auto;
     justify-content: center;
     gap: 28px;
+
+    @media screen and (width < $tablet-xs){
+      justify-content: space-between;
+      gap: 8px;
+    }
   }
+
+
 }
 </style>

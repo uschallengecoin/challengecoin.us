@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue';
 import { useDialogs } from 'UiKit/store/useDialogs';
-import { storeToRefs } from 'pinia';
 
 const props = defineProps({
   name: {
@@ -20,7 +18,7 @@ const onDialogClick = () => {
 </script>
 
 <template>
-  <span class="VDialogClickText v-dialog-click-text" @click="onDialogClick">
+  <span class="VDialogClickText v-dialog-click-text is--link-1" @click="onDialogClick">
     <slot />
   </span>
 </template>

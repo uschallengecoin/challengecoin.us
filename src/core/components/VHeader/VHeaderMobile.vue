@@ -21,6 +21,7 @@ const open = defineModel<boolean>();
 
 const onShareClick = () => {
   useDialogs().showDialogShare();
+  open.value = false;
 };
 </script>
 
@@ -80,16 +81,15 @@ const onShareClick = () => {
       </nav>
 
       <div class="v-header-mobile__data">
+        <slot />
         <VButton
           variant="link"
-          size="large"
           class="is--lt-tablet-show"
           @click="onShareClick"
         >
           <shareIcon />
           Share
         </VButton>
-        <slot />
       </div>
     </VSheetContent>
   </VSheet>

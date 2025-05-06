@@ -9,7 +9,7 @@ import { useData } from 'vitepress';
 import { links } from '@/config/links';
 
 const { theme } = useData();
-console.log('theme', theme);
+
 const useDialogsStore = useDialogs();
 const { isDialogEngraverOpen } = storeToRefs(useDialogsStore);
 

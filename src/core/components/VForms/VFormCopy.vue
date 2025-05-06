@@ -44,12 +44,12 @@ const onShareClick = () => {
     width: 100%;
     text-align: left;
 
-    @media screen and (width < $tablet){
-      flex-direction: column;
-    }
-
     .v-form-input {
       pointer-events: auto !important;
+    }
+
+    &__button {
+      min-width: 154px;
     }
 }
 </style>
