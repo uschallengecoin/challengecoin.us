@@ -28,13 +28,21 @@ const ViewErrors = defineAsyncComponent(() => import('UiKit/components/VPage/VEr
 const VToaster = defineAsyncComponent(() => import(
   'UiKit/components/Base/VToast/VToaster.vue'
 ));
+const VDialogs = defineAsyncComponent(() => import(
+  'UiKit/components/VDialogs.vue'
+));
 
 const { page, frontmatter, theme } = useData();
 const pages = convertPages(allPages);
 
 theme.navigation = {
   root: pages,
+  home: pages.getChild('layout', 'home'),
+  dialogs: pages.getChild('slug', 'dialogs'),
 };
+console.log('allPages', allPages);
+console.log('pages', pages);
+console.log('theme', theme);
 
 const route = useRoute();
 const router = useRouter();
@@ -147,6 +155,7 @@ onUnmounted(() => {
     </footer>
 
     <ClientOnly>
+      <VDialogs />
       <VToaster />
     </ClientOnly>
   </div>

@@ -1,4 +1,5 @@
 import env from './env';
+import socials from './socials';
 
 export default {
     search: {
@@ -8,5 +9,6 @@ export default {
       phone: env.phone,
       email: env.email,
     },
+    socials,
     env,
 };

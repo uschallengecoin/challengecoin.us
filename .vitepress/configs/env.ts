@@ -14,7 +14,7 @@ export default {
   GTM: envProcess.VITE_GTM,
   title: 'US Challenge Coin',
   description: 'Introducing a modern symbol of American pride — crafted to honor heritage, support those who serve, and bring communities together with every purchase.',
-  keywords: ['challenge', 'coin'],
+  keywords: ['challenge', 'coin', 'collectible', 'military', 'veteran', 'gift', 'commemorative', 'patriotic', 'limited edition', 'custom design'],
   author: 'US Challenge Coin',
   email: 'info@domain.com',
   phone: '123-123-1234',

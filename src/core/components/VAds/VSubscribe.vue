@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import VSection from 'UiKit/components/VSection/VSection.vue';
-import { socials } from '@/config/socials';
 import { defineAsyncComponent, hydrateOnVisible, ref } from 'vue';
 import { useToast } from '../Base/VToast/use-toast';
 import { useHubspotForm } from 'UiKit/composables/useHubspotForm';
@@ -9,6 +8,7 @@ import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
 import { storeToRefs } from 'pinia';
 import { useLazyBackground } from '@/core/composables/useLazyBackground';
 import subscribeImage from './subscribe.webp';
+import { useData } from 'vitepress';
 
 const VSocialLinks = defineAsyncComponent({
   loader: () => import('UiKit/components/VSocialLinks/VSocialLinks.vue'),
@@ -24,21 +24,25 @@ defineProps({
   title: String,
 });
 
+
+const { theme } = useData();
+
 const SOCIAL_LIST = [
-  socials?.twitter,
-  socials?.facebook,
-  socials?.tiktok,
-  socials?.telegram,
-  socials?.instagram,
+  theme.value.socials.share,
+  theme.value.socials.twitter,
+  theme.value.socials.facebook,
+  theme.value.socials.tiktok,
+  theme.value.socials.instagram,
 ];
 const { toast } = useToast();
 
 const TOAST_OPTIONS = {
-  title: 'Submitted!',
+  title: 'You’re subscribed!',
   variant: 'success',
 };
 
 const loadingSubmitting = ref(false);
+const clear = ref(false);
 const onSubmit = async (emailLocal: string) => {
   loadingSubmitting.value = true;
   const { submitFormToHubspot, errorHubspotForm } = useHubspotForm(env.HUBSPOT_FORM_ID_RECEIVE_LATEST_NEWS);
@@ -46,8 +50,13 @@ const onSubmit = async (emailLocal: string) => {
     email: emailLocal,
   });
   loadingSubmitting.value = false;
-  if (!errorHubspotForm.value) toast(TOAST_OPTIONS);
-  else toast({
+  if (!errorHubspotForm.value) {
+    toast(TOAST_OPTIONS);
+    clear.value = true;
+    setTimeout(() => {
+      clear.value = false;
+    }, 2000);
+  } else toast({
     title: 'Something went wrong!',
     variant: 'error',
   });
@@ -62,6 +71,7 @@ useLazyBackground('v-subscribe', subscribeImage);
   <VSection class="VSubscribe v-subscribe with-default-distance is--background-primary-blue">
     <slot />
     <VFormFooterSubscribe
+      :clear="clear"
       :loading="loadingSubmitting"
       :button-text="isTablet ? 'Subscribe' : 'Subscribe to our Newsletter'"
       class="is--margin-top-48 v-subscribe__form"

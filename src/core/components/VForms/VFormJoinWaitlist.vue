@@ -15,12 +15,13 @@ const props = defineProps({
     type: String,
     default: 'Subscribe',
   },
+  clear: Boolean,
 });
 
 const emit = defineEmits(['submit']);
 
 type FormModelSubscribe = {
-  email: number;
+  email: string;
 }
 
 const model = reactive({} as FormModelSubscribe);
@@ -75,6 +76,12 @@ const onSubmit = () => {
 watch(() => model, () => {
   if (!isValid.value) onValidate();
 }, { deep: true });
+watch(() => props.clear, () => {
+  if (props.clear) {
+    model.email = '';
+    validation.value = null;
+  }
+});
 </script>
 
 <template>

@@ -57,7 +57,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
 }
 
 .v-dialog-content {
-  background: colors.$white;
+  background: colors.$biege;
   box-shadow: $box-shadow-medium;
   position: fixed;
   top: 50%;

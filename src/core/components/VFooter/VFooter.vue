@@ -3,7 +3,6 @@ import { defineAsyncComponent, hydrateOnVisible, ref } from 'vue';
 import { useHubspotForm } from 'UiKit/composables/useHubspotForm';
 import { env } from '@/config/env';
 import { useData } from 'vitepress';
-import { socials } from '@/config/socials';
 import { useToast } from '../Base/VToast/use-toast';
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
 import VLogo from 'UiKit/components/VLogo.vue';
@@ -29,21 +28,22 @@ const VFooterBottom = defineAsyncComponent({
 const { theme } = useData();
 
 const SOCIAL_LIST = [
-  socials?.twitter,
-  socials?.facebook,
-  socials?.tiktok,
-  socials?.telegram,
-  socials?.instagram,
+  theme.value.socials.share,
+  theme.value.socials?.twitter,
+  theme.value.socials?.facebook,
+  theme.value.socials?.tiktok,
+  theme.value.socials?.instagram,
 ];
 
 const { toast } = useToast();
 
 const TOAST_OPTIONS = {
-  title: 'Submitted!',
+  title: 'You’re subscribed!',
   variant: 'success',
 };
 
 const loadingSubmitting = ref(false);
+const clear = ref(false);
 const onSubmit = async (emailLocal: string) => {
   loadingSubmitting.value = true;
   const { submitFormToHubspot, errorHubspotForm } = useHubspotForm(env.HUBSPOT_FORM_ID_RECEIVE_LATEST_NEWS);
@@ -51,8 +51,13 @@ const onSubmit = async (emailLocal: string) => {
     email: emailLocal,
   });
   loadingSubmitting.value = false;
-  if (!errorHubspotForm.value) toast(TOAST_OPTIONS);
-  else toast({
+  if (!errorHubspotForm.value) {
+    toast(TOAST_OPTIONS);
+    clear.value = true;
+    setTimeout(() => {
+      clear.value = false;
+    }, 2000);
+  } else toast({
     title: 'Something went wrong!',
     variant: 'error',
   });
@@ -92,6 +97,7 @@ const onClickMenu = () => {
         </div>
         <div class="v-footer__form-wrap">
           <VFormFooterSubscribe
+            :clear="clear"
             :loading="loadingSubmitting"
             class="v-footer__form"
             @submit="onSubmit"

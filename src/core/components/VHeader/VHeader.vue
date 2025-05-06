@@ -5,8 +5,9 @@ import {
 } from 'vue';
 import { useWindowScroll } from '@vueuse/core';
 import VLogo from 'UiKit/components/VLogo.vue';
-import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
-import { storeToRefs } from 'pinia';
+import VButton from 'UiKit/components/Base/VButton/VButton.vue';
+import shareIcon from '@/assets/images/social/share.svg';
+import { useDialogs } from 'UiKit/store/useDialogs';
 
 const VHeaderMobile = defineAsyncComponent({
   loader: () => import('./VHeaderMobile.vue'),
@@ -25,6 +26,10 @@ const emit = defineEmits(['click']);
 const { y } = useWindowScroll();
 const isFixed = ref(false);
 const isMobileSidebarOpen = defineModel<boolean>();
+
+const onShareClick = () => {
+  useDialogs().showDialogShare();
+};
 
 watchPostEffect(() => {
   if (y.value > 0) {
@@ -46,12 +51,22 @@ watchPostEffect(() => {
         class="v-header__logo"
       />
 
-      <ClientOnly class="v-header__right ">
-        <VHeaderMobile
-          v-model="isMobileSidebarOpen"
-        >
-          <slot name="mobile" />
-        </VHeaderMobile>
+      <ClientOnly>
+        <div class="v-header__right ">
+          <VButton
+            variant="link"
+            class="is--gt-tablet-show"
+            @click="onShareClick"
+          >
+            <shareIcon />
+            Share
+          </VButton>
+          <VHeaderMobile
+            v-model="isMobileSidebarOpen"
+          >
+            <slot name="mobile" />
+          </VHeaderMobile>
+        </div>
       </ClientOnly>
     </div>
   </header>
@@ -105,7 +120,7 @@ watchPostEffect(() => {
     justify-content: flex-end;
     flex: 1;
     height: 100%;
-    gap: 28px;
+    gap: 20px;
   }
 
   &__data {

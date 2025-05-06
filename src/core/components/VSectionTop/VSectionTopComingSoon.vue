@@ -12,11 +12,12 @@ const VFormJoinWaitlist = defineAsyncComponent({
 const { toast } = useToast();
 
 const TOAST_OPTIONS = {
-  title: 'Submitted!',
+  title: 'You’re subscribed!',
   variant: 'success',
 };
 
 const loadingSubmitting = ref(false);
+const clear = ref(false);
 const onSubmit = async (emailLocal: string) => {
   loadingSubmitting.value = true;
   const { submitFormToHubspot, errorHubspotForm } = useHubspotForm(env.HUBSPOT_FORM_ID_WAITING_LIST);
@@ -24,8 +25,13 @@ const onSubmit = async (emailLocal: string) => {
     email: emailLocal,
   });
   loadingSubmitting.value = false;
-  if (!errorHubspotForm.value) toast(TOAST_OPTIONS);
-  else toast({
+  if (!errorHubspotForm.value) {
+    toast(TOAST_OPTIONS);
+    clear.value = true;
+    setTimeout(() => {
+      clear.value = false;
+    }, 2000);
+  } else toast({
     title: 'Something went wrong!',
     variant: 'error',
   });
@@ -36,9 +42,10 @@ const onSubmit = async (emailLocal: string) => {
   <div class="VSectionTopComingSoon v-section-top-coming-soon">
     <slot />
     <VFormJoinWaitlist
+      :clear="clear"
       :loading="loadingSubmitting"
       button-text="Join The Waitlist"
-      class="is--margin-top-48 v-subscribe__form"
+      class="is--margin-top-48"
       @submit="onSubmit"
     />
   </div>

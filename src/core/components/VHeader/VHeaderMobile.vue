@@ -8,6 +8,9 @@ import VMenuBurger from 'UiKit/components/VHeader/VMenuBurger.vue';
 import VHeaderNavigationListItem from './VHeaderNavigationListItem.vue';
 import { MENU_HEADER } from '@/config/menu';
 import { VisuallyHidden } from 'radix-vue';
+import { useDialogs } from 'UiKit/store/useDialogs';
+import VButton from 'UiKit/components/Base/VButton/VButton.vue';
+import shareIcon from '@/assets/images/social/share.svg';
 
 const VNavigationMenuLink = defineAsyncComponent({
   loader: () => import('UiKit/components/Base/VNavigationMenu/VNavigationMenuLink.vue'),
@@ -15,6 +18,10 @@ const VNavigationMenuLink = defineAsyncComponent({
 });
 
 const open = defineModel<boolean>();
+
+const onShareClick = () => {
+  useDialogs().showDialogShare();
+};
 </script>
 
 <template>
@@ -73,6 +80,15 @@ const open = defineModel<boolean>();
       </nav>
 
       <div class="v-header-mobile__data">
+        <VButton
+          variant="link"
+          size="large"
+          class="is--lt-tablet-show"
+          @click="onShareClick"
+        >
+          <shareIcon />
+          Share
+        </VButton>
         <slot />
       </div>
     </VSheetContent>
@@ -110,6 +126,9 @@ const open = defineModel<boolean>();
   &__data {
     width: 100%;
     margin-top: 40px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__burger {

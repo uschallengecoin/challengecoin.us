@@ -1,42 +1,78 @@
 <script setup lang="ts">
-import { PropType } from 'vue';
+import { defineAsyncComponent, markRaw, onMounted, PropType, reactive } from 'vue';
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
+import { useDialogs } from '@/core/store/useDialogs';
+
 
 interface ISocial {
-  icon: object;
+  icon: string;
   href: string;
   name: string;
-  iconName: string;
+  shareHref: string;
+  function: () => void;
 }
 
-defineProps({
+const props = defineProps({
   socialList: {
     type: Array as PropType<ISocial[]>,
     required: true,
   },
+  share: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+// Reactive object to store resolved icons
+const resolvedIcons = reactive<Record<string, any>>({});
+
+const loadIcons = async () => {
+  for (const item of props.socialList) {
+    if (!resolvedIcons[item.icon]) {
+      resolvedIcons[item.icon] = markRaw(
+        defineAsyncComponent(() =>
+          import(`@/assets/images/social/${item.icon}.svg`)
+        )
+      );
+    }
+  }
+};
+
+// Load icons when the component is mounted
+onMounted(() => {
+  loadIcons();
 });
 </script>
 
 <template>
   <div class="SocialLinks social-links">
-    <VButton
+    <div
       v-for="item in socialList"
-      :key="item.iconName"
-      :href="item.href"
-      as="a"
-      target="_blank"
-      class="social-links__item is--margin-top-0"
-      rel="noopener noreferrer"
-      :aria-label="item.name"
-      icon-only
-      variant="social"
-      size="large"
+      :key="item.icon"
+      class="social-links__item"
     >
-      <component
-        :is="item.icon"
-        class="social-links__icon"
-      />
-    </VButton>
+      <VButton
+        :href="share ? item.shareHref : item.href"
+        as="a"
+        target="_blank"
+        class="social-links__item is--margin-top-0"
+        rel="noopener noreferrer"
+        :aria-label="item.name"
+        icon-only
+        :variant="!share ? 'social' : 'default'"
+        size="large"
+        @click="item.function && item.function(useDialogs())"
+      >
+        <component
+          :is="resolvedIcons[item.icon]"
+          class="social-links__icon"
+        />
+      </VButton>
+      <span
+        v-if="share"
+        class="social-links__text"
+      >{{ item.name }}</span>
+    </div>
   </div>
 </template>
 
@@ -60,6 +96,24 @@ defineProps({
   &__icon{
     height: 24px;
     width: 24px;
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+
+    @media screen and (width < $tablet){
+      gap: 12px;
+      justify-content: space-between;
+    }
+  }
+
+  &__text{
+    color: colors.$black;
   }
 }
 </style>

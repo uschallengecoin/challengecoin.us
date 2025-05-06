@@ -39,7 +39,7 @@ export default function (pageData: PageData) {
     canonicalImage = `${env.FRONTEND_URL}${canonicalImage}`;
   }
   const image = pageData.frontmatter.cover?.image ? canonicalImage
-        : `${env.FRONTEND_URL}/images/sharing.png`;
+        : `${env.FRONTEND_URL}/sharing.png`;
   
   pageData.frontmatter.head.push([
     'meta',

@@ -16,7 +16,6 @@ const props = defineProps<DialogCloseProps>();
       <VButton
         icon-only
         variant="link"
-        size="large"
         class="is--margin-top-0"
       >
         <closeIcon class="v-dialog-close__icon" />

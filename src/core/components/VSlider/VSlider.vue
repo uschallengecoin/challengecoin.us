@@ -63,7 +63,7 @@ onBeforeMount(() => {
     :plugins="plugins"
     orientation="horizontal"
     :class="{ 'is--autoplay': isAutoplay, 'is--hide-navigation': hideNavigation }"
-      @init-api="setApi"
+    @init-api="setApi"
   >
     <div>
       <VCarouselPrevious class="v-slider__prev" />

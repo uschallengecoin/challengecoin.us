@@ -37,14 +37,14 @@ const props = defineProps({
       <VImage
         :src="images[1]"
         alt="Legacy bottom left image"
-        class="v-section-legacy__bottom-left is--margin-top-0"
+        class="v-section-legacy__bottom-image is--margin-top-0"
         fit="cover"
         loading="lazy"
       />
       <VImage
         :src="images[2]"
         alt="Legacy bottom right image"
-        class="v-section-legacy__bottom-right is--margin-top-0"
+        class="v-section-legacy__bottom-image is--margin-top-0"
         fit="cover"
         loading="lazy"
       />
@@ -66,28 +66,15 @@ const props = defineProps({
     aspect-ratio: 348/219;
   }
 
-  &__bottom-left {
-    aspect-ratio: 128/158;
-  }
-
-  &__bottom-right {
-    aspect-ratio: 238/158;
+  &__bottom-image {
+    aspect-ratio: 262/270;
   }
 
   &__bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-    gap: 30px;
-    width: calc(47vw - 40px);
-    position: relative;
-    left: calc(-47vw + 100% + 40px);
-
-    @media screen and (width < $tablet){
-      width: calc(100vw - 25px);
-      left: -25px;
-    }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
   }
 
   &__title {
