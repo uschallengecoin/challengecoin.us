@@ -39,6 +39,19 @@ build-master)
   build;
   ;;
 
+deploy-coming-soon)
+  BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
+  SHORT_SHA=`git rev-parse --short HEAD`
+  echo $BRANCH_NAME, $SHORT_SHA
+  set -a
+  source .master.env
+  SHORT_SHA=$SHORT_SHA BRANCH_NAME=$BRANCH_NAME npm run docs:build --mode production
+  cp -rf docs/public/* .vitepress/dist/
+  cp -rf .vitepress/dist/coming-soon.html .vitepress/dist/index.html
+  # npm run add --global wrangler
+  wrangler pages deploy .vitepress/dist/ --project-name="comming-soon" --commit-dirty true --branch main --commit-hash $SHORT_SHA --commit-message $SHORT_SHA
+  ;;
+
 deploy-master)
   BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
   SHORT_SHA=`git rev-parse --short HEAD`
