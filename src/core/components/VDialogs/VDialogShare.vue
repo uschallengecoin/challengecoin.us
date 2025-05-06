@@ -61,10 +61,16 @@ watch(() => open.value, () => {
 </template>
 
 <style lang="scss">
+@use "UiKit/styles/_variables.scss" as *;
+
 .v-dialog-share {
   text-align: center;
   max-width: 692px;
   padding: 60px;
+
+  @media screen and (width < $tablet){
+    padding: 14px 23px;
+  }
 
   &__social-links {
     margin: 40px auto;

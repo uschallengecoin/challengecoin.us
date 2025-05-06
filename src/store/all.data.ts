@@ -54,6 +54,7 @@ async function getLastUpdatedUnix(url:string) {
 
 const loader = createContentLoader(['**/*.md'], {
   includeSrc: true,
+  render: true,
   async transform(rawData: ContentData[]) {
     let data = await pMap(
       rawData,
@@ -64,6 +65,7 @@ const loader = createContentLoader(['**/*.md'], {
           ...pageData.frontmatter as IFrontmatter,
           mtime,
           rawUrl: pageData.url,
+          html: pageData.frontmatter.render ? pageData.html : '',
         };
       },
       { concurrency: 64 },

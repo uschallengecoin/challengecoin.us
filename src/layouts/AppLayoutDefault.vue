@@ -40,9 +40,6 @@ theme.navigation = {
   home: pages.getChild('layout', 'home'),
   dialogs: pages.getChild('slug', 'dialogs'),
 };
-console.log('allPages', allPages);
-console.log('pages', pages);
-console.log('theme', theme);
 
 const route = useRoute();
 const router = useRouter();

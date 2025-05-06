@@ -1,31 +1,27 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import {
-  VDialogContent, VDialogHeader, VDialogTitle, VDialog,
+  VDialogContent, VDialogHeader, VDialogTitle, VDialog, VDialogFooter,
 } from 'UiKit/components/Base/VDialog';
-import { watch } from 'vue';
+import { computed, watch } from 'vue';
 import { useDialogs } from 'UiKit/store/useDialogs';
-import VSocialLinks from 'UiKit/components/VSocialLinks/VSocialLinks.vue';
 import { useData } from 'vitepress';
-import VFormCopy from 'UiKit/components/VForms/VFormCopy.vue';
+import { links } from '@/config/links';
 
 const { theme } = useData();
 console.log('theme', theme);
 const useDialogsStore = useDialogs();
-const { isDialogShareOpen } = storeToRefs(useDialogsStore);
+const { isDialogEngraverOpen } = storeToRefs(useDialogsStore);
+
+const data = computed(() => {
+  return theme.navigation.dialogs.children.engraver.data.html;
+});
 
 const open = defineModel<boolean>();
 
-const SOCIAL_LIST = [
-  theme.value.socials.twitter,
-  theme.value.socials.facebook,
-  theme.value.socials.linkedin,
-  theme.value.socials.reddit,
-];
-
 watch(() => open.value, () => {
   if (!open.value) {
-    isDialogShareOpen.value = false;
+    isDialogEngraverOpen.value = false;
   }
 });
 </script>
@@ -33,43 +29,80 @@ watch(() => open.value, () => {
 <template>
   <VDialog
     v-model:open="open"
-    query-key="popup"
-    query-value="log-out"
+    query-value="engraver"
   >
     <VDialogContent
+      scrollable-body
       :aria-describedby="undefined"
-      class="VDialogEngraver v-dialog-engraver"
+      class="VDialogEngraver v-dialog-engraver with-default-distance"
     >
-      <VDialogHeader>
-        <VDialogTitle>
-          Share
-        </VDialogTitle>
-      </VDialogHeader>
-
-      <VSocialLinks
-        share
-        :social-list="SOCIAL_LIST"
-        class="v-dialog-engraver__social-links"
+      <div
+        class="v-dialog-engraver__content"
+        v-html="data"
       />
-
-      <VFormCopy
-        :text="theme.env.FRONTEND_URL"
-        button-text="Copy Link"
-      />
+      <VDialogFooter>
+        <div class="v-dialog-engraver__button-wrap">
+          <slot name="buttons">
+            <VButton
+              v-if="links.buyNow"
+              as="a"
+              :href="encodeURI(links.buyNow)"
+              size="large"
+              class="is--margin-top-0"
+            >
+              Buy Now
+            </VButton>
+            <VButton
+              v-if="links.howItWorks"
+              as="a"
+              :href="encodeURI(links.howItWorks)"
+              size="large"
+              variant="link"
+              class="is--margin-top-0"
+              @click="open = false"
+            >
+              How It Works
+            </VButton>
+          </slot>
+        </div>
+      </VDialogFooter>
     </VDialogContent>
   </VDialog>
 </template>
 
 <style lang="scss">
-.v-dialog-engraver {
-  text-align: center;
-  max-width: 692px;
-  padding: 60px;
+@use "UiKit/styles/_variables.scss" as *;
 
-  &__social-links {
-    margin: 40px auto;
-    justify-content: center;
-    gap: 28px;
+.v-dialog-engraver {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__content {
+    padding: 0 60px;
+    height: calc(100% - 130px);
+    overflow-y: auto;
+    scrollbar-color: $gray transparent;
+    scrollbar-width: thin;
+
+    @media screen and (width < $tablet){
+      padding: 0 23px 14px;
+    }
+
+    h3 + h5 {
+      margin-top: 24px !important;
+    }
+
+    h5 + p {
+      margin-top: 30px !important;
+    }
+  }
+
+  &__button-wrap {
+    gap: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
   }
 }
 </style>

@@ -151,7 +151,8 @@ function fixRoot(rawPages: Page): Page {
   if (rawPages['']) {
     const rootPage = new Page(rawPages[''].data, false);
     // no need to do anything if we have just 1 element
-    if (keys.length !== 4) {
+    // if above true then if is wrong. changed keys.length !== 4 to keys.length > 1
+    if (keys.length > 1) {
       keys.forEach((key) => {
         if (key !== '') {
           const pge = convertDictToPage(rawPages[key], key);
@@ -186,7 +187,8 @@ function polish(unSortedPages: Page, parent: Page|null): void {
 export function convertPages(rawData: IFrontmatter[]): Page {
   const tmpPages: Record<string, Page> = {};
   rawData.forEach((el) => {
-    if (el.title && el.draft !== true) {
+    // removed title to be able to use partial md files
+    if (el.draft !== true) {
       // todo
       // bug - if file path contains . it will break everything
       const path = el.url?.substring(1).replaceAll('/', '.') || '';

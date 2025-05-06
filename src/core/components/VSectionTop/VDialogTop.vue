@@ -67,7 +67,6 @@ const backgroundImageLocal = computed(() => (
 @use "UiKit/styles/_variables.scss" as *;
 
 .v-dialog-top {
-  background: $biege;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -108,14 +107,6 @@ const backgroundImageLocal = computed(() => (
     display: flex;
     align-items: flex-start;
     flex-flow: row wrap;
-  }
-
-  p {
-    font-family: $familyValue;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
   }
 }
 </style>

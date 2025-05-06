@@ -70,7 +70,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
   padding: 60px 0 0;
   border-radius: 8px;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 1101;
+  z-index: 1100;
 
   @media screen and (width < $tablet){
     max-width: 100%;
@@ -89,6 +89,14 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
 
   &.is--scrollable-body {
     overflow-y: auto;
+  }
+
+  p {
+    font-family: $familyValue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
   }
 }
 </style>

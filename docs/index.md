@@ -5,6 +5,15 @@ description: Introducing a modern symbol of American pride — crafted to honor 
 jsonLDType: WebSite
 ---
 
+<script setup>
+import { links } from '@/config/links';
+import { defineAsyncComponent } from 'vue';
+
+const VDialogClickText = defineAsyncComponent({
+  loader: () => import('UiKit/components/VDialogClickText.vue'),
+});
+</script>
+
 :::::: top-video {video="/video/video-bg.mp4"}
 ::::: slider
 
@@ -16,7 +25,7 @@ Commemorating the 250th anniversary of the founding of the United States and giv
 ### Once-in-a-Generation
 In just over one year from now, on July 4th, 2026, America will celebrate its founding. Beginning on Independence Day 2025, the entire country will witness and participate in year-long patriotic celebrations like none the world has ever seen, culminating in this momentous and historic occasion.
 ### Pride, History, Art & Technology in the Palm of Your Hand
-The US Challenge Coin is a grand memento and keepsake for the entire Semiquincentennial celebration that is much more than just another collectible medallion for just another date in history. Designed by **Don Everhart II, renowned former Lead Sculptor at the United States Mint**, it is a beautiful and tangible symbol of American patriotism, that also gives back through contributions to well known American charities such as the Tunnel to Towers Foundation. Each individually numbered coin is uniquely integrated with charities, causes & communities, powered by cutting-edge technology connecting each coin with our crypto ecosystem.   
+The US Challenge Coin is a grand memento and keepsake for the entire Semiquincentennial celebration that is much more than just another collectible medallion for just another date in history. Designed by <VDialogClickText name="engraver">**Don Everhart II, renowned former Lead Sculptor at the United States Mint**</VDialogClickText>, it is a beautiful and tangible symbol of American patriotism, that also gives back through contributions to well known American charities such as the Tunnel to Towers Foundation. Each individually numbered coin is uniquely integrated with charities, causes & communities, powered by cutting-edge technology connecting each coin with our crypto ecosystem.   
 
 Whether you collect for yourself or present U.S. Challenge Coins as a special gift to others, you are participating in the celebration of our great nation, its storied history and its amazing people. Get them now and get involved!
 :::
@@ -51,10 +60,6 @@ U.S. Challenge Coin believes that these new technologies should be made availabl
 :::::
 ::::::
 
-<script>
-import { links } from '@/config/links';
-</script>
-
 ::::: two-col-image-full-background {buttonText="Buy U.S. Challenge Coin Now" buttonTextMobile="Buy Now"}
 :::: legacy {title1="The Legacy of" title2="Challenge Coins" images="['/images/home/history1.webp', '/images/home/history2.webp', '/images/home/history3.webp']"}
 ::::
@@ -68,7 +73,7 @@ Challenge coins in America trace their roots back to the battlefields of World W
 
 **Now, as the United States prepares to celebrate 250 years of independence, the tradition lives on.**
 
-The U.S. Challenge Coin was created to commemorate this milestone — a modern tribute to American resilience and pride. 100% made and designed in the U.S. in collaboration with renowned sculptor and engraver **Don Everhart II (U.S. Mint / Franklin Mint)** its beautiful design and timeless craftsmanship bridges past and present, honoring those who’ve served and inspiring those who collect and carry it.
+The U.S. Challenge Coin was created to commemorate this milestone — a modern tribute to American resilience and pride. 100% made and designed in the U.S. in collaboration with renowned sculptor and engraver <VDialogClickText name="engraver">**Don Everhart II (U.S. Mint / Franklin Mint)**</VDialogClickText> its beautiful design and timeless craftsmanship bridges past and present, honoring those who’ve served and inspiring those who collect and carry it.
 
 Owning this coin means holding a piece of American history — a symbol of who we are, where we’ve been, and the legacy we carry forward.
 </div>

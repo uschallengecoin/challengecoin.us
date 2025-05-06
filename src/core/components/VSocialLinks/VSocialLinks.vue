@@ -108,7 +108,6 @@ onMounted(() => {
 
     @media screen and (width < $tablet){
       gap: 12px;
-      justify-content: space-between;
     }
   }
 
