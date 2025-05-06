@@ -184,11 +184,11 @@ function polish(unSortedPages: Page, parent: Page|null): void {
   }
 }
 
-export function convertPages(rawData: IFrontmatter[]): Page {
+export function convertPages(rawData: IFrontmatter[], includeDrafts: boolean): Page {
   const tmpPages: Record<string, Page> = {};
   rawData.forEach((el) => {
     // removed title to be able to use partial md files
-    if (el.draft !== true) {
+    if (includeDrafts || el.draft !== true) {
       // todo
       // bug - if file path contains . it will break everything
       const path = el.url?.substring(1).replaceAll('/', '.') || '';
