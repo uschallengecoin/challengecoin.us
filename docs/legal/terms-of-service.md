@@ -5,7 +5,8 @@ aliases:
 title: Terms Of Service
 draft: "false"
 ---
-Effective Date: 06.04.25
+
+__Effective Date: 06.04.25__
 
 These Terms of Use apply to all U.S. Challenge Coin LLC online and mobile media and content. When we use the phrase "this Web site" in these Terms of use, that phrase refers to but is not limited to the following:
 

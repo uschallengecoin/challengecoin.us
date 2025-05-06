@@ -6,7 +6,7 @@ title: Privacy Notice
 draft: "false"
 ---
 
-Last Updated: 6.04.25
+__Last Updated: 6.04.25__
 
 This Privacy Policy describes the privacy practices of U.S. Challenge Coin LLC., U.S. Challenge token DAO LLC (collectively, “we,” “us,” “our”). This Policy applies to our website visitors, mobile app users, business contacts, investors, farmers, landowners, brokers, agents and other individuals who interact with us.
 
@@ -203,21 +203,21 @@ New York, NY 10004,
 
 |                             |                                                                                                                                                                                                                                                                                                                                                                                    |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ###### To limit our sharing | Call (123) 123 1234 or email us at support@challengecoin.us<br><br>**Please note:** If you are a _new_ customer, we can begin sharing your information immediately from the date we sent this notice. When you are no longer our customer, we continue to share your information as described in this notice.<br><br>However, you can contact us at any time to limit our sharing. |
+| **To limit our sharing** | Call (123) 123 1234 or email us at support@challengecoin.us<br><br>**Please note:** If you are a _new_ customer, we can begin sharing your information immediately from the date we sent this notice. When you are no longer our customer, we continue to share your information as described in this notice.<br><br>However, you can contact us at any time to limit our sharing. |
 | ###### Questions?           | Call (123) 123 1234 or email us at support@challengecoin.us                                                                                                                                                                                                                                                                                                                        |
 
-| ##### Who we are              |                          |
+| **Who we are**              |                          |
 | ----------------------------- | ------------------------ |
 | Who is providing this notice? | U.S. Challenge Coin LLC. |
 
-| ##### What we do                                                                   |                                                                                                                                                                                                                                                                                                                                                                              |
+| **What we do**  | |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | How does U.S. Challenge protect my personal information?                               | To protect your personal information from unauthorized access and use, we use security measures that comply with federal law. These measures include computer safeguards and secured files and buildings.                                                                                                                                                                    |
 | How does U.S. Challenge collect my personal information?                               | We collect your personal information, for example, when you:<br><br>- sign up for a U.S. Challenge account,<br>- provide account information,<br>- give us your contact information,<br>- apply for and use the financial products we offer<br><br>We also collect your personal information from others, such as banks, credit agencies and other third-party data aggregators. |
 | Why can’t I limit all sharing?                                                     | Federal law gives you the right to limit only:<br><br>- sharing for affiliates’ everyday business purposes - information about your credit worthiness,<br>- affiliates from using your information to market to you, and<br>- sharing for nonaffiliates to market to you.<br><br>State laws and individual companies may give you additional rights to limit sharing.        |
 | What happens when I limit sharing for an account I hold jointly with someone else? | Your choices will apply to everyone on your account.                                                                                                                                                                                                                                                                                                                         |
 
-| ##### Definitions |                                                                                                                                           |     |
+| **Definitions** |                                                                                                                                           |     |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | Affiliates        | Companies related by common ownership or control. They can be financial and nonfinancial companies.<br><br>- U.S. Challenge token DAO LLC |     |
 | Nonaffiliates     | Companies not related by common ownership or control. They can be financial and nonfinancial companies.                                   |     |
