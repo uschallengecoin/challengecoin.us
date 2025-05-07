@@ -1,24 +1,28 @@
 <script setup lang="ts">
 import { links } from '@/config/links';
+import VDropdownLanguages from 'UiKit/components/VDropdownLanguages.vue';
 
 const currentYear = new Date().getFullYear();
 </script>
 
 <template>
   <div class="VFooterBottom v-footer-bottom">
-    <p class="is--container is--small v-footer-bottom__content">
+    <div class="is--container is--small v-footer-bottom__content">
       © {{ currentYear }} U.S. Challenge Coin LLC. All rights reserved.
-      <span class="v-footer-bottom__terms">
-        <a
-          :href="links.terms"
-          class="is--small"
-        >Terms of Use</a>
-        <a
-          :href="links.privacy"
-          class="is--small"
-        >Privacy Policy</a>
-      </span>
-    </p>
+      <p class="v-footer-bottom__wrap">
+        <VDropdownLanguages class="v-footer-bottom__lang" />
+        <span class="v-footer-bottom__terms">
+          <a
+            :href="links.terms"
+            class="is--small"
+          >Terms of Use</a>
+          <a
+            :href="links.privacy"
+            class="is--small"
+          >Privacy Policy</a>
+        </span>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -56,6 +60,18 @@ const currentYear = new Date().getFullYear();
       @media screen and (width < $tablet){
         justify-content: center;
       }
+    }
+
+    &__lang {
+      color: $grayscale-white;
+    }
+
+    &__wrap {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
     }
 }
 </style>

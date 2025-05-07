@@ -35,7 +35,7 @@ const delegatedProps = computed(() => {
 
 .v-separator {
   margin: 20px 0;
-  background-color: $gray;
+  background-color: $dark-gray;
   position: relative;
   color: $gray-60;
   width: 100%;

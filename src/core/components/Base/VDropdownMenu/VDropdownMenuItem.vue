@@ -16,7 +16,7 @@ const forwardedProps = useForwardProps(delegatedProps);
 <template>
   <DropdownMenuItem
     v-bind="forwardedProps"
-    class="VDropdownMenuItem v-dropdown-menu-item is--h6__title"
+    class="VDropdownMenuItem v-dropdown-menu-item is--body"
   >
     <slot />
   </DropdownMenuItem>
@@ -30,16 +30,26 @@ const forwardedProps = useForwardProps(delegatedProps);
   display: block;
   color: $black;
   width: 100%;
-  padding: 8px 12px;
+  padding: 12px;
   cursor: pointer;
   text-decoration: none;
 
-  &:hover {
-    background-color: $gray-20;
+  &:hover{
+    background-color: $light-gray;
   }
 
-  &.is--active {
-    color: $primary;
+
+  * {
+    color: $black;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    text-decoration: none;
+  }
+
+  .is--active {
+    color: $light-blue;
+    font-weight: 700;
   }
 }
 </style>

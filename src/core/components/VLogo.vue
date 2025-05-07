@@ -56,19 +56,19 @@ const icon = computed(() => {
 
 <style lang="scss">
 .v-logo {
-  flex-shrink: 0;
   color: inherit;
-  height: 100%;
+  // height: 100%;
 
   &.is--link {
     cursor: pointer;
   }
 
   &__desktop {
-    height: 100%;
+    // height: 100%;
     color: inherit;
     width: auto;
     max-width: 100%;
+    max-height: 100%;
     // @media screen and (width < 1024px) {
     //   display: none;
     // }

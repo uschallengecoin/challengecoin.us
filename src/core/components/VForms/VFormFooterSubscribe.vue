@@ -83,7 +83,10 @@ watch(() => model, () => {
       novalidate
       @submit.prevent="onSubmit"
     >
-      <div class="v-form-footer-subscribe__group">
+      <div
+        class="v-form-footer-subscribe__group"
+        :class="{ 'is--with-label': label}"
+      >
         <VFormGroup
           v-slot="baseFormGroupProps"
           :model="model"
@@ -134,6 +137,14 @@ watch(() => model, () => {
 
   .v-form-group {
     width: 100%;
+  }
+
+  .is--with-label {
+    .v-form-footer-subscribe__button {
+      @media screen and (width > $tablet){
+        margin-top: 36px !important;
+      }
+    }
   }
 }
 </style>

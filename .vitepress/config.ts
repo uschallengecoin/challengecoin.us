@@ -10,6 +10,7 @@ import vite from './configs/vite';
 import markdown from './configs/markdown';
 import transformPage from './configs/transformPage';
 import transformHead from './configs/transformHead';
+import locales from './configs/locales';
 
 const srcDir = "./docs";
 // https://vitepress.dev/reference/site-config
@@ -28,9 +29,13 @@ export default {
   sitemap: sitemap,
   metaChunk: true,
   rewrites(url) {
+    if (url.startsWith('en/')) {
+      return url.replace('en/', '');
+    }
     return urlFormat(url);
   },
   appearance: false,
   vite: vite,
   markdown: markdown,
+  locales,
 };

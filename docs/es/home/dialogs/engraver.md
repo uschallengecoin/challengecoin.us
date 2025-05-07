@@ -1,0 +1,20 @@
+---
+publishDate: 2025-05-06
+draft: true
+slug: dialogEngraver
+---
+
+### Acerca de nuestro grabador
+##### Don Everhart II - Casa de la Moneda de Estados Unidos y Casa de la Moneda Franklin
+
+Don Everhart II es un distinguido escultor, grabador y diseñador de monedas estadounidense, cuya ilustre carrera abarca más de cuatro décadas. Tras obtener una Licenciatura en Bellas Artes con mención en Pintura por la Universidad Estatal de Kutztown en 1972, Everhart comenzó su trayectoria en la Casa de la Moneda Franklin, trabajando como escultor de planta. En 2004, se incorporó a la Casa de la Moneda de Estados Unidos, donde en 2014 se convirtió en su escultor principal. Durante su mandato, Everhart contribuyó a numerosos proyectos importantes, incluyendo el diseño y la escultura del reverso común de las Monedas Conmemorativas del Salón de la Fama del Béisbol Nacional de 2014 (las primeras monedas curvas producidas por la Casa de la Moneda de Estados Unidos) y el reverso del Dólar de Plata de March of Dimes de 2015, galardonado como la Moneda Más Inspiradora en los premios Moneda del Año 2017. Su arte se refleja en diversas monedas en circulación, como las monedas presidenciales de $1 y varias monedas de 25 centavos de dólar de los Estados Unidos. Su excepcional trabajo le ha valido prestigiosos galardones, como el Premio al Escultor del Año de la Asociación Numismática Americana en 1994 y el Premio a la Trayectoria de World Coin News en 2018. Sus creaciones forman parte de colecciones permanentes de instituciones de prestigio como el Instituto Smithsoniano y el Museo Británico, lo que subraya su gran influencia en el arte numismático.
+
+Actualmente, Everhart colabora con U.S. Challenge Coin, aportando su inigualable experiencia al diseño de esta majestuosa e innovadora nueva moneda de desafío. Ha expresado su orgullo por trabajar con U.S. Challenge Coin, afirmando que el proyecto le permite continuar su pasión por crear arte que honra temas y valores significativos. Esta colaboración es un testimonio del compromiso continuo de Everhart con la excelencia en el diseño de monedas y su dedicación a proyectos que resuena con propósito y distinción. [https://doneverhartsculpture.com](https://doneverhartsculpture.com)
+
+### Acerca de nuestra Casa de la Moneda
+##### Osborne Coinage Company - Cincinnati, OH, EE. UU.
+
+Fundada en 1835, Osborne Coinage Company se erige como la Casa de la Moneda privada más antigua de Estados Unidos, reconocida por su excepcional artesanía en la producción de monedas, fichas y medallones personalizados. Con sede en Cincinnati, Ohio, Osborne cuenta con una larga trayectoria que incluye la acuñación de fichas de campaña para el presidente Abraham Lincoln, la fabricación de miles de millones de fichas de racionamiento durante la Segunda Guerra Mundial y la creación de monedas promocionales para grandes marcas como General Mills y McDonald's. Su compromiso con la calidad se evidencia en sus monedas troqueladas, que ofrecen un nivel de detalle y una durabilidad superiores a las alternativas fundidas a presión. Con un proceso de fabricación totalmente integrado, Osborne puede gestionar todo, desde el diseño hasta la producción, internamente, garantizando una meticulosa atención al detalle en cada etapa. Su dedicación a los productos estadounidenses y su apoyo al empleo en Estados Unidos han consolidado su reputación como un socio de confianza para clientes de diversos sectores.
+
+Actualmente, Osborne Coinage colabora con U.S. Challenge Coin en este proyecto significativo y único, aportando su amplia experiencia y conocimientos a la creación de esta histórica moneda de desafío. Esta colaboración subraya el compromiso continuo de Osborne con la producción de monedas que no solo cumplen con los más altos estándares de calidad, sino que también poseen un gran valor simbólico. Su participación en este proyecto garantiza que el producto final sea un testimonio tanto de la artesanía como de su propósito.
+[https://osbornecoin.com](https://osbornecoin.com)

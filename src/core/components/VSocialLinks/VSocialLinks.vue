@@ -89,8 +89,8 @@ onMounted(() => {
   gap: 28px;
 
   @media screen and (width < $tablet){
-    gap: 2px;
-    justify-content: space-between;
+    // gap: 2px;
+    justify-content: center;
   }
 
   &__icon{

@@ -59,7 +59,7 @@ const delegatedProps = computed(() => {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  padding: 29px;
+  padding: 28px;
   text-align: inherit;
 
   &:hover{

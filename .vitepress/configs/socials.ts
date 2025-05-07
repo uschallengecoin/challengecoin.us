@@ -57,4 +57,9 @@ export default {
     name: 'Reddit',
     shareHref: `http://www.reddit.com/submit?url=${url}&title=${env.title}`,
   },
+  matrix: {
+    icon: 'matrix',
+    name: 'Matrix',
+    href: 'https://matrix.to/#/#matrix.challengecoin-us.org',
+  },
 };

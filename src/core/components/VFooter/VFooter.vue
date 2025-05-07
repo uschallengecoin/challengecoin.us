@@ -6,22 +6,15 @@ import { useData } from 'vitepress';
 import { useToast } from '../Base/VToast/use-toast';
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
 import VLogo from 'UiKit/components/VLogo.vue';
+import { links } from '@/config/links';
+import VDropdownLanguages from 'UiKit/components/VDropdownLanguages.vue';
 
 const VSocialLinks = defineAsyncComponent({
   loader: () => import('UiKit/components/VSocialLinks/VSocialLinks.vue'),
-
   hydrate: hydrateOnVisible(),
 });
-
 const VFormFooterSubscribe = defineAsyncComponent({
   loader: () => import('UiKit/components/VForms/VFormFooterSubscribe.vue'),
-
-  hydrate: hydrateOnVisible(),
-});
-
-const VFooterBottom = defineAsyncComponent({
-  loader: () => import('UiKit/components/VFooter/VFooterBottom.vue'),
-
   hydrate: hydrateOnVisible(),
 });
 
@@ -32,6 +25,8 @@ const SOCIAL_LIST = [
   theme.value.socials?.twitter,
   theme.value.socials?.facebook,
   theme.value.socials?.tiktok,
+  theme.value.socials?.github,
+  theme.value.socials?.matrix,
   theme.value.socials?.instagram,
 ];
 
@@ -41,6 +36,8 @@ const TOAST_OPTIONS = {
   title: 'You’re subscribed!',
   variant: 'success',
 };
+
+const currentYear = new Date().getFullYear();
 
 const loadingSubmitting = ref(false);
 const clear = ref(false);
@@ -80,8 +77,7 @@ const onClickMenu = () => {
             class="v-footer__logo"
           />
           <p class="is--margin-top-17">
-            Introducing a modern symbol of American pride — crafted to honor heritage, support those who serve,
-            and bring communities together with every purchase.
+            Join the growing community of Americans spreading pride, honor and gratitude across the country and supporting our past, present and future heroes.
           </p>
           <div
             class="v-footer__contact"
@@ -89,16 +85,20 @@ const onClickMenu = () => {
             <h5>
               {{ theme.contacts.email }}
             </h5>
-            |
+            <span v-if="theme.contacts.phone">|</span>
             <h5>
               {{ theme.contacts.phone }}
             </h5>
+          </div>
+          <div class="is--margin-top-50 is--small is--gt-tablet-show">
+            © {{ currentYear }} U.S. Challenge Coin LLC. All rights reserved.
           </div>
         </div>
         <div class="v-footer__form-wrap">
           <VFormFooterSubscribe
             :clear="clear"
             :loading="loadingSubmitting"
+            label="Join Our Newsletter"
             class="v-footer__form"
             @submit="onSubmit"
           />
@@ -106,11 +106,29 @@ const onClickMenu = () => {
             :social-list="SOCIAL_LIST"
             class="v-footer__socials is--margin-top-40"
           />
+
+          <p class="v-footer__terms-wrap is--margin-top-45">
+            <VDropdownLanguages
+              class="v-footer__lang"
+              :content-props="{ side: 'top' }"
+            />
+            <span class="v-footer__terms">
+              <a
+                :href="links.terms"
+                class="is--small"
+              >Terms of Use</a>
+              <a
+                :href="links.privacy"
+                class="is--small"
+              >Privacy Policy</a>
+            </span>
+          </p>
+          <div class="is--margin-top-40 is--small is--lt-tablet-show v-footer__copyright">
+            © {{ currentYear }} U.S. Challenge Coin LLC. All rights reserved.
+          </div>
         </div>
       </div>
     </div>
-
-    <VFooterBottom class="is--margin-top-40" />
   </div>
 </template>
 
@@ -120,7 +138,7 @@ const onClickMenu = () => {
 
   background-color: $primary-blue;
   padding: 80px 0;
-  color: $white;
+  color: $grayscale-white;
 
   @media screen and (width < $desktop-lg){
     padding: 60px 0;
@@ -128,7 +146,7 @@ const onClickMenu = () => {
 
   &__wrap {
     display: grid;
-    grid-template-columns: calc(60.5% - 40px) calc(39.5% - 40px);
+    grid-template-columns: calc(55% - 40px) calc(43% - 40px);
 
     @media screen and (width < $desktop){
       // display: flex;
@@ -156,9 +174,14 @@ const onClickMenu = () => {
   &__logo {
     // color: inherit;
     max-height: 44px;
+    max-width: 284px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 
     @media screen and (width < $tablet){
       max-height: 53px;
+      max-width: 284px;
     }
   }
 
@@ -168,8 +191,11 @@ const onClickMenu = () => {
 
   &__socials {
     width: 100%;
-    justify-content: space-between;
-    gap: 4px !important;
+
+    @media screen and (width > $tablet){
+      justify-content: space-between;
+      gap: 4px !important;
+    }
   }
 
   &__form-wrap {
@@ -178,6 +204,46 @@ const onClickMenu = () => {
 
   &__content {
     width: 100%;
+  }
+
+
+  a {
+      color: inherit;
+    }
+
+  &__terms {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    align-items: center;
+
+    @media screen and (width < $tablet){
+      justify-content: center;
+    }
+  }
+
+  &__lang {
+    color: $grayscale-white;
+  }
+
+  &__terms-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (width < $tablet){
+      justify-content: center;
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  &__copyright {
+    @media screen and (width < $tablet){
+      text-align: center;
+    }
   }
 }
 </style>

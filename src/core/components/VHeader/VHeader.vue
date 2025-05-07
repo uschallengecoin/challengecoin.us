@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  computed,
   defineAsyncComponent, ref,
   watchPostEffect,
 } from 'vue';
@@ -8,6 +9,7 @@ import VLogo from 'UiKit/components/VLogo.vue';
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 import shareIcon from '@/assets/images/social/share.svg';
 import { useDialogs } from 'UiKit/store/useDialogs';
+import VDropdownLanguages from 'UiKit/components/VDropdownLanguages.vue';
 
 const VHeaderMobile = defineAsyncComponent({
   loader: () => import('./VHeaderMobile.vue'),
@@ -61,6 +63,11 @@ watchPostEffect(() => {
             <shareIcon />
             Share
           </VButton>
+
+          <VDropdownLanguages 
+            class="is--gt-tablet-show"
+          />
+
           <VHeaderMobile
             v-model="isMobileSidebarOpen"
           >
@@ -107,6 +114,9 @@ watchPostEffect(() => {
     align-items: center;
     margin-right: 55px;
     max-height: 44px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 
     @include media-lte(desktop-lg) {
       margin-right: 30px;

@@ -11,6 +11,7 @@ import { VisuallyHidden } from 'radix-vue';
 import { useDialogs } from 'UiKit/store/useDialogs';
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 import shareIcon from '@/assets/images/social/share.svg';
+import VDropdownLanguages from 'UiKit/components/VDropdownLanguages.vue';
 
 const VNavigationMenuLink = defineAsyncComponent({
   loader: () => import('UiKit/components/Base/VNavigationMenu/VNavigationMenuLink.vue'),
@@ -43,42 +44,49 @@ const onShareClick = () => {
           <VSheetDescription>Mobile Menu</VSheetDescription>
         </VSheetHeader>
       </VisuallyHidden>
-      <nav class="v-header-mobile__navigation">
-        <ul
-          v-for="(menuItem, index) in MENU_HEADER"
-          :id="index"
-          :key="JSON.stringify(menuItem)"
-          class="v-header-mobile__list"
-        >
-          <li class="v-header-mobile__item">
-            <VNavigationMenuLink
-              v-if="!menuItem.children"
-              :href="menuItem.href"
-              @click="open = false"
-            >
-              {{ menuItem.text }}
-            </VNavigationMenuLink>
-            <span
-              v-else
-              class="is--h5__title v-header-mobile__title"
-            >
-              {{ menuItem.text }}
-            </span>
-            <ul
-              v-for="(childGroup, childGroupIndex) in menuItem.children"
-              :key="childGroupIndex"
-              class="v-header-mobile__list"
-            >
-              <VHeaderNavigationListItem
-                v-for="(childItem, childIndex) in childGroup"
-                :key="childIndex"
-                :data="childItem"
+      <div>
+        <nav class="v-header-mobile__navigation">
+          <ul
+            v-for="(menuItem, index) in MENU_HEADER"
+            :id="index"
+            :key="JSON.stringify(menuItem)"
+            class="v-header-mobile__list"
+          >
+            <li class="v-header-mobile__item">
+              <VNavigationMenuLink
+                v-if="!menuItem.children"
+                :href="menuItem.href"
                 @click="open = false"
-              />
-            </ul>
-          </li>
-        </ul>
-      </nav>
+              >
+                {{ menuItem.text }}
+              </VNavigationMenuLink>
+              <span
+                v-else
+                class="is--h5__title v-header-mobile__title"
+              >
+                {{ menuItem.text }}
+              </span>
+              <ul
+                v-for="(childGroup, childGroupIndex) in menuItem.children"
+                :key="childGroupIndex"
+                class="v-header-mobile__list"
+              >
+                <VHeaderNavigationListItem
+                  v-for="(childItem, childIndex) in childGroup"
+                  :key="childIndex"
+                  :data="childItem"
+                  @click="open = false"
+                />
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+
+        <VDropdownLanguages 
+          class="is--lt-tablet-show is--margin-top-40"
+        />
+      </div>
 
       <div class="v-header-mobile__data">
         <slot />

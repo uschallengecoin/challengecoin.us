@@ -102,7 +102,7 @@ defineProps({
   }
 
   &__bottom {
-    color: colors.$gray;
+    color: colors.$dark-gray;
     margin-left: 35px;
   }
 
