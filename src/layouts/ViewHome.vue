@@ -1,15 +1,263 @@
 <script lang="ts">
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
 import { links } from '@/config/links';
+import { data } from '@/store/home.data';
+import VInfoHero from /*VInfoHero*/'UiKit/components/VInfo/VInfoHero.vue';
+import VCarouselItem from /*VCarouselItem*/'UiKit/components/Base/VCarousel/VCarouselItem.vue';
+import VSectionTopVideo from /*VSectionTopVideo*/'UiKit/components/VSectionTop/VSectionTopVideo.vue';
+import VSlider from /*VSlider*/'UiKit/components/VSlider/VSlider.vue';
+import {
+  defineAsyncComponent, hydrateOnVisible, onBeforeUnmount, onMounted, ref,
+  useId,
+} from 'vue';
+
+const VDialog = defineAsyncComponent({
+  loader: () => import('UiKit/components/VDialogs/VDialog.vue'),
+});
+const VSectionTwoColImageFullBackground = defineAsyncComponent({
+  loader: () => import('UiKit/components/VSection/VSectionTwoColImageFullBackground.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VSectionLegacy = defineAsyncComponent({
+  loader: () => import('UiKit/components/VSection/VSectionLegacy.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VHowItWorks = defineAsyncComponent({
+  loader: () => import('UiKit/components/VAds/VHowItWorks.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VCardDefault = defineAsyncComponent({
+  loader: () => import('UiKit/components/VCard/VCardDefault.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VSectionWhyOwn = defineAsyncComponent({
+  loader: () => import('UiKit/components/VSection/VSectionWhyOwn.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VCardCheckmarked = defineAsyncComponent({
+  loader: () => import('UiKit/components/VCard/VCardCheckmarked.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VSubscribe = defineAsyncComponent({
+  loader: () => import('UiKit/components/VAds/VSubscribe.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VSectionWhatOurClientsSay = defineAsyncComponent({
+  loader: () => import('UiKit/components/VWhatOurClientsSay/VSectionWhatOurClientsSay.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VSliderAutoplay = defineAsyncComponent({
+  loader: () => import('UiKit/components/VSlider/VSliderAutoplay.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VWhatOurClientsSayItem = defineAsyncComponent({
+  loader: () => import('UiKit/components/VWhatOurClientsSay/VWhatOurClientsSayItem.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VPreOrder = defineAsyncComponent({
+  loader: () => import('UiKit/components/VAds/VPreOrder.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VSectionFaq = defineAsyncComponent({
+  loader: () => import('UiKit/components/VSection/VSectionFaq.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VAccordionItem = defineAsyncComponent({
+  loader: () => import('UiKit/components/VAccordion/VAccordionItem.vue'),
+  hydrate: hydrateOnVisible(),
+});
+const VButton = defineAsyncComponent({
+  loader: () => import(/*VButton*/'UiKit/components/Base/VButton/VButton.vue'),
+  hydrate: hydrateOnVisible(),
+});
+
+const heroSlides = data?.filter((item) => item.slug === 'heroSlide');
+const heroDialogs = data?.filter((item) => item.slug === 'heroDialog');
+const legacy = data?.find((item) => item.slug === 'legacy');
+const engraver = data?.find((item) => item.slug === 'dialogEngraver');
+const howItWorksList = data?.filter((item) => item.slug === 'howItWorks');
+const whyOwn = data?.find((item) => item.slug === 'whyOwn');
+const whyOwnList = data?.filter((item) => item.slug === 'whyOwnList');
+const subscribe = data?.find((item) => item.slug === 'subscribe');
+const testimonials = data?.find((item) => item.slug === 'testimonials');
+const testimonialsList = data?.filter((item) => item.slug === 'testimonialsList');
+const preOrder = data?.find((item) => item.slug === 'preOrder');
+const faq = data?.find((item) => item.slug === 'faq');
+const faqList = data?.filter((item) => item.slug === 'faqList');
 </script>
 
 <script setup lang="ts">
 useGlobalLoader().hide();
+
+const dialogOpen = defineModel<boolean>();
+const dialogData = ref();
+const savedDialogValue = ref<string | null>(null);
+
+const onLearnMore = (dialogId: string) => {
+  dialogData.value = heroDialogs.find((item) => item.dialogId === dialogId);
+  dialogOpen.value = true;
+};
+
+const handleDialogAttributeClick = (event: Event) => {
+  const target = event.target as HTMLElement;
+    if (target.hasAttribute('dialog')) {
+      savedDialogValue.value = target.getAttribute('dialog');
+      if (savedDialogValue.value?.toLowerCase() === 'engraver') {
+        dialogData.value = engraver;
+        dialogOpen.value = true;
+      }
+    }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleDialogAttributeClick);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleDialogAttributeClick);
+});
 </script>
 
+// TODO sanityze html
 <template>
   <div class="ViewHome view-home">
-    <Content />
+    <!-- Start Top Video -->
+    <VSectionTopVideo
+      id="hero"
+      full-height
+      video-src="/video/video-bg.mp4"
+    >
+      <VSlider
+        autoplay
+        fade
+        :options="{ containScroll: 'trimSnaps', loop: true }"
+      >
+        <VCarouselItem
+          v-for="(item, index) in heroSlides"
+          :key="index + item.dialogId"
+        >
+          <VInfoHero
+            :image-src="item.image"
+            :image-mobile-src="item.imageMobile"
+            :buy-now-href="links.buyNow"
+            @learn-more="onLearnMore(item.dialogId)"
+          >
+            <div v-html="item.html" />
+          </VInfoHero>
+        </VCarouselItem>
+      </VSlider>
+    </VSectionTopVideo>
+    <!-- End Top Video -->
+
+    <!-- Start Legacy -->
+    <VSectionTwoColImageFullBackground
+      id="legacy"
+      :button-href="links.buyNow"
+      button-text="Buy U.S. Challenge Coin Now"
+      button-text-mobile="Buy Now"
+      class="is--margin-top-150"
+    >
+      <VSectionLegacy
+        :title1="legacy.title1"
+        :title2="legacy.title2"
+        :images="legacy.images"
+      />
+      <div
+        style="position: relative; align-self: center;"
+        v-html="legacy.html"
+      />
+    </VSectionTwoColImageFullBackground>
+    <!-- End Legacy -->
+
+    <!-- Start How It Works -->
+    <VHowItWorks
+      title="How It Works"
+    >
+      <VCardDefault
+        v-for="(item, index) in howItWorksList"
+        :key="index + item.title"
+        :title="item.title"
+      >
+        <div v-html="item.html" />
+      </VCardDefault>
+    </VHowItWorks>
+    <!-- End How It Works -->
+
+    <!-- Start Why Own -->
+    <VSectionWhyOwn
+      id="why-own-u-s-challenge-coin"
+      :image="whyOwn.image"
+      :image-mobile="whyOwn.imageMobile"
+      class="is--paddings"
+    >
+      <div
+        class="is--margin-bottom-40"
+        v-html="whyOwn.html"
+      />
+      <VCardCheckmarked
+        v-for="(item, index) in whyOwnList"
+        :key="index + item.title"
+        :title="item.title"
+      >
+        <div v-html="item.html" />
+      </VCardCheckmarked>
+    </VSectionWhyOwn>
+    <!-- End Why Own -->
+
+    <!-- Start Subscribe -->
+    <VSubscribe id="be-part-of-something-bigger">
+      <div v-html="subscribe.html" />
+    </VSubscribe>
+    <!-- End Subscribe -->
+
+    <!-- Start Testimonials -->
+    <VSectionWhatOurClientsSay
+      id="voices-of-honor"
+      class="is--margin-top-150"
+    >
+      <div v-html="testimonials.html" />
+      <VSliderAutoplay pagination-src="/images/home/coin5.webp">
+        <VCarouselItem
+          v-for="(item, index) in testimonialsList"
+          :key="index + item.title"
+        >
+          <VWhatOurClientsSayItem
+            :title="item.title"
+            :profession="item.profession"
+          >
+            <div v-html="item.html" />
+          </VWhatOurClientsSayItem>
+        </VCarouselItem>
+      </VSliderAutoplay>
+    </VSectionWhatOurClientsSay>
+    <!-- End Testimonials -->
+
+    <!-- Start Pre Order -->
+    <VPreOrder
+      :title="preOrder.title"
+      :display="preOrder.display"
+      class="is--margin-top-150"
+    >
+      <div v-html="preOrder.html" />
+    </VPreOrder>
+    <!-- End Pre Order -->
+
+    <!-- Start faq-->
+    <VSectionFaq
+      :title="faq.title"
+      class="is--margin-top-150"
+    >
+      <VAccordionItem
+        v-for="(item, index) in faqList"
+        :key="index"
+        :trigger="item.trigger"
+        :idx="index"
+      >
+        <div v-html="item.html" />
+      </VAccordionItem>
+    </VSectionFaq>
+    <!-- End faq-->
+
     <div class="is--paddings view-home__button">
       <VButton
         as="a"
@@ -20,6 +268,15 @@ useGlobalLoader().hide();
       </VButton>
     </div>
   </div>
+
+  <ClientOnly>
+    <VDialog
+      v-model="dialogOpen"
+      :data="dialogData?.html"
+      :background-image-src="dialogData?.image"
+      class="view-home__dialog"
+    />
+  </ClientOnly>
 </template>
 
 <style lang="scss">

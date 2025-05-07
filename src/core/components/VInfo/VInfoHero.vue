@@ -11,6 +11,11 @@ defineProps({
   imageMobileSrc: String,
   buyNowHref: String,
 });
+const emit = defineEmits(['learnMore']);
+
+const onLearnMore = () => {
+  emit('learnMore');
+};
 </script>
 
 <template>
@@ -18,6 +23,7 @@ defineProps({
     <VInfoTop
       :buy-now-href="buyNowHref"
       class="v-info-hero__top"
+      @learn-more="onLearnMore"
     >
       <slot />
     </VInfoTop>

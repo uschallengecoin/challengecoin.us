@@ -10,7 +10,7 @@ useLazyBackground('v-pre-order__card', '/images/home/coin6.webp', { useVariable:
 
 defineProps({
   title: String,
-  pieces: String,
+  display: String,
 });
 </script>
 
@@ -30,7 +30,7 @@ defineProps({
         <slot />
         <div class="is--margin-top-8">
           <span class="is--display v-pre-order__display">
-            {{ pieces }}
+            {{ display }}
           </span>
         </div>
       </div>

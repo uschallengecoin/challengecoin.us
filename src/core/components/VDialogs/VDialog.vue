@@ -1,27 +1,33 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
 import {
-  VDialogContent, VDialogHeader, VDialogTitle, VDialog, VDialogFooter,
+  VDialogContent, VDialogFooter, VDialog,
 } from 'UiKit/components/Base/VDialog';
-import { computed, watch } from 'vue';
-import { useDialogs } from 'UiKit/store/useDialogs';
-import { useData } from 'vitepress';
+import { computed, ref, watch } from 'vue';
 import { links } from '@/config/links';
 
-const { theme } = useData();
-
-const useDialogsStore = useDialogs();
-const { isDialogEngraverOpen } = storeToRefs(useDialogsStore);
-
-const data = computed(() => {
-  return theme.navigation.dialogs?.children?.engraver?.data?.html;
+const props = defineProps({
+  backgroundImageSrc: String,
+  data: String,
 });
 
+const emit = defineEmits(['close']);
+
 const open = defineModel<boolean>();
+const dialog = ref(null);
+
+const backgroundImageLocal = computed(() => (
+  `url(${props.backgroundImageSrc})`
+));
 
 watch(() => open.value, () => {
   if (!open.value) {
-    isDialogEngraverOpen.value = false;
+    emit('close');
+  }
+});
+
+watch(() => props.data, () => {
+  if (dialog.value) {
+    dialog.value.scrollTop = 0;
   }
 });
 </script>
@@ -32,16 +38,17 @@ watch(() => open.value, () => {
     query-value="engraver"
   >
     <VDialogContent
-      scrollable-body
       :aria-describedby="undefined"
-      class="VDialogEngraver v-dialog-engraver with-default-distance"
+      class="VDialog v-dialog-default with-default-distance"
     >
       <div
-        class="v-dialog-engraver__content"
+        ref="dialog"
+        class="v-dialog-default__content"
+        :style="{ '--bg-image': backgroundImageSrc ? backgroundImageLocal : undefined }"
         v-html="data"
       />
       <VDialogFooter>
-        <div class="v-dialog-engraver__button-wrap">
+        <div class="v-dialog-default__button-wrap">
           <slot name="buttons">
             <VButton
               v-if="links.buyNow"
@@ -71,9 +78,10 @@ watch(() => open.value, () => {
 </template>
 
 <style lang="scss">
+@use 'UiKit/styles/_colors.scss' as *;
 @use "UiKit/styles/_variables.scss" as *;
 
-.v-dialog-engraver {
+.v-dialog-default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -85,16 +93,31 @@ watch(() => open.value, () => {
     scrollbar-color: $gray transparent;
     scrollbar-width: thin;
 
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: var(--bg-image);
+      width: 100%;
+      height: 100%;
+      opacity: 0.08;
+      background-repeat: no-repeat;
+      background-size: 60%;
+      background-position: 124% 0%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+
+      @media screen and (width < $tablet){
+        display: none;
+      }
+    }
+
     @media screen and (width < $tablet){
       padding: 0 23px 14px;
     }
 
-    h3 + h5 {
-      margin-top: 24px !important;
-    }
-
-    h5 + p {
-      margin-top: 30px !important;
+    > *:last-child {
+      margin-bottom: 40px;
     }
   }
 

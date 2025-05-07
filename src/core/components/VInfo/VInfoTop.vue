@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
-import { VDialogTrigger, VDialog } from 'UiKit/components/Base/VDialog';
-import { onBeforeUnmount, watch } from 'vue';
 
 defineProps({
   title: String,
@@ -11,64 +9,51 @@ defineProps({
   buyNowHref: String,
   learnMoreHref: String,
 });
-const open = defineModel<boolean>();
 
-const onHashChange = () => {
-  open.value = false;
-}
+const emit = defineEmits(['learnMore']);
 
-if (typeof window !== 'undefined') {
-  window?.addEventListener('hashchange', onHashChange);
-}
-
-onBeforeUnmount(() => {
-  window?.removeEventListener('hashchange', onHashChange);
-})
+const onLearnMore = () => {
+  emit('learnMore');
+};
 </script>
 
 <template>
   <div class="VInfoTop v-info-top with-default-distance">
-    <VDialog
-      v-model:open="open"
-      class="VDialogTop v-dialog-top"
-    >
-      <div class="v-info-top__text">
-        <slot>
-          <h1
-            v-if="title"
-          >
-            {{ title }}
-          </h1>
-          <div
-            v-if="subtitle"
-            class="is--subheading-1"
-          >
-            {{ subtitle }}
-          </div>
-        </slot>
-      </div>
-      <div class="v-info-top__button-wrap">
-        <slot name="buttons">
-          <VButton
-            as="a"
-            :href="encodeURI(buyNowHref)"
-            size="large"
-            class="is--margin-top-0"
-          >
-            Buy Now
-          </VButton>
-          <VDialogTrigger>
-            <VButton
-              size="large"
-              variant="link"
-              class="is--margin-top-0"
-            >
-              Learn More
-            </VButton>
-          </VDialogTrigger>
-        </slot>
-      </div>
-    </VDialog>
+    <div class="v-info-top__text">
+      <slot>
+        <h1
+          v-if="title"
+        >
+          {{ title }}
+        </h1>
+        <div
+          v-if="subtitle"
+          class="is--subheading-1"
+        >
+          {{ subtitle }}
+        </div>
+      </slot>
+    </div>
+    <div class="v-info-top__button-wrap">
+      <slot name="buttons">
+        <VButton
+          as="a"
+          :href="encodeURI(buyNowHref)"
+          size="large"
+          class="is--margin-top-0"
+        >
+          Buy Now
+        </VButton>
+        <VButton
+          size="large"
+          variant="link"
+          class="is--margin-top-0"
+          @click="onLearnMore"
+        >
+          Learn More
+        </VButton>
+      </slot>
+    </div>
   </div>
 </template>
 

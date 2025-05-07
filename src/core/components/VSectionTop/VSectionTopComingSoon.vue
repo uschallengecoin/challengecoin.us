@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { defineAsyncComponent, hydrateOnVisible, ref } from 'vue';
+import { defineAsyncComponent, hydrateOnVisible, onMounted, ref } from 'vue';
 import { env } from '@/config/env';
 import { useToast } from '../Base/VToast/use-toast';
 import { useHubspotForm } from 'UiKit/composables/useHubspotForm';
+import { removeAnchorFromElements } from '@/core/helpers/formatters/removeAnchor';
 
 const VFormJoinWaitlist = defineAsyncComponent({
   loader: () => import('UiKit/components/VForms/VFormJoinWaitlist.vue'),
@@ -36,6 +37,11 @@ const onSubmit = async (emailLocal: string) => {
     variant: 'error',
   });
 };
+
+
+onMounted(() => {
+  removeAnchorFromElements('.v-section-top-coming-soon');
+});
 </script>
 
 <template>

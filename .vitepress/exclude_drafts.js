@@ -17,7 +17,7 @@ function findDrafts(dirPath) {
       console.error(err);
     }
     if (stats.isDirectory()) {
-      draftFiles = draftFiles.concat(findDraftFiles(filePath));
+      draftFiles = draftFiles.concat(findDrafts(filePath));
     }
   }
 
@@ -32,7 +32,7 @@ function findDrafts(dirPath) {
         let fileContent = fs.readFileSync(filePath, "utf8");
         let frontmatter = matter(fileContent);
         let data = frontmatter.data;
-        if (data.draft === true) {
+        if (data.draft == true) {
           draftFiles.push(filePath);
         }
       } catch(e) {
@@ -45,10 +45,14 @@ function findDrafts(dirPath) {
 
 export default function findDraftFiles(dirPath) {
   const draftFiles = findDrafts(dirPath);
+  const res = [];
   // change source dir to ./
   // i.e. docs/aaa/bb/ccc.md => ./aaa/bb/ccc.md
   for(let i = 0; i < draftFiles.length; i++) {
-    draftFiles[i] = `./${draftFiles[i].substr(dirPath.length-1, draftFiles[i].length)}`
+    const draftF = draftFiles[i];
+    if (draftF.startsWith(dirPath.substr(2))) {
+      res.push(`./${draftF.substr(dirPath.length-1, draftF.length)}`);
+    }
   }
-  return draftFiles;
+  return res;
 };

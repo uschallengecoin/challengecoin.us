@@ -1,8 +1,8 @@
 ---
 image: /images/home/coin2.webp
 dialogId: 2
-render: true
 draft: true
+slug: heroDialog
 ---
 
 ### Giving Back

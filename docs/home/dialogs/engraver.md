@@ -1,7 +1,7 @@
 ---
 publishDate: 2025-05-06
 draft: true
-render: true
+slug: dialogEngraver
 ---
 
 ### About Our Engraver

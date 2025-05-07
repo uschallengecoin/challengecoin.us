@@ -4,8 +4,9 @@ import {
 } from '../Base/VCarousel';
 import Autoplay from 'embla-carousel-autoplay';
 import Fade from 'embla-carousel-fade';
-import { computed, onBeforeMount, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { CarouselApi } from '../Base/VCarousel';
+import { removeAnchorFromElements } from '@/core/helpers/formatters/removeAnchor';
 
 interface Props {
     variant?: 'default' | 'autoplay';
@@ -40,15 +41,8 @@ function setApi(val: CarouselApi) {
   api.value = val;
 }
 
-onBeforeMount(() => {
-  document?.querySelectorAll('.v-slider h1[id]').forEach(element => {
-    element.removeAttribute('id');
-  });
-  // Remove <a> tags while keeping their text
-    document?.querySelectorAll('.v-slider h1 a.header-anchor').forEach(anchor => {
-    const text = anchor.textContent;
-    anchor.replaceWith(text); // Replace link with its text
-  });
+onMounted(() => {
+  removeAnchorFromElements('.v-slider');
   // api.value?.reInit();
 });
 </script>

@@ -4,6 +4,7 @@ import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 import { links } from '@/config/links';
 import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
 import { storeToRefs } from 'pinia';
+import VSectionTwoColImageFullBackground from 'UiKit/components/VSection/VSectionTwoColImageFullBackground.vue';
 
 const props = defineProps({
   image: String,

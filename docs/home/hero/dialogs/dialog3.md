@@ -1,8 +1,8 @@
 ---
 image: /images/home/coin3.webp
 dialogId: 3
-render: true
 draft: true
+slug: heroDialog
 ---
 
 ### America’s Next Digital Revolution

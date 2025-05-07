@@ -4,9 +4,8 @@ import {
   onUnmounted, ref,
 } from 'vue';
 import VLoader from 'UiKit/components/VLoader.vue';
-import { useData, useRoute, useRouter } from 'vitepress';
+import { useData } from 'vitepress';
 import { data as allPages } from '@/store/all.data';
-import { data as textsPages } from '@/store/drafts.data';
 import { convertPages } from 'UiKit/types/pages';
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
 import { storeToRefs } from 'pinia';
@@ -35,21 +34,10 @@ const VDialogs = defineAsyncComponent(() => import(
 
 const { page, frontmatter, theme } = useData();
 const pages = convertPages(allPages);
-const texts = convertPages(textsPages, true);
-
-console.log('pages', pages);
-console.log('textsPages', textsPages);
-console.log('texts', texts);
 
 theme.navigation = {
   root: pages,
-  home: texts.getChild('layout', 'home'),
-  dialogs: texts.getChild('slug', 'dialogs'),
 };
-
-console.log('theme.navigation', theme.navigation);
-const route = useRoute();
-const router = useRouter();
 
 
 const isComingSoon = computed(() => {
