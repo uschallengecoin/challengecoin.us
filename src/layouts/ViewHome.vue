@@ -1,6 +1,5 @@
 <script lang="ts">
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
-import { links } from '@/config/links';
 import { data } from '@/store/home.data';
 import VInfoHero from /*VInfoHero*/'UiKit/components/VInfo/VInfoHero.vue';
 import VCarouselItem from /*VCarouselItem*/'UiKit/components/Base/VCarousel/VCarouselItem.vue';
@@ -8,7 +7,6 @@ import VSectionTopVideo from /*VSectionTopVideo*/'UiKit/components/VSectionTop/V
 import VSlider from /*VSlider*/'UiKit/components/VSlider/VSlider.vue';
 import {
   defineAsyncComponent, hydrateOnVisible, onBeforeUnmount, onMounted, ref, computed,
-  useId,
 } from 'vue';
 import { useData } from 'vitepress';
 
@@ -76,8 +74,10 @@ const VButton = defineAsyncComponent({
 
 <script setup lang="ts">
 useGlobalLoader().hide();
-const { lang } = useData();
+const { lang, theme, site } = useData();
 const currentLanguage = computed(() => lang.value || 'en');
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 const languageData = computed(() => data[currentLanguage.value] || data['en']);
 
@@ -109,7 +109,7 @@ const handleDialogAttributeClick = (event: Event) => {
     if (target.hasAttribute('dialog')) {
       savedDialogValue.value = target.getAttribute('dialog');
       if (savedDialogValue.value?.toLowerCase() === 'engraver') {
-        dialogData.value = engraver;
+        dialogData.value = engraver.value;
         dialogOpen.value = true;
       }
     }
@@ -145,7 +145,7 @@ onBeforeUnmount(() => {
           <VInfoHero
             :image-src="item.image"
             :image-mobile-src="item.imageMobile"
-            :buy-now-href="links.buyNow"
+            :buy-now-href="theme.links.buyNow"
             @learn-more="onLearnMore(item.dialogId)"
           >
             <div v-html="item.html" />
@@ -158,9 +158,9 @@ onBeforeUnmount(() => {
     <!-- Start Legacy -->
     <VSectionTwoColImageFullBackground
       id="legacy"
-      :button-href="links.buyNow"
-      button-text="Buy U.S. Challenge Coin Now"
-      button-text-mobile="Buy Now"
+      :button-href="theme.links.buyNow"
+      :button-text="currentLocale?.home.buyNowLong"
+      :button-text-mobile="currentLocale?.home.buyNow"
       class="is--margin-top-150"
     >
       <VSectionLegacy
@@ -177,7 +177,7 @@ onBeforeUnmount(() => {
 
     <!-- Start How It Works -->
     <VHowItWorks
-      title="How It Works"
+      :title="currentLocale?.home?.howItWorksTitle"
     >
       <VCardDefault
         v-for="(item, index) in howItWorksList"
@@ -194,6 +194,7 @@ onBeforeUnmount(() => {
       id="why-own-u-s-challenge-coin"
       :image="whyOwn?.image"
       :image-mobile="whyOwn?.imageMobile"
+      :button-text="currentLocale?.home.buyNow"
       class="is--paddings"
     >
       <div
@@ -267,10 +268,10 @@ onBeforeUnmount(() => {
     <div class="is--paddings view-home__button">
       <VButton
         as="a"
-        :href="encodeURI(links.buyNow)"
+        :href="encodeURI(theme.links.buyNow)"
         size="large"
       >
-        Buy U.S. Challenge Coin
+        {{ currentLocale?.buyNowLong2 }}
       </VButton>
     </div>
   </div>

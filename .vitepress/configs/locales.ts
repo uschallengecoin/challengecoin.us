@@ -1,10 +1,7 @@
+import en from './locales/en';
+import es from './locales/es';
+
 export default {
-    root: {
-        label: 'English',
-        lang: 'en',
-    },
-    es: {
-        label: 'Español',
-        lang: 'es',
-    },
+    root: en,
+    es: es,
   }

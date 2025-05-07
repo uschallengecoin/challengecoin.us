@@ -11,6 +11,7 @@ import { isEmpty } from 'UiKit/helpers/general';
 const props = defineProps({
   loading: Boolean,
   label: String,
+  placeholder: String,
   buttonText: {
     type: String,
     default: 'Subscribe',
@@ -99,20 +100,20 @@ watch(() => model, () => {
           <VFormInput
             :is-error="baseFormGroupProps.isFieldError"
             :model-value="model.email"
-            placeholder="Your Email"
+            :placeholder="placeholder"
             type="email"
             size="large"
             @update:model-value="model.email = $event"
           />
+          <VButton
+            size="large"
+            :loading="loading"
+            :disabled="isDisabledButton || loading"
+            class="v-form-footer-subscribe__button is--margin-top-0"
+          >
+            {{ buttonText }}
+          </VButton>
         </VFormGroup>
-        <VButton
-          size="large"
-          :loading="loading"
-          :disabled="isDisabledButton || loading"
-          class="v-form-footer-subscribe__button is--margin-top-0"
-        >
-          {{ buttonText }}
-        </VButton>
       </div>
     </form>
   </div>
@@ -137,14 +138,6 @@ watch(() => model, () => {
 
   .v-form-group {
     width: 100%;
-  }
-
-  .is--with-label {
-    .v-form-footer-subscribe__button {
-      @media screen and (width > $tablet){
-        margin-top: 36px !important;
-      }
-    }
   }
 }
 </style>

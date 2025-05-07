@@ -136,6 +136,9 @@ watch(() => [props.schemaBack, props.schemaFront], () => {
   &__input {
     width: 100%;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 }
 </style>

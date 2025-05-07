@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { defineAsyncComponent, hydrateOnVisible } from 'vue';
+import { computed, defineAsyncComponent, hydrateOnVisible } from 'vue';
 import {
   VSheet, VSheetContent, VSheetTrigger, VSheetHeader, VSheetTitle,
   VSheetDescription,
 } from '../Base/VSheet';
 import VMenuBurger from 'UiKit/components/VHeader/VMenuBurger.vue';
 import VHeaderNavigationListItem from './VHeaderNavigationListItem.vue';
-import { MENU_HEADER } from '@/config/menu';
 import { VisuallyHidden } from 'radix-vue';
 import { useDialogs } from 'UiKit/store/useDialogs';
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 import shareIcon from '@/assets/images/social/share.svg';
 import VDropdownLanguages from 'UiKit/components/VDropdownLanguages.vue';
+import { useData } from 'vitepress';
 
 const VNavigationMenuLink = defineAsyncComponent({
   loader: () => import('UiKit/components/Base/VNavigationMenu/VNavigationMenuLink.vue'),
@@ -19,6 +19,9 @@ const VNavigationMenuLink = defineAsyncComponent({
 });
 
 const open = defineModel<boolean>();
+const { lang, site } = useData();
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 const onShareClick = () => {
   useDialogs().showDialogShare();
@@ -47,7 +50,7 @@ const onShareClick = () => {
       <div>
         <nav class="v-header-mobile__navigation">
           <ul
-            v-for="(menuItem, index) in MENU_HEADER"
+            v-for="(menuItem, index) in currentLocale.nav"
             :id="index"
             :key="JSON.stringify(menuItem)"
             class="v-header-mobile__list"
@@ -96,7 +99,7 @@ const onShareClick = () => {
           @click="onShareClick"
         >
           <shareIcon />
-          Share
+          {{ currentLocale.share.button }}
         </VButton>
       </div>
     </VSheetContent>

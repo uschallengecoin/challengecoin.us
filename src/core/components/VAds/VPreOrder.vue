@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import VSection from 'UiKit/components/VSection/VSection.vue';
-import { links } from '@/config/links';
 import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
 import { storeToRefs } from 'pinia';
 import { useLazyBackground } from '@/core/composables/useLazyBackground';
+import { useData } from 'vitepress';
+import { computed } from 'vue';
 
 const { isTablet } = storeToRefs(useBreakpoints());
 useLazyBackground('v-pre-order__card', '/images/home/coin6.webp', { useVariable: true });
@@ -12,6 +13,10 @@ defineProps({
   title: String,
   display: String,
 });
+
+const { lang, site, theme } = useData();
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 </script>
 
 <template>
@@ -35,13 +40,13 @@ defineProps({
         </div>
       </div>
       <VButton
-        v-if="links.buyNow"
+        v-if="theme.links.buyNow"
         as="a"
-        :href="links.buyNow"
+        :href="theme.links.buyNow"
         size="large"
         class="is--margin-top-0"
       >
-        {{ isTablet ? 'Buy Now' : 'Buy U.S. Challenge Coin' }}
+        {{ isTablet ? currentLocale.home.buyNow : currentLocale.buyNowLong2 }}
       </VButton>
     </div>
   </VSection>

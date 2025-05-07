@@ -1,12 +1,12 @@
 ---
-title1: The Legacy of
+title1: Es The Legacy of
 title2: Challenge Coins
 images: ['/images/home/history1.webp', '/images/home/history2.webp', '/images/home/history3.webp']
 draft: true
 slug: legacy
 ---
 
-### A Symbol of Honor for Every American
+### ES A Symbol of Honor for Every American
 
 For over a century, challenge coins have represented unity, service, and valor. Now, you can own a piece of this legacy and be part of history.
 

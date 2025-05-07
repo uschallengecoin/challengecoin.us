@@ -4,7 +4,6 @@ import { useData } from 'vitepress';
 import { computed } from 'vue';
 
 const { site, lang } = useData();
-console.log(useData())
 
 const currentLanguage = computed(() => lang.value || 'en');
 const locales = computed(() => site.value.locales);

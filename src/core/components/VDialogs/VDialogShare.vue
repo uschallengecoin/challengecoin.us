@@ -3,13 +3,15 @@ import { storeToRefs } from 'pinia';
 import {
   VDialogContent, VDialogHeader, VDialogTitle, VDialog,
 } from 'UiKit/components/Base/VDialog';
-import { watch } from 'vue';
+import { computed, watch } from 'vue';
 import { useDialogs } from 'UiKit/store/useDialogs';
 import VSocialLinks from 'UiKit/components/VSocialLinks/VSocialLinks.vue';
 import { useData } from 'vitepress';
 import VFormCopy from 'UiKit/components/VForms/VFormCopy.vue';
 
-const { theme } = useData();
+const { lang, site, theme } = useData();
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 const useDialogsStore = useDialogs();
 const { isDialogShareOpen } = storeToRefs(useDialogsStore);
@@ -42,7 +44,7 @@ watch(() => open.value, () => {
     >
       <VDialogHeader>
         <VDialogTitle>
-          Share
+          {{ currentLocale.share.title }}
         </VDialogTitle>
       </VDialogHeader>
 
@@ -54,7 +56,8 @@ watch(() => open.value, () => {
 
       <VFormCopy
         :text="theme.env.FRONTEND_URL"
-        button-text="Copy Link"
+        :button-text="currentLocale.copy.copy"
+        :button-text-copied="currentLocale.copy.copied"
       />
     </VDialogContent>
   </VDialog>

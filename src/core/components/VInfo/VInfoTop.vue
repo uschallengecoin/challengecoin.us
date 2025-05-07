@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
+import { useData } from 'vitepress';
+import { computed } from 'vue';
 
 defineProps({
   title: String,
@@ -11,6 +13,9 @@ defineProps({
 });
 
 const emit = defineEmits(['learnMore']);
+const { lang, site } = useData();
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 const onLearnMore = () => {
   emit('learnMore');
@@ -42,7 +47,7 @@ const onLearnMore = () => {
           size="large"
           class="is--margin-top-0"
         >
-          Buy Now
+          {{ currentLocale.home.buyNow || 'Buy Now' }}
         </VButton>
         <VButton
           size="large"
@@ -50,7 +55,7 @@ const onLearnMore = () => {
           class="is--margin-top-0"
           @click="onLearnMore"
         >
-          Learn More
+          {{ currentLocale.home.learnMore || 'Learn More' }}
         </VButton>
       </slot>
     </div>

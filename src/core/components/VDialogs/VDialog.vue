@@ -3,7 +3,7 @@ import {
   VDialogContent, VDialogFooter, VDialog,
 } from 'UiKit/components/Base/VDialog';
 import { computed, ref, watch } from 'vue';
-import { links } from '@/config/links';
+import { useData } from 'vitepress';
 
 const props = defineProps({
   backgroundImageSrc: String,
@@ -11,6 +11,9 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['close']);
+const { lang, site, theme } = useData();
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 const open = defineModel<boolean>();
 const dialog = ref(null);
@@ -51,24 +54,24 @@ watch(() => props.data, () => {
         <div class="v-dialog-default__button-wrap">
           <slot name="buttons">
             <VButton
-              v-if="links.buyNow"
+              v-if="theme.links.buyNow"
               as="a"
-              :href="encodeURI(links.buyNow)"
+              :href="encodeURI(theme.links.buyNow)"
               size="large"
               class="is--margin-top-0"
             >
-              Buy Now
+              {{ currentLocale.home.buyNow || 'Buy Now' }}
             </VButton>
             <VButton
-              v-if="links.howItWorks"
+              v-if="theme.links.howItWorks"
               as="a"
-              :href="encodeURI(links.howItWorks)"
+              :href="encodeURI(theme.links.howItWorks)"
               size="large"
               variant="link"
               class="is--margin-top-0"
               @click="open = false"
             >
-              How It Works
+              {{ currentLocale.home.howItWorks || 'How It Works' }}
             </VButton>
           </slot>
         </div>
@@ -90,7 +93,7 @@ watch(() => props.data, () => {
     padding: 0 60px;
     height: calc(100% - 130px);
     overflow-y: auto;
-    scrollbar-color: $gray transparent;
+    scrollbar-color: $dark-gray transparent;
     scrollbar-width: thin;
 
     &::before {

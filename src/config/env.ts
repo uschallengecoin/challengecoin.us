@@ -8,6 +8,4 @@ export const env = {
   HUBSPOT_FORM_ID_WAITING_LIST: import.meta.env?.VITE_HUBSPOT_FORM_ID_WAITING_LIST as string,
   SEGMENT_KEY: import.meta.env?.VITE_SEGMENT_KEY as string,
   GTM: import.meta.env?.VITE_GTM as string,
-  email: 'info@domain.com',
-  phone: '123-123-1234',
 };

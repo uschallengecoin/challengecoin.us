@@ -10,6 +10,7 @@ import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 import shareIcon from '@/assets/images/social/share.svg';
 import { useDialogs } from 'UiKit/store/useDialogs';
 import VDropdownLanguages from 'UiKit/components/VDropdownLanguages.vue';
+import { useData } from 'vitepress';
 
 const VHeaderMobile = defineAsyncComponent({
   loader: () => import('./VHeaderMobile.vue'),
@@ -24,6 +25,9 @@ defineProps({
 });
 
 const emit = defineEmits(['click']);
+const { lang, site } = useData();
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 const { y } = useWindowScroll();
 const isFixed = ref(false);
@@ -56,12 +60,13 @@ watchPostEffect(() => {
       <ClientOnly>
         <div class="v-header__right ">
           <VButton
+            :key="currentLocale.share.button"
             variant="link"
             class="is--gt-tablet-show"
             @click="onShareClick"
           >
             <shareIcon />
-            Share
+            {{ currentLocale.share.button }}
           </VButton>
 
           <VDropdownLanguages 

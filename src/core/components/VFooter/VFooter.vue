@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { defineAsyncComponent, hydrateOnVisible, ref } from 'vue';
+import { computed, defineAsyncComponent, hydrateOnVisible, ref } from 'vue';
 import { useHubspotForm } from 'UiKit/composables/useHubspotForm';
 import { env } from '@/config/env';
 import { useData } from 'vitepress';
 import { useToast } from '../Base/VToast/use-toast';
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
 import VLogo from 'UiKit/components/VLogo.vue';
-import { links } from '@/config/links';
 import VDropdownLanguages from 'UiKit/components/VDropdownLanguages.vue';
 
 const VSocialLinks = defineAsyncComponent({
@@ -18,7 +17,9 @@ const VFormFooterSubscribe = defineAsyncComponent({
   hydrate: hydrateOnVisible(),
 });
 
-const { theme } = useData();
+const { lang, site, theme } = useData();
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 const SOCIAL_LIST = [
   theme.value.socials.share,
@@ -77,7 +78,7 @@ const onClickMenu = () => {
             class="v-footer__logo"
           />
           <p class="is--margin-top-17">
-            Join the growing community of Americans spreading pride, honor and gratitude across the country and supporting our past, present and future heroes.
+            {{ currentLocale.footer.message }}
           </p>
           <div
             class="v-footer__contact"
@@ -91,14 +92,17 @@ const onClickMenu = () => {
             </h5>
           </div>
           <div class="is--margin-top-50 is--small is--gt-tablet-show">
-            © {{ currentYear }} U.S. Challenge Coin LLC. All rights reserved.
+            © {{ currentYear }} {{ currentLocale.footer.copyright }}
           </div>
         </div>
         <div class="v-footer__form-wrap">
           <VFormFooterSubscribe
+            :key="currentLocale.footer.subscription.label"
             :clear="clear"
             :loading="loadingSubmitting"
-            label="Join Our Newsletter"
+            :label="currentLocale.footer.subscription.label"
+            :placeholder="currentLocale.footer.subscription.placeholder"
+            :button-text="currentLocale.footer.subscription.buttonMobile"
             class="v-footer__form"
             @submit="onSubmit"
           />
@@ -114,17 +118,21 @@ const onClickMenu = () => {
             />
             <span class="v-footer__terms">
               <a
-                :href="links.terms"
+                :href="theme.links.terms"
                 class="is--small"
-              >Terms of Use</a>
+              >
+                {{ currentLocale.footer.terms }}
+              </a>
               <a
-                :href="links.privacy"
+                :href="theme.links.privacy"
                 class="is--small"
-              >Privacy Policy</a>
+              >
+                {{ currentLocale.footer.privacy }}
+              </a>
             </span>
           </p>
           <div class="is--margin-top-40 is--small is--lt-tablet-show v-footer__copyright">
-            © {{ currentYear }} U.S. Challenge Coin LLC. All rights reserved.
+            © {{ currentYear }} {{ currentLocale.footer.copyright }}
           </div>
         </div>
       </div>

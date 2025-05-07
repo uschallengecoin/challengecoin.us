@@ -9,6 +9,7 @@ const props = defineProps({
     type: String,
     default: 'Copy',
   },
+  buttonTextCopied: String,
 });
 
 const { copy, copied } = useClipboard({ legacy: true });
@@ -32,7 +33,7 @@ const onShareClick = () => {
       @click="onShareClick"
     >
       <span v-if="!copied">{{ buttonText }}</span>
-      <span v-else>Copied!</span>
+      <span v-else>{{ buttonTextCopied }}</span>
     </VButton>
   </div>
 </template>

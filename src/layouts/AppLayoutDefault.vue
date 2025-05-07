@@ -9,7 +9,6 @@ import { data as allPages } from '@/store/all.data';
 import { convertPages } from 'UiKit/types/pages';
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
 import { storeToRefs } from 'pinia';
-import { links } from '@/config/links';
 
 const VHeader = defineAsyncComponent({
   loader: () => import('UiKit/components/VHeader/VHeader.vue'),
@@ -32,8 +31,10 @@ const VDialogs = defineAsyncComponent(() => import(
   'UiKit/components/VDialogs.vue'
 ));
 
-const { page, frontmatter, theme } = useData();
+const { page, frontmatter, theme, site, lang } = useData();
 const pages = convertPages(allPages);
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 theme.navigation = {
   root: pages,
@@ -119,10 +120,10 @@ onUnmounted(() => {
       <template #mobile>
         <VButton
           as="a"
-          :href="encodeURI(links.buyNow)"
+          :href="encodeURI(theme.links.buyNow)"
           size="large"
         >
-          Buy U.S. Challenge Coin
+          {{ currentLocale.buyNowLong2 }}
         </VButton>
       </template>
     </VHeader>

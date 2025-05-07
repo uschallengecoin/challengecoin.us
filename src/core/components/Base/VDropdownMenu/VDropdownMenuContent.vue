@@ -26,7 +26,6 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
 </script>
 
 <template>
-  {{console.log(props)}}
   <DropdownMenuPortal>
     <DropdownMenuContent
       v-bind="forwarded"
@@ -61,12 +60,12 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
 
 .v-dropdown-menu-content[data-side="top"] {
   // animation-name: slideUp;
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 0 0;
 }
 
 .v-dropdown-menu-content[data-side="bottom"] {
   animation-name: slideDown;
-  border-radius: 0px 0px 4px 4px;
+  border-radius: 0 0 4px 4px;
 }
 
 @keyframes slideUp {
@@ -74,6 +73,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
     opacity: 0;
     transform: translateY(2px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -85,6 +85,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
     opacity: 0;
     transform: translateY(-2px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

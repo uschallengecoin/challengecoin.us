@@ -44,7 +44,6 @@ const toggleState = ref(false);
     >
       <slot />
     </VDropdownMenuTrigger>
-{{console.log(contentProps)}}
     <VDropdownMenuContent
       v-bind="contentProps"
     >

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { defineAsyncComponent, hydrateOnVisible, onMounted, ref } from 'vue';
-import { env } from '@/config/env';
 import { useToast } from '../Base/VToast/use-toast';
 import { useHubspotForm } from 'UiKit/composables/useHubspotForm';
 import { removeAnchorFromElements } from '@/core/helpers/formatters/removeAnchor';
+import { useData } from 'vitepress';
 
 const VFormJoinWaitlist = defineAsyncComponent({
   loader: () => import('UiKit/components/VForms/VFormJoinWaitlist.vue'),
@@ -11,6 +11,7 @@ const VFormJoinWaitlist = defineAsyncComponent({
 });
 
 const { toast } = useToast();
+const { theme } = useData();
 
 const TOAST_OPTIONS = {
   title: 'You’re subscribed!',
@@ -21,7 +22,7 @@ const loadingSubmitting = ref(false);
 const clear = ref(false);
 const onSubmit = async (emailLocal: string) => {
   loadingSubmitting.value = true;
-  const { submitFormToHubspot, errorHubspotForm } = useHubspotForm(env.HUBSPOT_FORM_ID_WAITING_LIST);
+  const { submitFormToHubspot, errorHubspotForm } = useHubspotForm(theme.value.env.HUBSPOT_FORM_ID_WAITING_LIST);
   await submitFormToHubspot({
     email: emailLocal,
   });
