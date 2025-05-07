@@ -2,7 +2,7 @@
 import {
   VDialogContent, VDialogFooter, VDialog,
 } from 'UiKit/components/Base/VDialog';
-import { computed, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { links } from '@/config/links';
 
 const props = defineProps({
@@ -13,6 +13,7 @@ const props = defineProps({
 const emit = defineEmits(['close']);
 
 const open = defineModel<boolean>();
+const dialog = ref(null);
 
 const backgroundImageLocal = computed(() => (
   `url(${props.backgroundImageSrc})`
@@ -21,6 +22,12 @@ const backgroundImageLocal = computed(() => (
 watch(() => open.value, () => {
   if (!open.value) {
     emit('close');
+  }
+});
+
+watch(() => props.data, () => {
+  if (dialog.value) {
+    dialog.value.scrollTop = 0;
   }
 });
 </script>
@@ -32,15 +39,16 @@ watch(() => open.value, () => {
   >
     <VDialogContent
       :aria-describedby="undefined"
-      class="VDialogHero v-dialog-hero with-default-distance"
+      class="VDialog v-dialog-default with-default-distance"
     >
       <div
-        class="v-dialog-hero__content"
+        ref="dialog"
+        class="v-dialog-default__content"
         :style="{ '--bg-image': backgroundImageSrc ? backgroundImageLocal : undefined }"
         v-html="data"
       />
       <VDialogFooter>
-        <div class="v-dialog-hero__button-wrap">
+        <div class="v-dialog-default__button-wrap">
           <slot name="buttons">
             <VButton
               v-if="links.buyNow"
@@ -73,7 +81,7 @@ watch(() => open.value, () => {
 @use 'UiKit/styles/_colors.scss' as *;
 @use "UiKit/styles/_variables.scss" as *;
 
-.v-dialog-hero {
+.v-dialog-default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

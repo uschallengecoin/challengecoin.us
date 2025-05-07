@@ -48,7 +48,6 @@ const loader = createContentLoader(['home/**/*.md'], {
       async (pageData) => {
         const mtime = await getLastUpdatedUnix(pageData.url);
         normalizeFrontmatter(pageData);
-        console.log('pageData', pageData);
         return {
           ...pageData.frontmatter as IFrontmatter,
           mtime,

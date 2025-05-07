@@ -274,6 +274,7 @@ onBeforeUnmount(() => {
       v-model="dialogOpen"
       :data="dialogData?.html"
       :background-image-src="dialogData?.image"
+      class="view-home__dialog"
     />
   </ClientOnly>
 </template>

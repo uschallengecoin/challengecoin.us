@@ -1,5 +1,4 @@
 export function removeAnchorFromElements(selector: string): void {
-    console.log('removeAnchorFromElements', document?.querySelectorAll(`${selector} [id]`));
     // Remove 'id' attributes from selected elements
     document?.querySelectorAll(`${selector} [id]`).forEach(element => {
       element.removeAttribute('id');
