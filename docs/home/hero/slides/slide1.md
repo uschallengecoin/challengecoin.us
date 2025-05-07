@@ -3,6 +3,7 @@ image: /images/home/coin1.webp
 imageMobile: /images/home/coin7.webp
 draft: true
 slug: heroSlide
+dialogId: 1
 ---
 
 # U.S. Challenge Coin

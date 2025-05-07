@@ -1,6 +1,7 @@
 ---
 title: Give
 draft: true
+slug: howItWorks
 ---
 
 ##### Give back and help heroes in need.

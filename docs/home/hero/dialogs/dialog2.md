@@ -2,6 +2,7 @@
 image: /images/home/coin2.webp
 dialogId: 2
 draft: true
+slug: heroDialog
 ---
 
 ### Giving Back

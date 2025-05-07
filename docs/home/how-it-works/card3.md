@@ -1,6 +1,7 @@
 ---
 title: Belong
 draft: true
+slug: howItWorks
 ---
 
 ##### Join a community and take part in real-world and online events powered by crypto.

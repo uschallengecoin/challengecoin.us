@@ -3,6 +3,7 @@ title1: The Legacy of
 title2: Challenge Coins
 images: ['/images/home/history1.webp', '/images/home/history2.webp', '/images/home/history3.webp']
 draft: true
+slug: legacy
 ---
 
 ### A Symbol of Honor for Every American
@@ -13,6 +14,6 @@ Challenge coins in America trace their roots back to the battlefields of World W
 
 **Now, as the United States prepares to celebrate 250 years of independence, the tradition lives on.**
 
-The U.S. Challenge Coin was created to commemorate this milestone — a modern tribute to American resilience and pride. 100% made and designed in the U.S. in collaboration with renowned sculptor and engraver <VDialogClickText name="engraver">**Don Everhart II (U.S. Mint / Franklin Mint)**</VDialogClickText> its beautiful design and timeless craftsmanship bridges past and present, honoring those who’ve served and inspiring those who collect and carry it.
+The U.S. Challenge Coin was created to commemorate this milestone — a modern tribute to American resilience and pride. 100% made and designed in the U.S. in collaboration with renowned sculptor and engraver **Don Everhart II (U.S. Mint / Franklin Mint)**{dialog="engraver" .is--link-1} its beautiful design and timeless craftsmanship bridges past and present, honoring those who’ve served and inspiring those who collect and carry it.
 
 Owning this coin means holding a piece of American history — a symbol of who we are, where we’ve been, and the legacy we carry forward.

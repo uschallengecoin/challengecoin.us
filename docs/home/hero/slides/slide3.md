@@ -3,6 +3,7 @@ image: /images/home/coin3.webp
 imageMobile: /images/home/coin9.webp
 draft: true
 slug: heroSlide
+dialogId: 3
 ---
 
 # Buy Physical Coins, Get Free Crypto

@@ -9,16 +9,9 @@ export const useDialogs = defineStore('dialogs', () => {
     isDialogShareOpen.value = true;
   };
 
-  const isDialogEngraverOpen = ref(false);
-  const showDialogEngraver = () => {
-    isDialogEngraverOpen.value = true;
-  };
-
   return {
     showDialogShare,
     isDialogShareOpen,
-    showDialogEngraver,
-    isDialogEngraverOpen,
   };
 });
 

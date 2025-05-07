@@ -1,5 +1,6 @@
 ---
 draft: true
+slug: subscribe
 ---
 
 # Be Part of Something Bigger

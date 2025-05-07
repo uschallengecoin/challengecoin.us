@@ -1,5 +1,6 @@
 ---
 draft: true
+slug: testimonials
 ---
 
 ## Voices of Honor

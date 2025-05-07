@@ -3,6 +3,7 @@ image: /images/home/coin2.webp
 imageMobile: /images/home/coin8.webp
 draft: true
 slug: heroSlide
+dialogId: 2
 ---
 
 # Supporting Our Heroes
