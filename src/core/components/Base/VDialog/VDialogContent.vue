@@ -92,12 +92,12 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
     overflow-y: auto;
   }
 
-  p {
-    font-family: $familyValue;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-  }
+  // p {
+  //   font-family: $familyValue;
+  //   font-size: 20px;
+  //   font-style: normal;
+  //   font-weight: 400;
+  //   line-height: 28px;
+  // }
 }
 </style>

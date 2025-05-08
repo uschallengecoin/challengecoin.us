@@ -19,7 +19,7 @@ defineProps({
         </h5>
         <p
           v-if="profession"
-          class="is--color-gray is--margin-top-8"
+          class="is--color-dark-gray is--margin-top-8"
         >
           {{ profession }}
         </p>
@@ -55,10 +55,15 @@ defineProps({
     font-style: normal;
     font-weight: 400;
     line-height: 60px;
+    color: colors.$black;
 
     @media screen and (width < $tablet){
       font-size: 36px;
       line-height: 46px;
+    }
+
+    p {
+      color: colors.$black;
     }
   }
 }

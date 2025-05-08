@@ -20,7 +20,10 @@ const { theme } = useData();
     reverse
     class="VSectionWhyOwn v-section-why-own"
   >
-    <div style="position: relative">
+    <div
+      style="position: relative"
+      class="v-section-why-own__top"
+    >
       <slot />
 
       <VButton
@@ -95,6 +98,16 @@ const { theme } = useData();
       height: auto;
       padding-bottom: 0;
     }
+  }
+
+  &__top > div > p:first-of-type:not([class]) {
+    font-family: $familyValue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 40px;
+    color: $black;
   }
 }
 </style>

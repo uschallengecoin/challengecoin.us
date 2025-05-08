@@ -61,6 +61,7 @@ defineProps({
       font-weight: 400;
       line-height: 32px;
       margin-bottom: 40px;
+      color: $black;
     }
   }
 

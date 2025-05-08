@@ -75,6 +75,7 @@ const currentLocale = computed(() => (
     justify-content: space-between;
     border-radius: 10px;
     background-color: $biege;
+    color: $black;
     
 
     &::before {
@@ -109,6 +110,10 @@ const currentLocale = computed(() => (
       font-weight: 600;
       line-height: 46px;
     }
+  }
+
+  p {
+    color: $black;
   }
 }
 </style>

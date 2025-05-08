@@ -81,4 +81,9 @@ export default {
     terms: "Terms of Use",
     privacy: "Privacy Policy",
   },
+
+  links: {
+    terms: '/legal/terms-of-service',
+    privacy: '/legal/privacy-policy',
+  },
 };

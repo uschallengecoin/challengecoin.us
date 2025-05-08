@@ -30,7 +30,7 @@ export default {
   metaChunk: true,
   rewrites(url) {
     if (url.startsWith('en/')) {
-      return url.replace('en/', '');
+      return urlFormat(url.replace('en/', ''));
     }
     return urlFormat(url);
   },

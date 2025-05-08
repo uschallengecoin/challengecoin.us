@@ -31,6 +31,7 @@ import VSection from 'UiKit/components/VSection/VSection.vue';
       font-weight: 400;
       line-height: 32px;
       margin-top: 28px;
+      color: $black;
 
       @media screen and (width < $tablet){
         margin-top: 20px;

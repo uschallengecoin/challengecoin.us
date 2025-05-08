@@ -118,24 +118,24 @@ const onClickMenu = () => {
             />
             <span class="v-footer__terms">
               <a
-                :href="theme.links.terms"
+                :href="currentLocale.links.terms"
                 class="is--small"
               >
                 {{ currentLocale.footer.terms }}
               </a>
               <a
-                :href="theme.links.privacy"
+                :href="currentLocale.links.privacy"
                 class="is--small"
               >
                 {{ currentLocale.footer.privacy }}
               </a>
             </span>
           </p>
-          <div class="is--margin-top-40 is--small is--lt-tablet-show v-footer__copyright">
-            © {{ currentYear }} {{ currentLocale.footer.copyright }}
-          </div>
         </div>
       </div>
+    </div>
+    <div class="is--margin-top-40 is--small is--lt-tablet-show v-footer__copyright">
+      © {{ currentYear }} {{ currentLocale.footer.copyright }}
     </div>
   </div>
 </template>

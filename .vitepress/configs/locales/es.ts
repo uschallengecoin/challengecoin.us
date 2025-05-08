@@ -82,4 +82,10 @@ export default {
     terms: "Condiciones de uso",
     privacy: "política de privacidad",
   },
+
+
+  links: {
+    terms: '/es/legal/terms-of-service',
+    privacy: '/es/legal/privacy-policy',
+  },
 };

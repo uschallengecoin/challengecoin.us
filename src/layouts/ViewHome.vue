@@ -4,7 +4,8 @@ import { data } from '@/store/home.data';
 import VInfoHero from /*VInfoHero*/'UiKit/components/VInfo/VInfoHero.vue';
 import VCarouselItem from /*VCarouselItem*/'UiKit/components/Base/VCarousel/VCarouselItem.vue';
 import VSectionTopVideo from /*VSectionTopVideo*/'UiKit/components/VSectionTop/VSectionTopVideo.vue';
-import VSlider from /*VSlider*/'UiKit/components/VSlider/VSlider.vue';
+import VSliderSwiper from /*VSlider*/'UiKit/components/VSlider/VSliderSwiper.vue';
+import { SwiperSlide } from 'swiper/vue';
 import {
   defineAsyncComponent, hydrateOnVisible, onBeforeUnmount, onMounted, ref, computed,
 } from 'vue';
@@ -133,12 +134,18 @@ onBeforeUnmount(() => {
       full-height
       video-src="/video/video-bg.mp4"
     >
-      <VSlider
-        autoplay
-        fade
-        :options="{ containScroll: 'trimSnaps', loop: true }"
+      <VSliderSwiper
+        navigation
+        :centeredSlides="true"
+        :loop="true"
+        :autoplay="{
+          delay: 2500,
+          disableOnInteraction: false,
+        }"
+        :effect="'fade'"
+        :slides-per-view="1"
       >
-        <VCarouselItem
+        <SwiperSlide
           v-for="(item, index) in heroSlides"
           :key="index + item.dialogId"
         >
@@ -150,8 +157,8 @@ onBeforeUnmount(() => {
           >
             <div v-html="item.html" />
           </VInfoHero>
-        </VCarouselItem>
-      </VSlider>
+        </SwiperSlide>
+      </VSliderSwiper>
     </VSectionTopVideo>
     <!-- End Top Video -->
 

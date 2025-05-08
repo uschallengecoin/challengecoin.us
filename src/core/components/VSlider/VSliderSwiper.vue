@@ -1,30 +1,19 @@
 <script setup lang="ts">
-import { Navigation } from 'swiper/modules';
+import { Navigation, EffectFade, Autoplay } from 'swiper/modules';
 import { Swiper } from 'swiper/vue';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/effect-fade';
+// import 'swiper/css/autoplay';
 
-defineProps({
-  breakpoints: {
-    type: Object,
-    default: () => ({
-      767: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-    }),
-  },
-});
-
-const modules = [Navigation];
+const modules = [Navigation, EffectFade, Autoplay];
 
 </script>
 
 <template>
   <Swiper
     :modules="modules"
-    :space-between="20"
-    navigation
-    :slides-per-view="1"
-    :breakpoints="breakpoints"
+    v-bind="$attrs"
     class="swiper-container VSliderSwiper slider-swiper"
   >
     <slot />
@@ -35,29 +24,52 @@ const modules = [Navigation];
 @use 'UiKit/styles/_colors.scss' as colors;
 
 .slider-swiper {
-  display: flex;
-  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
-
-  @media screen and (width < 767px) {
-    margin-top: 55px;
-  }
+  // overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+  display: block;
+  user-select: none;
 
   .swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
     display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+  }
+
+  .swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+  }
+
+  .swiper-slide-invisible-blank {
+    visibility: hidden;
   }
 
   .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
-    right: 0;
-    top: -87px;
+    bottom: 0;
+    display: flex;
     width: 48px;
     height: 48px;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
     cursor: pointer;
-    padding: 12px;
     transition: all 0.3s ease;
+    border-radius: 4px;
 
     &.swiper-button-disabled {
       opacity: 0.3;
@@ -65,25 +77,60 @@ const modules = [Navigation];
     }
 
     &:hover {
-      background-color: colors.$primary-light;
       transition: all 0.3s ease;
+      background-color: rgb(66 84 102 / 0.5);
     }
   }
 
   .swiper-button-prev {
-    right: 51px;
+    left: 50%;
+    transform: translateX(-66px);
     background-image: url("UiKit/assets/images/arrow-left-primary.svg?url");
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 24px;
     background-position: center;
   }
 
   .swiper-button-next {
-    right: -3px;
+    right: 50%;
+    transform: translateX(66px);
     background-image: url("UiKit/assets/images/arrow-right-primary.svg?url");
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 24px;
     background-position: center;
+  }
+}
+
+.swiper-slide {
+  opacity: 0 !important;
+}
+
+.swiper-slide-active {
+  opacity: 1 !important;
+}
+
+// effect fade
+.swiper-fade {
+  &.swiper-free-mode {
+    .swiper-slide {
+      transition-timing-function: ease-out;
+    }
+  }
+
+  .swiper-slide {
+    pointer-events: none;
+    transition-property: opacity;
+
+    .swiper-slide {
+      pointer-events: none;
+    }
+  }
+
+  .swiper-slide-active {
+    &,
+    & .swiper-slide-active {
+      pointer-events: auto;
+    }
   }
 }
 </style>

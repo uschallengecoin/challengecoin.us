@@ -81,6 +81,7 @@ const onLearnMore = () => {
     font-style: normal;
     font-weight: 400;
     line-height: 36px;
+    color: $black;
 
     @media (width < 768px) {
       font-size: 24px;

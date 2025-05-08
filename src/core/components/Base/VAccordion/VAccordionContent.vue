@@ -29,6 +29,10 @@ const delegatedProps = computed(() => {
   background-color: #F2F1ED;
   transition: all 0.3s ease;
   margin: 0 !important;
+
+  p {
+    color: inherit;
+  }
 }
 
 .v-accordion-content[data-state="open"] {
