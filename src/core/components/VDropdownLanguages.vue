@@ -1,28 +1,9 @@
 <script setup lang="ts">
 import VDropdown from 'UiKit/components/VDropdown.vue';
-import { useData } from 'vitepress';
-import { computed } from 'vue';
+import { useLangs } from 'UiKit/composables/useLang';
 
-const { site, lang } = useData();
+const { localeLinks, currentLang } = useLangs({ correspondingLink: true })
 
-const currentLanguage = computed(() => lang.value || 'en');
-const locales = computed(() => site.value.locales);
-const currentLocale = computed(() => {
-  const languageKey = lang.value || currentLanguage.value;
-  const locale = Object.values(locales.value).find((locale) => locale.lang === languageKey);
-  return locale?.label || '';
-});
-const localesMenu = computed(() => {
-  const menu = [];
-  Object.keys(locales.value).forEach((key) => {
-      menu.push({
-        text: locales.value[key].label,
-        href: `/${locales.value[key].lang}/`,
-        active: locales.value[key].lang === currentLanguage.value,
-      });
-  });
-  return menu;
-});
 </script>
 
 <template>
@@ -31,11 +12,11 @@ const localesMenu = computed(() => {
   >
     <VDropdown
       v-bind="$attrs"
-      :menu="localesMenu"
+      :menu="localeLinks"
       with-chevron
     >
       <span class="is--small">
-        {{ currentLocale.slice(0, 3).toUpperCase() }}
+        {{ currentLang.label.slice(0, 3).toUpperCase() }}
       </span>
     </VDropdown>
   </div>
