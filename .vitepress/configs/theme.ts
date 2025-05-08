@@ -1,5 +1,6 @@
 import env from './env';
 import socials from './socials';
+import links from './links';
 
 export default {
     search: {
@@ -11,4 +12,5 @@ export default {
     },
     socials,
     env,
+    links,
 };

@@ -11,6 +11,7 @@ import { isEmpty } from 'UiKit/helpers/general';
 const props = defineProps({
   loading: Boolean,
   label: String,
+  placeholder: String,
   buttonText: {
     type: String,
     default: 'Subscribe',
@@ -83,7 +84,10 @@ watch(() => model, () => {
       novalidate
       @submit.prevent="onSubmit"
     >
-      <div class="v-form-footer-subscribe__group">
+      <div
+        class="v-form-footer-subscribe__group"
+        :class="{ 'is--with-label': label}"
+      >
         <VFormGroup
           v-slot="baseFormGroupProps"
           :model="model"
@@ -96,20 +100,20 @@ watch(() => model, () => {
           <VFormInput
             :is-error="baseFormGroupProps.isFieldError"
             :model-value="model.email"
-            placeholder="Your Email"
+            :placeholder="placeholder"
             type="email"
             size="large"
             @update:model-value="model.email = $event"
           />
+          <VButton
+            size="large"
+            :loading="loading"
+            :disabled="isDisabledButton || loading"
+            class="v-form-footer-subscribe__button is--margin-top-0"
+          >
+            {{ buttonText }}
+          </VButton>
         </VFormGroup>
-        <VButton
-          size="large"
-          :loading="loading"
-          :disabled="isDisabledButton || loading"
-          class="v-form-footer-subscribe__button is--margin-top-0"
-        >
-          {{ buttonText }}
-        </VButton>
       </div>
     </form>
   </div>

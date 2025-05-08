@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import VSection from 'UiKit/components/VSection/VSection.vue';
-import { defineAsyncComponent, hydrateOnVisible, ref } from 'vue';
+import { computed, defineAsyncComponent, hydrateOnVisible, ref } from 'vue';
 import { useToast } from '../Base/VToast/use-toast';
 import { useHubspotForm } from 'UiKit/composables/useHubspotForm';
-import { env } from '@/config/env';
 import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
 import { storeToRefs } from 'pinia';
 import { useLazyBackground } from '@/core/composables/useLazyBackground';
@@ -24,8 +23,9 @@ defineProps({
   title: String,
 });
 
-
-const { theme } = useData();
+const { lang, site, theme } = useData();
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 const SOCIAL_LIST = [
   theme.value.socials.share,
@@ -65,6 +65,8 @@ const onSubmit = async (emailLocal: string) => {
 const { isTablet } = storeToRefs(useBreakpoints());
 
 useLazyBackground('v-subscribe', subscribeImage);
+
+
 </script>
 
 <template>
@@ -73,7 +75,8 @@ useLazyBackground('v-subscribe', subscribeImage);
     <VFormFooterSubscribe
       :clear="clear"
       :loading="loadingSubmitting"
-      :button-text="isTablet ? 'Subscribe' : 'Subscribe to our Newsletter'"
+      :placeholder="currentLocale.subscription.placeholder"
+      :button-text="isTablet ? currentLocale.subscription.buttonMobile : currentLocale.subscription.button"
       class="is--margin-top-48 v-subscribe__form"
       @submit="onSubmit"
     />

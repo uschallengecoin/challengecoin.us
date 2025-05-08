@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { defineAsyncComponent, hydrateOnVisible } from 'vue';
+import { computed, defineAsyncComponent, hydrateOnVisible } from 'vue';
 import {
   VSheet, VSheetContent, VSheetTrigger, VSheetHeader, VSheetTitle,
   VSheetDescription,
 } from '../Base/VSheet';
 import VMenuBurger from 'UiKit/components/VHeader/VMenuBurger.vue';
 import VHeaderNavigationListItem from './VHeaderNavigationListItem.vue';
-import { MENU_HEADER } from '@/config/menu';
 import { VisuallyHidden } from 'radix-vue';
 import { useDialogs } from 'UiKit/store/useDialogs';
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 import shareIcon from '@/assets/images/social/share.svg';
+import VDropdownLanguages from 'UiKit/components/VDropdownLanguages.vue';
+import { useData } from 'vitepress';
 
 const VNavigationMenuLink = defineAsyncComponent({
   loader: () => import('UiKit/components/Base/VNavigationMenu/VNavigationMenuLink.vue'),
@@ -18,6 +19,9 @@ const VNavigationMenuLink = defineAsyncComponent({
 });
 
 const open = defineModel<boolean>();
+const { lang, site } = useData();
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 const onShareClick = () => {
   useDialogs().showDialogShare();
@@ -43,42 +47,49 @@ const onShareClick = () => {
           <VSheetDescription>Mobile Menu</VSheetDescription>
         </VSheetHeader>
       </VisuallyHidden>
-      <nav class="v-header-mobile__navigation">
-        <ul
-          v-for="(menuItem, index) in MENU_HEADER"
-          :id="index"
-          :key="JSON.stringify(menuItem)"
-          class="v-header-mobile__list"
-        >
-          <li class="v-header-mobile__item">
-            <VNavigationMenuLink
-              v-if="!menuItem.children"
-              :href="menuItem.href"
-              @click="open = false"
-            >
-              {{ menuItem.text }}
-            </VNavigationMenuLink>
-            <span
-              v-else
-              class="is--h5__title v-header-mobile__title"
-            >
-              {{ menuItem.text }}
-            </span>
-            <ul
-              v-for="(childGroup, childGroupIndex) in menuItem.children"
-              :key="childGroupIndex"
-              class="v-header-mobile__list"
-            >
-              <VHeaderNavigationListItem
-                v-for="(childItem, childIndex) in childGroup"
-                :key="childIndex"
-                :data="childItem"
+      <div>
+        <nav class="v-header-mobile__navigation">
+          <ul
+            v-for="(menuItem, index) in currentLocale.nav"
+            :id="index"
+            :key="JSON.stringify(menuItem)"
+            class="v-header-mobile__list"
+          >
+            <li class="v-header-mobile__item">
+              <VNavigationMenuLink
+                v-if="!menuItem.children"
+                :href="menuItem.href"
                 @click="open = false"
-              />
-            </ul>
-          </li>
-        </ul>
-      </nav>
+              >
+                {{ menuItem.text }}
+              </VNavigationMenuLink>
+              <span
+                v-else
+                class="is--h5__title v-header-mobile__title"
+              >
+                {{ menuItem.text }}
+              </span>
+              <ul
+                v-for="(childGroup, childGroupIndex) in menuItem.children"
+                :key="childGroupIndex"
+                class="v-header-mobile__list"
+              >
+                <VHeaderNavigationListItem
+                  v-for="(childItem, childIndex) in childGroup"
+                  :key="childIndex"
+                  :data="childItem"
+                  @click="open = false"
+                />
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+
+        <VDropdownLanguages 
+          class="is--lt-tablet-show is--margin-top-40"
+        />
+      </div>
 
       <div class="v-header-mobile__data">
         <slot />
@@ -88,7 +99,7 @@ const onShareClick = () => {
           @click="onShareClick"
         >
           <shareIcon />
-          Share
+          {{ currentLocale.share.button }}
         </VButton>
       </div>
     </VSheetContent>

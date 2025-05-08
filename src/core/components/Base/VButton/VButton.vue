@@ -144,9 +144,9 @@ const btnClasses = computed(() => ({
 
   &.is--size-medium{
     height: 40px;
-    padding: 0 16px;
-    font-size: 14px;
-    line-height: 21px;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 20px;
   }
 
   &.is--size-small {

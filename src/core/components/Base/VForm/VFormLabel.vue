@@ -8,7 +8,7 @@ defineProps({
   <!-- eslint-disable-next-line vuejs-accessibility/label-has-for -->
   <label
     v-bind="$attrs"
-    class="VFormlabel v-form-label"
+    class="VFormlabel v-form-label is--h5__title"
   >
     <slot />
 
@@ -25,9 +25,7 @@ defineProps({
 @use 'UiKit/styles/_colors.scss' as colors;
 
 .v-form-label{
-  color: colors.$gray-80;
-  font-weight: 400;
-  font-size: 16px;
+  color: inherit;
   display: inline-block;
   position: relative;
 

@@ -1,15 +1,14 @@
 <script lang="ts">
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
-import { links } from '@/config/links';
 import { data } from '@/store/home.data';
 import VInfoHero from /*VInfoHero*/'UiKit/components/VInfo/VInfoHero.vue';
 import VCarouselItem from /*VCarouselItem*/'UiKit/components/Base/VCarousel/VCarouselItem.vue';
 import VSectionTopVideo from /*VSectionTopVideo*/'UiKit/components/VSectionTop/VSectionTopVideo.vue';
 import VSlider from /*VSlider*/'UiKit/components/VSlider/VSlider.vue';
 import {
-  defineAsyncComponent, hydrateOnVisible, onBeforeUnmount, onMounted, ref,
-  useId,
+  defineAsyncComponent, hydrateOnVisible, onBeforeUnmount, onMounted, ref, computed,
 } from 'vue';
+import { useData } from 'vitepress';
 
 const VDialog = defineAsyncComponent({
   loader: () => import('UiKit/components/VDialogs/VDialog.vue'),
@@ -71,30 +70,37 @@ const VButton = defineAsyncComponent({
   hydrate: hydrateOnVisible(),
 });
 
-const heroSlides = data?.filter((item) => item.slug === 'heroSlide');
-const heroDialogs = data?.filter((item) => item.slug === 'heroDialog');
-const legacy = data?.find((item) => item.slug === 'legacy');
-const engraver = data?.find((item) => item.slug === 'dialogEngraver');
-const howItWorksList = data?.filter((item) => item.slug === 'howItWorks');
-const whyOwn = data?.find((item) => item.slug === 'whyOwn');
-const whyOwnList = data?.filter((item) => item.slug === 'whyOwnList');
-const subscribe = data?.find((item) => item.slug === 'subscribe');
-const testimonials = data?.find((item) => item.slug === 'testimonials');
-const testimonialsList = data?.filter((item) => item.slug === 'testimonialsList');
-const preOrder = data?.find((item) => item.slug === 'preOrder');
-const faq = data?.find((item) => item.slug === 'faq');
-const faqList = data?.filter((item) => item.slug === 'faqList');
 </script>
 
 <script setup lang="ts">
 useGlobalLoader().hide();
+const { lang, theme, site } = useData();
+const currentLanguage = computed(() => lang.value || 'en');
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
+
+const languageData = computed(() => data[currentLanguage.value] || data['en']);
+
+const heroSlides = computed(() => languageData.value?.filter((item) => item.slug === 'heroSlide'));
+const heroDialogs = computed(() => languageData.value?.filter((item) => item.slug === 'heroDialog'));
+const legacy = computed(() => languageData.value?.find((item) => item.slug === 'legacy'));
+const engraver = computed(() => languageData.value?.find((item) => item.slug === 'dialogEngraver'));
+const howItWorksList = computed(() => languageData.value?.filter((item) => item.slug === 'howItWorks'));
+const whyOwn = computed(() => languageData.value?.find((item) => item.slug === 'whyOwn'));
+const whyOwnList = computed(() => languageData.value?.filter((item) => item.slug === 'whyOwnList'));
+const subscribe = computed(() => languageData.value?.find((item) => item.slug === 'subscribe'));
+const testimonials = computed(() => languageData.value?.find((item) => item.slug === 'testimonials'));
+const testimonialsList = computed(() => languageData.value?.filter((item) => item.slug === 'testimonialsList'));
+const preOrder = computed(() => languageData.value?.find((item) => item.slug === 'preOrder'));
+const faq = computed(() => languageData.value?.find((item) => item.slug === 'faq'));
+const faqList = computed(() => languageData.value?.filter((item) => item.slug === 'faqList'));
 
 const dialogOpen = defineModel<boolean>();
 const dialogData = ref();
 const savedDialogValue = ref<string | null>(null);
 
 const onLearnMore = (dialogId: string) => {
-  dialogData.value = heroDialogs.find((item) => item.dialogId === dialogId);
+  dialogData.value = heroDialogs.value.find((item) => item.dialogId === dialogId);
   dialogOpen.value = true;
 };
 
@@ -103,7 +109,7 @@ const handleDialogAttributeClick = (event: Event) => {
     if (target.hasAttribute('dialog')) {
       savedDialogValue.value = target.getAttribute('dialog');
       if (savedDialogValue.value?.toLowerCase() === 'engraver') {
-        dialogData.value = engraver;
+        dialogData.value = engraver.value;
         dialogOpen.value = true;
       }
     }
@@ -139,7 +145,7 @@ onBeforeUnmount(() => {
           <VInfoHero
             :image-src="item.image"
             :image-mobile-src="item.imageMobile"
-            :buy-now-href="links.buyNow"
+            :buy-now-href="theme.links.buyNow"
             @learn-more="onLearnMore(item.dialogId)"
           >
             <div v-html="item.html" />
@@ -152,15 +158,15 @@ onBeforeUnmount(() => {
     <!-- Start Legacy -->
     <VSectionTwoColImageFullBackground
       id="legacy"
-      :button-href="links.buyNow"
-      button-text="Buy U.S. Challenge Coin Now"
-      button-text-mobile="Buy Now"
+      :button-href="theme.links.buyNow"
+      :button-text="currentLocale?.home.buyNowLong"
+      :button-text-mobile="currentLocale?.home.buyNow"
       class="is--margin-top-150"
     >
       <VSectionLegacy
-        :title1="legacy.title1"
-        :title2="legacy.title2"
-        :images="legacy.images"
+        :title1="legacy?.title1"
+        :title2="legacy?.title2"
+        :images="legacy?.images"
       />
       <div
         style="position: relative; align-self: center;"
@@ -171,7 +177,7 @@ onBeforeUnmount(() => {
 
     <!-- Start How It Works -->
     <VHowItWorks
-      title="How It Works"
+      :title="currentLocale?.home?.howItWorksTitle"
     >
       <VCardDefault
         v-for="(item, index) in howItWorksList"
@@ -186,13 +192,14 @@ onBeforeUnmount(() => {
     <!-- Start Why Own -->
     <VSectionWhyOwn
       id="why-own-u-s-challenge-coin"
-      :image="whyOwn.image"
-      :image-mobile="whyOwn.imageMobile"
+      :image="whyOwn?.image"
+      :image-mobile="whyOwn?.imageMobile"
+      :button-text="currentLocale?.home.buyNow"
       class="is--paddings"
     >
       <div
         class="is--margin-bottom-40"
-        v-html="whyOwn.html"
+        v-html="whyOwn?.html"
       />
       <VCardCheckmarked
         v-for="(item, index) in whyOwnList"
@@ -206,7 +213,7 @@ onBeforeUnmount(() => {
 
     <!-- Start Subscribe -->
     <VSubscribe id="be-part-of-something-bigger">
-      <div v-html="subscribe.html" />
+      <div v-html="subscribe?.html" />
     </VSubscribe>
     <!-- End Subscribe -->
 
@@ -215,7 +222,7 @@ onBeforeUnmount(() => {
       id="voices-of-honor"
       class="is--margin-top-150"
     >
-      <div v-html="testimonials.html" />
+      <div v-html="testimonials?.html" />
       <VSliderAutoplay pagination-src="/images/home/coin5.webp">
         <VCarouselItem
           v-for="(item, index) in testimonialsList"
@@ -234,8 +241,8 @@ onBeforeUnmount(() => {
 
     <!-- Start Pre Order -->
     <VPreOrder
-      :title="preOrder.title"
-      :display="preOrder.display"
+      :title="preOrder?.title"
+      :display="preOrder?.display"
       class="is--margin-top-150"
     >
       <div v-html="preOrder.html" />
@@ -244,13 +251,13 @@ onBeforeUnmount(() => {
 
     <!-- Start faq-->
     <VSectionFaq
-      :title="faq.title"
+      :title="faq?.title"
       class="is--margin-top-150"
     >
       <VAccordionItem
         v-for="(item, index) in faqList"
         :key="index"
-        :trigger="item.trigger"
+        :trigger="item?.trigger"
         :idx="index"
       >
         <div v-html="item.html" />
@@ -261,10 +268,10 @@ onBeforeUnmount(() => {
     <div class="is--paddings view-home__button">
       <VButton
         as="a"
-        :href="encodeURI(links.buyNow)"
+        :href="encodeURI(theme.links.buyNow)"
         size="large"
       >
-        Buy U.S. Challenge Coin
+        {{ currentLocale?.buyNowLong2 }}
       </VButton>
     </div>
   </div>

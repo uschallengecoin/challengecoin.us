@@ -25,7 +25,7 @@ const delegatedProps = computed(() => {
 
 .v-accordion-content {
   overflow: hidden;
-  color: colors.$gray;
+  color: colors.$dark-gray;
   background-color: #F2F1ED;
   transition: all 0.3s ease;
   margin: 0 !important;

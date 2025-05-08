@@ -44,7 +44,7 @@ defineProps({
 <style lang="scss">
 .v-accordion-item {
   &__content {
-    color: $gray;
+    color: $dark-gray;
   }
 
   &__content-hidden {

@@ -39,7 +39,7 @@ async function getLastUpdatedUnix(url:string) {
   });
 }
 
-const loader = createContentLoader(['home/**/*.md'], {
+const loader = createContentLoader(['{en,es}/home/**/*.md'], {
   includeSrc: true,
   render: true,
   async transform(rawData: ContentData[]) {
@@ -53,25 +53,23 @@ const loader = createContentLoader(['home/**/*.md'], {
           mtime,
           rawUrl: pageData.url,
           html: pageData.html,
+          lang: pageData.url.split('/')[1],
         };
       },
       { concurrency: 64 },
     );
-    // ToDo
-    // change to draft == false
     data = sortByPublishDate(data);
     data = sortByOrder(data);
-    return data;
+
+
+    const dataLang = data.reduce((acc, item) => {
+      const lang = item.lang || 'en';
+      if (!acc[lang]) acc[lang] = [];
+      acc[lang].push(item);
+      return acc;
+    }, {} as Record<string, typeof rawData>);
+
+    return dataLang;
   },
 });
-
-// async function reShapeData() {
-//   const tempData = await loader.load();
-//   return convertPages(tempData);
-// }
-
-// // Export the data and the loader
-// export const data = await loader.load();
-// export const pages = await reShapeData();
-
 export default loader;

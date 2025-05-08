@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import VImage from 'UiKit/components/Base/VImage/VImage.vue';
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
-import { links } from '@/config/links';
 import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
 import { storeToRefs } from 'pinia';
 import VSectionTwoColImageFullBackground from 'UiKit/components/VSection/VSectionTwoColImageFullBackground.vue';
+import { useData } from 'vitepress';
 
 const props = defineProps({
   image: String,
   imageMobile: String,
+  buttonText: String,
 });
 const { isTablet } = storeToRefs(useBreakpoints());
+const { theme } = useData();
 </script>
 
 <template>
@@ -23,10 +25,10 @@ const { isTablet } = storeToRefs(useBreakpoints());
 
       <VButton
         as="a"
-        :href="encodeURI(links.buyNow)"
+        :href="encodeURI(theme.links.buyNow)"
         size="large"
       >
-        Buy Now
+        {{ buttonText }}
       </VButton>
     </div>
     <div class="v-section-why-own__image">

@@ -229,7 +229,7 @@ watch(() => props.modelValue, () => onInput(props.modelValue));
 .v-form-input {
   color: colors.$black;
   caret-color: colors.$black;
-  background-color: colors.$white;
+  background-color: colors.$grayscale-white;
   padding: 0 20px;
   margin: 0;
   -webkit-appearance: none;
@@ -238,12 +238,13 @@ watch(() => props.modelValue, () => onInput(props.modelValue));
   width: 100%;
   position: relative;
   border: solid 1px colors.$gray;
-  border-radius: 2px;
+  border-radius: 4px;
   height: 40px;
   min-height: 32px;
 
   &.is--focused {
     border-color: colors.$light-blue;
+    border-width: 2px;
   }
 
   &.is--error {
@@ -292,7 +293,7 @@ watch(() => props.modelValue, () => onInput(props.modelValue));
 
     &::placeholder {
       opacity: 1;
-      color: colors.$gray;
+      color: colors.$dark-gray;
       font-size: inherit;
       font-weight: inherit;
       font-family: inherit;
