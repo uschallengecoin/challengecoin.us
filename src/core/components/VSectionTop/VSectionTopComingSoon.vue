@@ -46,7 +46,7 @@ const onSubmit = async (emailLocal: string) => {
 
 
 const onShareClick = () => {
-  useDialogs().showDialogShare();
+  useDialogs().showDialogShare(window?.location?.origin || theme.env.FRONTEND_URL);
 };
 
 onMounted(() => {

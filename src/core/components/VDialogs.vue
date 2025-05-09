@@ -8,13 +8,14 @@ const VDialogShare = defineAsyncComponent({
 });
 
 const useDialogsStore = useDialogs();
-const { isDialogShareOpen } = storeToRefs(useDialogsStore);
+const { isDialogShareOpen, dialogsShareUrl } = storeToRefs(useDialogsStore);
 </script>
 
 <template>
   <div>
     <VDialogShare
       v-model="isDialogShareOpen"
+      :full-url="dialogsShareUrl"
     />
   </div>
 </template>

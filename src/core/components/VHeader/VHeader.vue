@@ -16,7 +16,7 @@ const VHeaderMobile = defineAsyncComponent({
   loader: () => import('./VHeaderMobile.vue'),
 });
 
-defineProps({
+const props = defineProps({
   showNavigation: {
     type: Boolean,
     default: true,
@@ -26,10 +26,11 @@ defineProps({
     default: false,
   },
   path: String,
+  shareOrigin: Boolean,
 });
 
 const emit = defineEmits(['click']);
-const { lang, site } = useData();
+const { lang, site, theme } = useData();
 const currentLocale = computed(() => (
   Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
@@ -38,7 +39,8 @@ const isFixed = ref(false);
 const isMobileSidebarOpen = defineModel<boolean>();
 
 const onShareClick = () => {
-  useDialogs().showDialogShare();
+  const url = window?.location?.origin || theme.env.FRONTEND_URL;
+  useDialogs().showDialogShare(props.shareOrigin ? url : undefined);
 };
 
 watchPostEffect(() => {

@@ -53,6 +53,7 @@ const showHeader = computed(() => true);
 const showMenu = computed(() => !isComingSoon.value);
 const hideLanguages = computed(() => !isComingSoon.value);
 const showFooter = computed(() => !isComingSoon.value);
+const shareOrigin = computed(() => isComingSoon.value);
 globalLoader.toggle(true);
 
 const checkIfFontLoaded = async () => {
@@ -123,6 +124,7 @@ onUnmounted(() => {
       v-if="showHeader"
       :hide-languages="hideLanguages"
       :show-navigation="showMenu"
+      :share-origin="shareOrigin"
     >
       <template #mobile>
         <VButton

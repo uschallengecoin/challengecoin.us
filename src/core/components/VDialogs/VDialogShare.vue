@@ -9,6 +9,10 @@ import VSocialLinks from 'UiKit/components/VSocialLinks/VSocialLinks.vue';
 import { useData } from 'vitepress';
 import VFormCopy from 'UiKit/components/VForms/VFormCopy.vue';
 
+defineProps({
+  fullUrl: String
+})
+
 const { lang, site, theme } = useData();
 const currentLocale = computed(() => (
   Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
@@ -55,7 +59,7 @@ watch(() => open.value, () => {
       />
 
       <VFormCopy
-        :text="theme.env.FRONTEND_URL"
+        :text="fullUrl"
         :button-text="currentLocale.copy.copy"
         :button-text-copied="currentLocale.copy.copied"
       />
