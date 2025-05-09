@@ -261,47 +261,47 @@ pre{
 }
 
 .is--margin-top-4{
-    margin-top: 4px !important;
+    margin-top: 4px ;
 }
 
 .is--margin-top-8{
-    margin-top: 8px !important;
+    margin-top: 8px ;
 }
 
 .is--margin-bottom-8{
-    margin-bottom: 8px !important;
+    margin-bottom: 8px ;
 }
 
 .is--margin-top-10{
-    margin-top: 10px !important;
+    margin-top: 10px ;
 }
 
 .is--margin-top-12{
-    margin-top: 12px !important;
+    margin-top: 12px ;
 }
 
 .is--margin-top-15{
-    margin-top: 15px !important;
+    margin-top: 15px ;
 }
 
 .is--margin-top-17{
-    margin-top: 17px !important;
+    margin-top: 17px ;
 }
 
 .is--margin-top-20{
-    margin-top: 20px !important;
+    margin-top: 20px ;
 }
 
 .is--margin-top-24{
-    margin-top: 24px !important;
+    margin-top: 24px ;
 }
 
 .is--margin-top-30{
-    margin-top: 30px !important;
+    margin-top: 30px ;
 }
 
 .is--margin-top-40{
-    margin-top: 40px !important;
+    margin-top: 40px ;
 }
 
 .is--margin-top-45{
@@ -309,39 +309,39 @@ pre{
 }
 
 .is--margin-top-48{
-    margin-top: 48px !important;
+    margin-top: 48px ;
 
     @media screen and (max-width: $tablet){
-        margin-top: 40px !important;
+        margin-top: 40px ;
     }
 }
 
 .is--margin-bottom-40{
-    margin-bottom: 40px !important;
+    margin-bottom: 40px ;
 }
 
 .is--margin-top-50{
-    margin-top: 50px !important;
+    margin-top: 50px ;
 }
 
 .is--margin-top-60{
-    margin-top: 60px !important;
+    margin-top: 60px ;
 }
 
 .is--margin-top-70{
-    margin-top: 70px !important;
+    margin-top: 70px ;
 }
 
 .is--margin-top-80{
-    margin-top: 80px !important;
+    margin-top: 80px ;
 }
 
 .is--margin-top-90{
-    margin-top: 90px !important;
+    margin-top: 90px ;
 }
 
 .is--margin-top-100{
-    margin-top: 100px !important;
+    margin-top: 100px ;
 }
 
 .is--margin-top-130{
@@ -362,10 +362,10 @@ pre{
 
 
 .is--padding-bottom-130{
-    padding-bottom: 130px !important;
+    padding-bottom: 130px ;
 
     @media screen and (max-width: $tablet){
-        padding-bottom: 100px !important;
+        padding-bottom: 100px ;
     }
 }
 
@@ -418,5 +418,14 @@ pre{
 
     @media screen and (max-width: $tablet){
         columns: 1;
+    }
+}
+
+.is--display-row {
+    display: flex;
+    gap: 24px;
+
+    @media screen and (width < $tablet){
+      flex-direction: column;
     }
 }

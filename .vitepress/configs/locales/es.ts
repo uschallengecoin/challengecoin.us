@@ -88,4 +88,9 @@ export default {
     terms: '/es/legal/terms-of-service',
     privacy: '/es/legal/privacy-policy',
   },
+
+  waitList: {
+    placeholder: "Su correo electrónico",
+    button: "Únase a la lista de espera",
+  }
 };

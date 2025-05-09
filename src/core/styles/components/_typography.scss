@@ -230,15 +230,15 @@ h6 {
   .is--h2__title + .is--subheading-2,
   h3 + .is--subheading-2,
   .is--h3__title + .is--subheading-2 {
-    margin-top: 8px;
+    margin-top: 24px;
   }
 
   .is--subheading-1 + *:not(section) {
-    margin-top: 30px;
+    margin-top: 24px;
   }
 
   .is--subheading-2 + * {
-    margin-top: 30px;
+    margin-top: 24px;
   }
 
   .v-badge + h1,

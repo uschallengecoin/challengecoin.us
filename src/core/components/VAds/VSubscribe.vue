@@ -8,6 +8,7 @@ import { storeToRefs } from 'pinia';
 import { useLazyBackground } from '@/core/composables/useLazyBackground';
 import subscribeImage from './subscribe.webp';
 import { useData } from 'vitepress';
+import { env } from '@/config/env';
 
 const VSocialLinks = defineAsyncComponent({
   loader: () => import('UiKit/components/VSocialLinks/VSocialLinks.vue'),
@@ -32,6 +33,8 @@ const SOCIAL_LIST = [
   theme.value.socials.twitter,
   theme.value.socials.facebook,
   theme.value.socials.tiktok,
+  theme.value.socials?.github,
+  theme.value.socials?.matrix,
   theme.value.socials.instagram,
 ];
 const { toast } = useToast();
@@ -77,7 +80,7 @@ useLazyBackground('v-subscribe', subscribeImage);
       :loading="loadingSubmitting"
       :placeholder="currentLocale.subscription.placeholder"
       :button-text="isTablet ? currentLocale.subscription.buttonMobile : currentLocale.subscription.button"
-      class="is--margin-top-48 v-subscribe__form"
+      class="v-subscribe__form"
       @submit="onSubmit"
     />
 
@@ -119,17 +122,16 @@ useLazyBackground('v-subscribe', subscribeImage);
 
   &__form {
     max-width: 805px;
-    margin: 0 auto;
+    margin: 48px auto 0;
+
+    @media screen and (width < $tablet){
+      margin: 40px auto 0;
+    }
   }
 
   &__socials {
     margin-top: 60px;
     justify-content: center;
-
-    @media screen and (width < $tablet){
-      gap: 2px;
-      justify-content: space-between;
-    }
   }
 }
 </style>

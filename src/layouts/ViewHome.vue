@@ -335,4 +335,35 @@ onBeforeUnmount(() => {
     text-align: center;
   }
 }
+
+.engraver {
+  &__image1 {
+    max-width: 157px;
+    margin-top: 0 !important;
+  }
+
+  &__image2 {
+    max-width: 300px;
+    margin-top: 0 !important;
+
+    @media screen and (width < $tablet){
+      max-width: 100%;
+    }
+  }
+
+  &__image3 {
+    margin-top: 0 !important;
+    max-width: 201px;
+  }
+}
+
+.v-dialog-default__content p:has(img) {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  @media screen and (width < $tablet){
+    flex-direction: column;
+  }
+}
 </style>

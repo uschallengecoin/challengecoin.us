@@ -91,7 +91,8 @@ watch(() => props.data, () => {
 
   &__content {
     padding: 0 60px;
-    height: calc(100% - 130px);
+    // height: calc(100% - 130px);
+    flex: 1;
     overflow-y: auto;
     scrollbar-color: $dark-gray transparent;
     scrollbar-width: thin;

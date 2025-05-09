@@ -86,4 +86,9 @@ export default {
     terms: '/legal/terms-of-service',
     privacy: '/legal/privacy-policy',
   },
+
+  waitList: {
+    placeholder: "Your Email",
+    button: "Join The Waitlist",
+  }
 };

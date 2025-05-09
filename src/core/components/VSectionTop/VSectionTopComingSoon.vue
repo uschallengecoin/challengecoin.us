@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { defineAsyncComponent, hydrateOnVisible, onMounted, ref } from 'vue';
+import { computed, defineAsyncComponent, hydrateOnVisible, onMounted, ref } from 'vue';
 import { useToast } from '../Base/VToast/use-toast';
 import { useHubspotForm } from 'UiKit/composables/useHubspotForm';
 import { removeAnchorFromElements } from '@/core/helpers/formatters/removeAnchor';
 import { useData } from 'vitepress';
+import VButton from 'UiKit/components/Base/VButton/VButton.vue';
+import { useDialogs } from 'UiKit/store/useDialogs';
+import shareIcon from '@/assets/images/social/share.svg';
 
 const VFormJoinWaitlist = defineAsyncComponent({
   loader: () => import('UiKit/components/VForms/VFormJoinWaitlist.vue'),
@@ -11,7 +14,9 @@ const VFormJoinWaitlist = defineAsyncComponent({
 });
 
 const { toast } = useToast();
-const { theme } = useData();
+const { lang, site, theme } = useData();
+const currentLocale = computed(() => (
+  Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
 const TOAST_OPTIONS = {
   title: 'You’re subscribed!',
@@ -40,6 +45,10 @@ const onSubmit = async (emailLocal: string) => {
 };
 
 
+const onShareClick = () => {
+  useDialogs().showDialogShare();
+};
+
 onMounted(() => {
   removeAnchorFromElements('.v-section-top-coming-soon');
 });
@@ -51,10 +60,22 @@ onMounted(() => {
     <VFormJoinWaitlist
       :clear="clear"
       :loading="loadingSubmitting"
-      button-text="Join The Waitlist"
+      :button-text="currentLocale.waitList.button"
+      :placeholder="currentLocale.waitList.placeholder"
       class="is--margin-top-48"
       @submit="onSubmit"
     />
+    <VButton
+      :key="currentLocale.share.button"
+      variant="link"
+      block
+      
+      class="is--lt-tablet-show is--margin-top-20"
+      @click="onShareClick"
+    >
+      <shareIcon />
+      {{ currentLocale.share.button }}
+    </VButton>
   </div>
 </template>
 

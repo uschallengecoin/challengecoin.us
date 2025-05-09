@@ -15,6 +15,7 @@ const props = defineProps({
     type: String,
     default: 'Subscribe',
   },
+  placeholder: String,
   clear: Boolean,
 });
 
@@ -103,7 +104,7 @@ watch(() => props.clear, () => {
           <VFormInput
             :is-error="baseFormGroupProps.isFieldError"
             :model-value="model.email"
-            placeholder="Your Email"
+            :placeholder="placeholder"
             type="email"
             size="large"
             @update:model-value="model.email = $event"

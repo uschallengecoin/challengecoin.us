@@ -9,6 +9,7 @@ import { data as allPages } from '@/store/all.data';
 import { convertPages } from 'UiKit/types/pages';
 import { useGlobalLoader } from 'UiKit/store/useGlobalLoader';
 import { storeToRefs } from 'pinia';
+import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 
 const VHeader = defineAsyncComponent({
   loader: () => import('UiKit/components/VHeader/VHeader.vue'),
@@ -48,7 +49,9 @@ const isFontLoaded = ref(false);
 const globalLoader = useGlobalLoader();
 const { isLoading: globalLoaderisLoading } = storeToRefs(globalLoader);
 const showLoader = computed(() => globalLoaderisLoading.value || !isFontLoaded.value);
-const showHeader = computed(() => !isComingSoon.value);
+const showHeader = computed(() => true);
+const showMenu = computed(() => !isComingSoon.value);
+const hideLanguages = computed(() => !isComingSoon.value);
 const showFooter = computed(() => !isComingSoon.value);
 globalLoader.toggle(true);
 
@@ -116,7 +119,11 @@ onUnmounted(() => {
     <transition name="transition-fade-out">
       <VLoader v-if="showLoader" />
     </transition>
-    <VHeader v-if="showHeader">
+    <VHeader
+      v-if="showHeader"
+      :hide-languages="hideLanguages"
+      :show-navigation="showMenu"
+    >
       <template #mobile>
         <VButton
           as="a"

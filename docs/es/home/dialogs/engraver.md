@@ -4,17 +4,30 @@ draft: true
 slug: dialogEngraver
 ---
 
-### Acerca de nuestro grabador
-##### Don Everhart II - Casa de la Moneda de Estados Unidos y Casa de la Moneda Franklin
+### About Our Engraver
 
-Don Everhart II es un distinguido escultor, grabador y diseñador de monedas estadounidense, cuya ilustre carrera abarca más de cuatro décadas. Tras obtener una Licenciatura en Bellas Artes con mención en Pintura por la Universidad Estatal de Kutztown en 1972, Everhart comenzó su trayectoria en la Casa de la Moneda Franklin, trabajando como escultor de planta. En 2004, se incorporó a la Casa de la Moneda de Estados Unidos, donde en 2014 se convirtió en su escultor principal. Durante su mandato, Everhart contribuyó a numerosos proyectos importantes, incluyendo el diseño y la escultura del reverso común de las Monedas Conmemorativas del Salón de la Fama del Béisbol Nacional de 2014 (las primeras monedas curvas producidas por la Casa de la Moneda de Estados Unidos) y el reverso del Dólar de Plata de March of Dimes de 2015, galardonado como la Moneda Más Inspiradora en los premios Moneda del Año 2017. Su arte se refleja en diversas monedas en circulación, como las monedas presidenciales de $1 y varias monedas de 25 centavos de dólar de los Estados Unidos. Su excepcional trabajo le ha valido prestigiosos galardones, como el Premio al Escultor del Año de la Asociación Numismática Americana en 1994 y el Premio a la Trayectoria de World Coin News en 2018. Sus creaciones forman parte de colecciones permanentes de instituciones de prestigio como el Instituto Smithsoniano y el Museo Británico, lo que subraya su gran influencia en el arte numismático.
+Don Everhart II - United States Mint and Franklin Mint {.is--subheading-2}
 
-Actualmente, Everhart colabora con U.S. Challenge Coin, aportando su inigualable experiencia al diseño de esta majestuosa e innovadora nueva moneda de desafío. Ha expresado su orgullo por trabajar con U.S. Challenge Coin, afirmando que el proyecto le permite continuar su pasión por crear arte que honra temas y valores significativos. Esta colaboración es un testimonio del compromiso continuo de Everhart con la excelencia en el diseño de monedas y su dedicación a proyectos que resuena con propósito y distinción. [https://doneverhartsculpture.com](https://doneverhartsculpture.com)
+Don Everhart II is a distinguished American sculptor, engraver, and coin designer whose illustrious career spans over four decades. After earning a Bachelor of Fine Arts in Painting from Kutztown State University in 1972, Everhart began his journey at the Franklin Mint, serving as a staff sculptor. In 2004, he joined the United States Mint, eventually becoming its Lead Sculptor in 2014.
 
-### Acerca de nuestra Casa de la Moneda
-##### Osborne Coinage Company - Cincinnati, OH, EE. UU.
+During his tenure, Everhart contributed to numerous significant projects, including designing and sculpting the common reverse of the 2014 National Baseball Hall of Fame Commemorative Coins — the first curved coins produced by the U.S. Mint — and the reverse of the 2015 March of Dimes Silver Dollar, which was awarded the Most Inspirational Coin in the 2017 Coin of the Year awards. His artistry is featured on various circulating coins, such as the Presidential $1 Coins and several State Quarters.
+![Everhart coin](/images/home/engraver2.webp){.engraver__image1}
 
-Fundada en 1835, Osborne Coinage Company se erige como la Casa de la Moneda privada más antigua de Estados Unidos, reconocida por su excepcional artesanía en la producción de monedas, fichas y medallones personalizados. Con sede en Cincinnati, Ohio, Osborne cuenta con una larga trayectoria que incluye la acuñación de fichas de campaña para el presidente Abraham Lincoln, la fabricación de miles de millones de fichas de racionamiento durante la Segunda Guerra Mundial y la creación de monedas promocionales para grandes marcas como General Mills y McDonald's. Su compromiso con la calidad se evidencia en sus monedas troqueladas, que ofrecen un nivel de detalle y una durabilidad superiores a las alternativas fundidas a presión. Con un proceso de fabricación totalmente integrado, Osborne puede gestionar todo, desde el diseño hasta la producción, internamente, garantizando una meticulosa atención al detalle en cada etapa. Su dedicación a los productos estadounidenses y su apoyo al empleo en Estados Unidos han consolidado su reputación como un socio de confianza para clientes de diversos sectores.
+![Don Everhart II](/images/home/engraver1.webp){.engraver__image2}
+Everhart’s exceptional work has earned him prestigious accolades, including the American Numismatic Association’s Sculptor of the Year Award in 1994 and the World Coin News Lifetime Achievement Award in 2018. His creations are part of permanent collections at esteemed institutions like the Smithsonian Institution and the British Museum, underscoring his significant impact on the field of numismatic art.
 
-Actualmente, Osborne Coinage colabora con U.S. Challenge Coin en este proyecto significativo y único, aportando su amplia experiencia y conocimientos a la creación de esta histórica moneda de desafío. Esta colaboración subraya el compromiso continuo de Osborne con la producción de monedas que no solo cumplen con los más altos estándares de calidad, sino que también poseen un gran valor simbólico. Su participación en este proyecto garantiza que el producto final sea un testimonio tanto de la artesanía como de su propósito.
+
+Currently, Everhart is collaborating with U.S. Challenge Coin, bringing his unparalleled expertise to the design of this majestic and innovative new challenge coin. He has expressed pride in working with U.S. Challenge Coin, stating that the project allows him to continue his passion for creating art that honors significant themes and values. This collaboration is a testament to Everhart’s ongoing commitment to excellence in coin design and his dedication to projects that resonate with purpose and distinction.
+[https://doneverhartsculpture.com](https://doneverhartsculpture.com)
+
+### About Our Mint
+Osborne Coinage Company - Cincinnati, OH, USA {.is--subheading-2}
+
+Established in 1835, Osborne Coinage Company stands as America’s oldest private mint, renowned for its exceptional craftsmanship in producing custom coins, tokens, and medallions. Based in Cincinnati, Ohio, Osborne has a storied history that includes minting campaign tokens for President Abraham Lincoln, manufacturing billions of ration tokens during World War II, and creating promotional coins for major brands like General Mills and McDonald’s.
+
+Their commitment to quality is evident in their die-struck coins, which offer superior detail and durability compared to die-cast alternatives. With a fully integrated manufacturing process, Osborne can handle everything from design to production in-house, ensuring meticulous attention to detail at every stage. Their dedication to American-made products and support for U.S. jobs has solidified their reputation as a trusted partner for clients across various industries.
+![Osborne mint](/images/home/engraver3.webp){.engraver__image3}
+
+
+Currently, Osborne Coinage is collaborating with U.S. Challenge Coin on this meaningful and unique project, bringing their extensive experience and expertise to the creation of this historical challenge coin. This partnership underscores Osborne’s ongoing commitment to producing coins that not only meet the highest standards of quality but also carry significant symbolic value. Their involvement in this project ensures that the final product will be a testament to both craftsmanship and purpose.
 [https://osbornecoin.com](https://osbornecoin.com)

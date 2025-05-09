@@ -1,9 +1,9 @@
 ---
 layout: coming-soon
-title: US Challenge Coin
-description: Get ready for the biggest thing in 250 years
+title: Próximamente, la moneda de desafío estadounidense
+description: Prepárate para el acontecimiento más grande en 250 años
 jsonLDType: WebSite
 ---
 
-# Get ready for the biggest thing in 250 years
-Coming Summer 2025
+# Prepárate para el evento más grande en 250 años.
+Disponible en el verano de 2025.

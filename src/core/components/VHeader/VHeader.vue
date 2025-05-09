@@ -21,6 +21,10 @@ defineProps({
     type: Boolean,
     default: true,
   },
+  hideLanguages: {
+    type: Boolean,
+    default: false,
+  },
   path: String,
 });
 
@@ -70,10 +74,11 @@ watchPostEffect(() => {
           </VButton>
 
           <VDropdownLanguages 
-            class="is--gt-tablet-show"
+            :class="{ 'is--gt-tablet-show' : hideLanguages }"
           />
 
           <VHeaderMobile
+            v-if="showNavigation"
             v-model="isMobileSidebarOpen"
           >
             <slot name="mobile" />

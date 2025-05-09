@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { removeAnchorFromElements } from '@/core/helpers/formatters/removeAnchor';
 import { Navigation, EffectFade, Autoplay } from 'swiper/modules';
 import { Swiper } from 'swiper/vue';
+import { onMounted } from 'vue';
 // import 'swiper/css';
 // import 'swiper/css/navigation';
 // import 'swiper/css/effect-fade';
@@ -8,6 +10,10 @@ import { Swiper } from 'swiper/vue';
 
 const modules = [Navigation, EffectFade, Autoplay];
 
+onMounted(() => {
+  removeAnchorFromElements('.slider-swiper');
+  // api.value?.reInit();
+});
 </script>
 
 <template>

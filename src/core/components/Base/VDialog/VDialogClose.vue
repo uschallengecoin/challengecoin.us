@@ -31,8 +31,8 @@ const props = defineProps<DialogCloseProps>();
 
 .v-dialog-close {
   position: absolute;
-  top: 3px;
-  right: 3px;
+  top: 12px;
+  right: 12px;
   width: auto;
 
   &__icon {
