@@ -141,4 +141,11 @@ export default [
         window.addEventListener('load', loadSegment);
       }();`,
     ],
+    [
+      'script',
+      {},
+      `<!-- Start of HubSpot Embed Code -->
+      <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/${env.HUBSPOTPORTAL_ID}.js"></script>
+      <!-- End of HubSpot Embed Code -->`
+    ]
   ];
