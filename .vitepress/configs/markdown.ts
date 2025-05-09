@@ -1,6 +1,7 @@
 import { urlFormat } from '../../src/core/helpers/url';
 
 import markdownItAnchor from 'markdown-it-anchor';
+import obsidianImages from 'markdown-it-obsidian-images';
 import wikilinks from '../../src/markdown-it-wikilinks';
 
 export default {
@@ -14,6 +15,7 @@ export default {
     permalink: markdownItAnchor.permalink.headerLink(),
   },
   config: (md) => {
+    md.use(obsidianImages({makeAllLinksAbsolute: true }));
     md.use(wikilinks({
       makeAllLinksAbsolute: false, generatePagePathFromLabel: urlFormat, postProcessPagePath: urlFormat, uriSuffix: '',
     }));

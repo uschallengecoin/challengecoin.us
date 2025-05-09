@@ -28,6 +28,7 @@
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-container": "^4.0.0",
+    "markdown-it-obsidian-images": "^1.0.1",
     "marked": "^15.0.7",
     "maska": "^3.1.0",
     "nanoid": "^5.1.2",
