@@ -7,10 +7,11 @@ export default {
       provider: 'local',
     },
     contacts: {
-      phone: env.phone,
-      email: env.email,
+      // phone: '+123',
+      email: 'info@challengecoin.us',
     },
     socials,
     env,
     links,
+    author: 'US Challenge Coin',
 };

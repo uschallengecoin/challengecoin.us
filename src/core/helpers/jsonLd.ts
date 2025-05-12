@@ -1,8 +1,8 @@
 import { PageData } from 'vitepress';
 
-export function generateJsonLd(pageData: PageData, env: any): string | null {
+export function generateJsonLd(pageData: PageData, env: any, theme: any): string | null {
   const baseUrl = `${env.FRONTEND_URL}/${pageData.relativePath?.replace(/index\.md$/, '')?.replace(/\.md$/, '.html')}`;
-  const keywords = pageData.frontmatter.keywords || pageData.frontmatter.tags || env.keywords;
+  const keywords = pageData.frontmatter.keywords || pageData.frontmatter.tags;
 
   const commonData = {
     '@context': 'https://schema.org',
@@ -15,8 +15,8 @@ export function generateJsonLd(pageData: PageData, env: any): string | null {
     description: pageData.description,
     keywords: Array.isArray(keywords) ? keywords.join(', ') : keywords,
     inLanguage: 'en-us',
-    telephone: env.phone,
-    email: env.email,
+    telephone: theme.contacts.phone,
+    email: theme.contacts.email,
     sameAs: [
       'https://www.linkedin.com/company/challengecoin.us',
       'https://www.facebook.com/challengecoin.us',
@@ -35,13 +35,13 @@ export function generateJsonLd(pageData: PageData, env: any): string | null {
       provider: {
         '@type': 'Organization',
         '@id': env.FRONTEND_URL,
-        name: env.title,
+        name: pageData.title,
         logo: {
           '@type': 'ImageObject',
           '@id': `${env.FRONTEND_URL}/public/images/logo.svg`,
           url: `${env.FRONTEND_URL}/public/images/logo.svg`,
-          width: '112',
-          height: '38',
+          width: '281',
+          height: '44',
         },
       },
     });

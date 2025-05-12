@@ -1,7 +1,3 @@
-import env from './env';
-
-const url = typeof window !== 'undefined' ? window.location.origin : env.FRONTEND_URL;
-
 export default {
   share: {
     icon: 'share',
@@ -13,32 +9,37 @@ export default {
   twitter: {
     icon: 'x-twitter',
     href: 'https://x.com/challengecoin.us',
-    shareHref: `https://twitter.com/intent/tweet?url=${url}&text=${env.title}`,
+    shareHref: (url, title) => {
+      let res = 'https://twitter.com/intent/tweet?';
+      if (url) res += `url=${encodeURIComponent(url)}`;
+      if (title) res += `&text=${encodeURIComponent(title)}`;
+      return res;
+    },
     name: 'X',
   },
   facebook: {
     icon: 'facebook',
     href: 'https://www.facebook.com/challengecoin.us',
     name: 'Facebook',
-    shareHref: `https://www.facebook.com/sharer.php?u=${url}`,
+    shareHref: (url) => `https://www.facebook.com/sharer.php?u=${encodeURIComponent(url)}`,
   },
   instagram: {
     icon: 'instagram',
     href: 'https://www.instagram.com/challengecoin.us',
     name: 'Instagram',
-    shareHref: '',
+    shareHref: () => '', // Instagram does not support direct sharing via URL
   },
   tiktok: {
     icon: 'tiktok',
     href: 'https://www.tiktok.com/@challengecoin.us',
-    shareHref: `https://twitter.com/intent/tweet?url=${url}&text=${env.title}`,
+    shareHref: (url, title) => `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, // TikTok has no direct share URL, fallback to Twitter
     name: 'Tiktok',
   },
   telegram: {
     icon: 'telegram',
     href: 'https://t.me/challengecoin.us',
     name: 'Telegram',
-    shareHref: '',
+    shareHref: () => '', // No direct share URL provided
   },
   github: {
     icon: 'github',
@@ -49,13 +50,12 @@ export default {
     icon: 'linkedin',
     href: 'https://www.linkedin.com/company/challengecoin.us',
     name: 'LinkedIn',
-    // shareHref: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
-    shareHref: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${env.title}`,
+    shareHref: (url, title) => `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
   },
   reddit: {
     icon: 'reddit',
     name: 'Reddit',
-    shareHref: `http://www.reddit.com/submit?url=${url}&title=${env.title}`,
+    shareHref: (url, title) => `http://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
   },
   matrix: {
     icon: 'matrix',

@@ -32,10 +32,10 @@ const nav = [
 export default {
   label: "English",
   lang: "en",
+  locale: 'en_US',
   title: 'US Challenge Coin',
   description: 'Introducing a modern symbol of American pride — crafted to honor heritage, support those who serve, and bring communities together with every purchase.',
   keywords: ['challenge', 'coin', 'collectible', 'military', 'veteran', 'gift', 'commemorative', 'patriotic', 'limited edition', 'custom design'],
-  author: 'US Challenge Coin',
 
   nav,
 

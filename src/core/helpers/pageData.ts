@@ -2,6 +2,7 @@
 import { stripHtmlAndMarkdown } from './text';
 import { getFirst200Characters } from './general';
 import { urlFormat } from './url';
+import { PageData } from 'vitepress';
 
 export function getSlugFromURL(url: string) {
   return url.split('/')?.pop()?.replace('.html', '').trim();
@@ -17,8 +18,18 @@ export function getImage(img: string) {
   return image;
 }
 
-export function normalizeFrontmatter(pageData) {
-  pageData.frontmatter.url = urlFormat(pageData.relativePath ? `/${pageData.relativePath.replace(/index\.md$/, '').replace('.md', '')}` : pageData.url);
+export function getUrl(pageData: PageData) {
+ return urlFormat(pageData.relativePath ? `/${pageData.relativePath.replace(/index\.md$/, '').replace('.md', '')}` : pageData.url);
+}
+
+export function getLang(filePath: string) {
+ return filePath?.split('/')[0];
+}
+
+export function normalizeFrontmatter(pageData: PageData) {
+  pageData.frontmatter.url = getUrl(pageData);
+  if (!pageData.frontmatter.lang) pageData.frontmatter.lang = getLang(pageData.filePath);
+
   if (Object.prototype.hasOwnProperty.call(pageData.frontmatter, 'slug') === false) {
     pageData.frontmatter.slug = getSlugFromURL(pageData.frontmatter.url);
   }

@@ -12,10 +12,4 @@ export default {
   HUBSPOT_FORM_ID_WAITING_LIST: envProcess.VITE_HUBSPOT_FORM_ID_WAITING_LIST,
   SEGMENT_KEY: envProcess.VITE_SEGMENT_KEY,
   GTM: envProcess.VITE_GTM,
-  title: 'US Challenge Coin',
-  description: 'Introducing a modern symbol of American pride — crafted to honor heritage, support those who serve, and bring communities together with every purchase.',
-  keywords: ['challenge', 'coin', 'collectible', 'military', 'veteran', 'gift', 'commemorative', 'patriotic', 'limited edition', 'custom design'],
-  author: 'US Challenge Coin',
-  email: 'info@challengecoin.us',
-  locale: 'en_US',
 };

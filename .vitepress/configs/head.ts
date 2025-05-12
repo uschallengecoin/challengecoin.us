@@ -1,77 +1,18 @@
 import env from './env';
+import theme from './theme';
 
 export default [
-    [
-      'link',
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    ],
-    [
-      'link',
-      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-    ],
-    [
-      'meta',
-      {
-        name: 'og:image:width',
-        content: '200',
-      },
-    ],
-    [
-      'meta',
-      {
-        name: 'og:image:height',
-        content: '200',
-      },
-    ],
-    [
-      'meta',
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image',
-      },
-    ],
-    [
-      'meta',
-      {
-        name: 'twitter:creator',
-        content: env.author,
-      },
-    ],
-    [
-      'link',
-      {
-        rel: 'apple-touch-icon',
-        href: '/logo200x200.png',
-      },
-    ],
-    [
-      'meta',
-      {
-        name: 'mobile-web-app-capable',
-        content: 'yes',
-      },
-    ],
-    [
-      'meta',
-      {
-        name: 'theme-color',
-        content: '#2e2e33',
-      },
-    ],
-    [
-      'link',
-      {
-        rel: 'manifest',
-        href: '/manifest.json',
-      },
-    ],
-    [
-      'meta',
-      {
-        name: 'msapplication-config',
-        content: '/browserconfig.xml',
-      },
-    ],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    [ 'meta', { name: 'og:image:width', content: '200'}],
+    ['meta', { name: 'og:image:height', content: '200'}],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:creator', content: theme.author }],
+    ['link', { rel: 'apple-touch-icon', href: '/logo200x200.png' }],
+    ['meta', { name: 'mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'theme-color', content: '#2e2e33' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['meta', { name: 'msapplication-config', content: '/browserconfig.xml' }],
     [
       'script',
       {},

@@ -2,7 +2,10 @@
 import { defineAsyncComponent, markRaw, onMounted, PropType, reactive } from 'vue';
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 import { useDialogs } from '@/core/store/useDialogs';
+import { useData } from 'vitepress';
 
+
+const { theme, frontmatter } = useData();
 
 interface ISocial {
   icon: string;
@@ -25,6 +28,12 @@ const props = defineProps({
 
 // Reactive object to store resolved icons
 const resolvedIcons = reactive<Record<string, any>>({});
+
+const urlOrigin = typeof window !== 'undefined' ? window.location.origin : theme.env.FRONTEND_URL;
+const urlPath = typeof window !== 'undefined' ? window.location.pathname : '';
+const currentUrl = `${urlOrigin}${urlPath}`;
+const currentTitle = typeof document !== 'undefined' ? document.title : frontmatter.value.title || '';
+
 
 const loadIcons = async () => {
   for (const item of props.socialList) {
@@ -52,7 +61,7 @@ onMounted(() => {
       class="social-links__item"
     >
       <VButton
-        :href="share ? item.shareHref : item.href"
+        :href="(share && item.shareHref) ? item.shareHref(currentUrl, currentTitle) : item.href"
         as="a"
         target="_blank"
         class="social-links__item is--margin-top-0"
