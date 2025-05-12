@@ -26,11 +26,10 @@ const props = defineProps({
     default: false,
   },
   path: String,
-  shareOrigin: Boolean,
 });
 
 const emit = defineEmits(['click']);
-const { lang, site, theme } = useData();
+const { lang, site } = useData();
 const currentLocale = computed(() => (
   Object.values(site.value.locales).find((locale) => locale.lang === lang.value)));
 
@@ -39,8 +38,7 @@ const isFixed = ref(false);
 const isMobileSidebarOpen = defineModel<boolean>();
 
 const onShareClick = () => {
-  const url = window?.location?.origin || theme.env.FRONTEND_URL;
-  useDialogs().showDialogShare(props.shareOrigin ? url : undefined);
+  useDialogs().showDialogShare();
 };
 
 watchPostEffect(() => {

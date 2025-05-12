@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineAsyncComponent, markRaw, onMounted, PropType, reactive } from 'vue';
+import { defineAsyncComponent, markRaw, onMounted, PropType, reactive, watch } from 'vue';
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 import { useDialogs } from '@/core/store/useDialogs';
 import { useData } from 'vitepress';
@@ -30,9 +30,6 @@ const props = defineProps({
 const resolvedIcons = reactive<Record<string, any>>({});
 
 const urlOrigin = typeof window !== 'undefined' ? window.location.origin : theme.env.FRONTEND_URL;
-const urlPath = typeof window !== 'undefined' ? window.location.pathname : '';
-const currentUrl = `${urlOrigin}${urlPath}`;
-const currentTitle = typeof document !== 'undefined' ? document.title : frontmatter.value.title || '';
 
 
 const loadIcons = async () => {
@@ -61,7 +58,7 @@ onMounted(() => {
       class="social-links__item"
     >
       <VButton
-        :href="(share && item.shareHref) ? item.shareHref(currentUrl, currentTitle) : item.href"
+        :href="(share && item.shareHref) ? item.shareHref(`${urlOrigin}${frontmatter.url}`, frontmatter.title) : item.href"
         as="a"
         target="_blank"
         class="social-links__item is--margin-top-0"
