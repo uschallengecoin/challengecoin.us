@@ -134,10 +134,20 @@ watch(() => model, () => {
 
   &__button {
     position: relative;
+
+    @media screen and (width < $tablet){
+      width: 100%;
+    }
   }
 
   .v-form-group {
     width: 100%;
+  }
+
+  .v-form-group__input {
+    @media screen and (width < $tablet){
+      flex-direction: column;
+    }
   }
 }
 </style>

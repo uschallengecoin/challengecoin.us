@@ -66,7 +66,7 @@ onMounted(() => {
   .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
-    bottom: 0;
+    bottom: -40px;
     display: flex;
     width: 48px;
     height: 48px;

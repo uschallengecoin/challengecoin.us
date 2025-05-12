@@ -2,6 +2,10 @@
 import VButton from 'UiKit/components/Base/VButton/VButton.vue';
 import { useData } from 'vitepress';
 import { computed } from 'vue';
+import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
+import { storeToRefs } from 'pinia';
+
+const { isTabletXS } = storeToRefs(useBreakpoints());
 
 defineProps({
   title: String,
@@ -44,13 +48,13 @@ const onLearnMore = () => {
         <VButton
           as="a"
           :href="encodeURI(buyNowHref)"
-          size="large"
+          :size="!isTabletXS ? 'large' : 'medium'"
           class="is--margin-top-0"
         >
           {{ currentLocale.home.buyNow || 'Buy Now' }}
         </VButton>
         <VButton
-          size="large"
+          :size="!isTabletXS ? 'large' : 'medium'"
           variant="link"
           class="is--margin-top-0"
           @click="onLearnMore"
