@@ -1,6 +1,7 @@
 import { ref, onBeforeMount, onBeforeUnmount } from 'vue';
 
 const BREAKPOINTS = {
+  TABLET_XS: 575,
   TABLET: 768,
   DESKTOP: 980,
   DESKTOP_MD: 1024,
@@ -8,6 +9,7 @@ const BREAKPOINTS = {
 };
 
 let count = 0;
+const isTabletXS = ref(false);
 const isTablet = ref(false);
 const isDesktop = ref(false);
 const isDesktopMD = ref(false);
@@ -15,6 +17,7 @@ const isDesktopLG = ref(false);
 
 export const useBreakpoints = () => {
   const onResize = () => {
+    isTabletXS.value = window?.innerWidth < BREAKPOINTS.TABLET_XS;
     isTablet.value = window?.innerWidth < BREAKPOINTS.TABLET;
     isDesktop.value = window?.innerWidth >= BREAKPOINTS.DESKTOP;
     isDesktopMD.value = window?.innerWidth >= BREAKPOINTS.DESKTOP_MD;
@@ -40,5 +43,6 @@ export const useBreakpoints = () => {
     isDesktop,
     isDesktopMD,
     isDesktopLG,
+    isTabletXS,
   };
 };

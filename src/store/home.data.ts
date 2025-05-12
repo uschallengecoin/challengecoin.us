@@ -53,7 +53,7 @@ const loader = createContentLoader(['{en,es}/home/**/*.md'], {
           mtime,
           rawUrl: pageData.url,
           html: pageData.html,
-          lang: pageData.frontmatter.lang,
+          lang: pageData.url?.split('/')[1],
         };
       },
       { concurrency: 64 },

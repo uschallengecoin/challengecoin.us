@@ -4,6 +4,10 @@ import {
 } from 'UiKit/components/Base/VDialog';
 import { computed, ref, watch } from 'vue';
 import { useData } from 'vitepress';
+import { useBreakpoints } from 'UiKit/composables/useBreakpoints';
+import { storeToRefs } from 'pinia';
+
+const { isTabletXS } = storeToRefs(useBreakpoints());
 
 const props = defineProps({
   backgroundImageSrc: String,
@@ -57,7 +61,7 @@ watch(() => props.data, () => {
               v-if="theme.links.buyNow"
               as="a"
               :href="encodeURI(theme.links.buyNow)"
-              size="large"
+              :size="!isTabletXS ? 'large' : 'medium'"
               class="is--margin-top-0"
             >
               {{ currentLocale.home.buyNow || 'Buy Now' }}
@@ -66,9 +70,9 @@ watch(() => props.data, () => {
               v-if="theme.links.howItWorks"
               as="a"
               :href="encodeURI(theme.links.howItWorks)"
-              size="large"
+              :size="!isTabletXS ? 'large' : 'medium'"
               variant="link"
-              class="is--margin-top-0"
+              class="is--margin-top-0 v-dialog-default__secondary"
               @click="open = false"
             >
               {{ currentLocale.home.howItWorks || 'How It Works' }}
@@ -130,6 +134,12 @@ watch(() => props.data, () => {
     display: flex;
     align-items: flex-start;
     flex-flow: row wrap;
+  }
+
+  &__secondary {
+    @media screen and (width < 340px){
+      display: none;
+    }
   }
 }
 </style>
