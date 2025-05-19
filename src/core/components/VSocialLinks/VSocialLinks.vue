@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { defineAsyncComponent, markRaw, onMounted, PropType, reactive, watch } from 'vue';
-import VButton from 'UiKit/components/Base/VButton/VButton.vue';
+import VButton from '@/core/components/Base/VButton/VButton.vue';
 import { useDialogs } from '@/core/store/useDialogs';
 import { useData } from 'vitepress';
-
 
 const { theme, frontmatter } = useData();
 
@@ -11,8 +10,8 @@ interface ISocial {
   icon: string;
   href: string;
   name: string;
-  shareHref: string;
-  function: () => void;
+  shareHref?: (url: string, title: string) => string;
+  function?: (context: any) => void;
 }
 
 const props = defineProps({
@@ -29,8 +28,7 @@ const props = defineProps({
 // Reactive object to store resolved icons
 const resolvedIcons = reactive<Record<string, any>>({});
 
-const urlOrigin = typeof window !== 'undefined' ? window.location.origin : theme.env.FRONTEND_URL;
-
+const urlOrigin = typeof window !== 'undefined' ? window.location.origin : (theme.value?.env?.FRONTEND_URL || '');
 
 const loadIcons = async () => {
   for (const item of props.socialList) {
@@ -58,7 +56,7 @@ onMounted(() => {
       class="social-links__item"
     >
       <VButton
-        :href="(share && item.shareHref) ? item.shareHref(`${urlOrigin}${frontmatter.url}`, frontmatter.title) : item.href"
+        :href="(share && item.shareHref) ? item.shareHref(urlOrigin + frontmatter.url, frontmatter.title) : item.href"
         as="a"
         target="_blank"
         class="social-links__item is--margin-top-0"
@@ -83,8 +81,8 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@use 'UiKit/styles/_colors.scss' as colors;
-@use 'UiKit/styles/_variables.scss' as variables;
+@use '@/core/styles/_colors.scss' as colors;
+@use '@/core/styles/_variables.scss' as variables;
 
 .social-links{
   display: flex;

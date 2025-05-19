@@ -18,13 +18,13 @@ export function generateJsonLd(pageData: PageData, env: any, theme: any): string
     telephone: theme.contacts.phone,
     email: theme.contacts.email,
     sameAs: [
-      'https://www.linkedin.com/company/challengecoin.us',
-      'https://www.facebook.com/challengecoin.us',
-      'https://www.instagram.com/challengecoin.us',
-      'https://github.com/uschallengecoin',
-      'https://x.com/challengecoin.us',
-      'https://www.tiktok.com/@challengecoin.us',
-      'https://t.me/challengecoin.us',
+      theme.socials.linkedin.href,
+      theme.socials.facebook.href,
+      theme.socials.instagram.href,
+      theme.socials.github.href,
+      theme.socials.twitter.href,
+      theme.socials.tiktok.href,
+      theme.socials.telegram.href,
     ],
   };
 

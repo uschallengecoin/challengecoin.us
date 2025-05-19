@@ -8,7 +8,7 @@ export default {
   },
   twitter: {
     icon: 'x-twitter',
-    href: 'https://x.com/challengecoin.us',
+    href: 'https://x.com/uschallengecoin',
     shareHref: (url, title) => {
       let res = 'https://twitter.com/intent/tweet?';
       if (url) res += `url=${encodeURIComponent(url)}`;
@@ -19,25 +19,25 @@ export default {
   },
   facebook: {
     icon: 'facebook',
-    href: 'https://www.facebook.com/challengecoin.us',
+    href: 'https://www.facebook.com/people/US-Challenge-Coin/61576400066975/',
     name: 'Facebook',
     shareHref: (url) => `https://www.facebook.com/sharer.php?u=${encodeURIComponent(url)}`,
   },
   instagram: {
     icon: 'instagram',
-    href: 'https://www.instagram.com/challengecoin.us',
+    href: 'https://www.instagram.com/uschallengecoin',
     name: 'Instagram',
     shareHref: () => '', // Instagram does not support direct sharing via URL
   },
   tiktok: {
     icon: 'tiktok',
-    href: 'https://www.tiktok.com/@challengecoin.us',
+    href: 'https://www.tiktok.com/@uschallengecoin',
     shareHref: (url, title) => `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, // TikTok has no direct share URL, fallback to Twitter
     name: 'Tiktok',
   },
   telegram: {
     icon: 'telegram',
-    href: 'https://t.me/challengecoin.us',
+    href: 'https://t.me/uschallengecoin',
     name: 'Telegram',
     shareHref: () => '', // No direct share URL provided
   },
@@ -48,7 +48,7 @@ export default {
   },
   linkedin: {
     icon: 'linkedin',
-    href: 'https://www.linkedin.com/company/challengecoin.us',
+    href: 'https://www.linkedin.com/company/uschallengecoin',
     name: 'LinkedIn',
     shareHref: (url, title) => `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
   },
@@ -60,6 +60,6 @@ export default {
   matrix: {
     icon: 'matrix',
     name: 'Matrix',
-    href: 'https://matrix.to/#/#matrix.challengecoin-us.org',
+    href: 'https://matrix.to/#/#matrix.uschallengecoin.org',
   },
 };
