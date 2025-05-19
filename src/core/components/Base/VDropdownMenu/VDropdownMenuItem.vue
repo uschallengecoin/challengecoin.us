@@ -30,7 +30,6 @@ const forwardedProps = useForwardProps(delegatedProps);
   display: block;
   color: $black;
   width: 100%;
-  padding: 12px;
   cursor: pointer;
   text-decoration: none;
 
@@ -45,6 +44,7 @@ const forwardedProps = useForwardProps(delegatedProps);
     font-weight: 400;
     line-height: 28px;
     text-decoration: none;
+    padding: 12px;
   }
 
   .is--active {
